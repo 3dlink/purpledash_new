@@ -53,9 +53,31 @@
 	<!--Header end-->
 
 	<!-- Slider -->
-	<div class="slider"></div>
+	<div class="slider">
+		<section class="slider hero">
+			<div class="grid"> 
+				<!-- hero holder -->
+				<div class="hero-holder grid-70 mobile-100 tablet-100">
+					<div class="hero-inner"> <span class="hero-description">Creative Design Studio</span>
+						<div class="hero-title-holder clear">
+							<h1 class="hero-title">We are <span>purple dash</span></h1>
+						</div>
+						<span class="btn-holder"><a id="to-about-section" data-scroll href="#about-section" class="hero-btn">What We Do</a></span>
+					</div>
+				</div>
+			<!-- close hero-holder --> 
+			</div>
 
-
+			<div class="main-slider">
+				<ul class="slides">
+					<li class="flex-active-slide" style="background: transparent url(&quot;../img/s1.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;"></li>
+					<li class="" style="background: transparent url(&quot;../img/s2.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"></li>
+					<li class="" style="background: transparent url(&quot;../img/s3.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"></li>
+					<li class="" style="background: transparent url(&quot;../img/s4.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"></li>
+				</ul>
+			</div>
+		</section>
+	</div>
 
 	<!-- Slider end -->
 
@@ -77,7 +99,7 @@
 
 		<div class="clear"></div>
 
-		<section id="parallax-section-2" class="parallax-section parallax-banner-2 parallax-section-2" data-parallax="scroll" data-image-src="../img/parallax-banner-2.jpg"  data-android-fix="true">
+		<section id="parallax-section-2" class="parallax-section parallax-banner-2 parallax-section-2" data-parallax="scroll" data-image-src="../img/parallax-banner-2.jpg">
 
 			<div class="parallax-content">
         
