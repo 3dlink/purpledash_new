@@ -1,0 +1,387 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	background: #FFFFFF;
+	font: 15px/23px "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #8F989F;
+}
+
+/* #Typography
+================================================== */
+
+h1, h2 { color: #333333; font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight: normal; line-height:100%; margin-bottom:20px; margin-top:0; text-rendering: optimizelegibility; }
+h3, h4, h5, h6 { color: #333333; font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight: normal; line-height:100%; margin-bottom:20px; margin-top:0; text-rendering: optimizelegibility; }
+h1 { font-size:30px; }
+h2 { font-size:26px; }
+h3 {
+	font-size: 26px;
+}
+h4 { font-size:16px; }
+h5 { font-size:14px; }
+h6 { font-size:12px; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+p { margin: 0 0 20px 0; }
+p img { margin: 0; }
+p.lead { font-size: 21px; line-height: 27px; color: #77777;  }
+em { font-style: italic; }
+strong { font-weight: bold; }
+small { font-size: 80%; }
+
+/*	Blockquotes  */
+
+blockquote, blockquote p { font-size: 17px; line-height: 24px; font-style: italic; }
+blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #DDDDDD; }
+blockquote cite { display: block; font-size: 12px; color: #999999; }
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a { color: #999999; }
+
+hr { border: solid #DDDDDD; border-width: 1px 0 0; clear: both; margin: 20px 0 40px; height: 0; }
+
+/*	Links  */
+a{
+	text-decoration: none;
+	-webkit-transition: 0.2s color linear;
+	-moz-transition: 0.2s color linear;
+	transition: 0.2s color linear;
+	color: #552499;
+}
+
+a:hover { 
+	color: #555555; 
+}
+
+
+/*	HTML  */
+* {
+	font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    vertical-align: baseline;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+section{
+	display: block;
+}
+
+p {
+	margin: 0 0 20px 0;	
+}
+
+.grid-20{
+	float: left;
+	width: 20%;
+}
+
+.grid-40{
+	float: left;
+	width: 40%;
+}
+
+.grid-70{
+	float: left;
+	width: 70%;
+}
+
+.grid-80{
+	float: left;
+	width: 80%;
+}
+
+.prefix-15{
+	margin-left: 15%;
+}
+
+.prefix-60{
+	margin-left: 60%;
+}
+
+#header-section{
+	line-height: 105px;
+	height: 110px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	z-index: 1000;
+	background: rgba(255, 255, 255, 0.95);
+	box-shadow: 0 1px 10px rgba(31, 50, 63, 0.25);	
+}
+
+.header-show{
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.header-hide{
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+#header-container{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 100%;
+}
+
+#header-container nav a::after {
+    content: '·';
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    color: #999999;
+    font-weight: bold;
+    left: 10px;
+}
+
+.nav a:first-child:after{
+	display: none;
+}
+
+.logo {
+    text-align: left;
+    margin: 0;
+    line-height: 105px;
+    color: #1d1d1d;
+    text-transform: uppercase;
+}
+
+.logo img{
+	max-height: 85px;
+	vertical-align: middle;
+}
+
+#nav-section{
+	height: 100%;
+	text-align: right;
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+}
+
+.nav{
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.nav a{
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 11px;
+	cursor: pointer;
+	color: #777777;
+	outline: none;
+	text-decoration: none;
+	padding-left: 30px;
+	position: relative;
+}
+
+.nav a:hover{
+	color: #552499;
+}
+
+.selected {
+    color: #552499 !important;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+
+.section-container{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+}
+
+.grid{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.section-header{
+	text-align: center;
+	padding-bottom: 50px;
+}
+
+.section-title{
+	font-size: 40px;
+	margin-bottom: 20px;
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: center center;
+	text-transform: uppercase;
+}
+
+.section-title span{
+	background: #FFFFFF;
+	padding: 0 35px;
+}
+
+.section-slogan{
+	font-size: 20px;
+	line-height: 140%;
+}
+
+.section-title, .parallax-title {
+	opacity: 0;
+	transition: all 1.0s;
+}
+
+.section-slogan, .parallax-slogan, .section-extra{
+	opacity: 0;
+	transition: all 1.0s;
+	transition-delay: 0.5s;
+}
+
+.slider{
+	height: 659px;
+}
+
+.about-section{
+	padding-bottom: 90px;
+}
+
+.content-section{
+	padding-top: 150px;
+	padding-bottom: 130px;
+	background: #FFFFFF;
+}
+
+.team-section{
+	padding-bottom: 90px;
+}
+
+.clear{
+	overflow: hidden;
+}
+
+
+/* PARALLAX */
+
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.parallax-content {
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin-left:5%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.parallax-content .parallax-header {
+    padding: 200px 0;
+}
+
+.parallax-header {
+    position: relative;
+    text-align: center;
+}
+
+.parallax-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #fdfd28;
+    padding-top: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+}
+
+.parallax-slogan {
+    font-size: 37px;
+    line-height: 140%;
+    margin: 0;
+    z-index: 10;
+    position: relative;
+    padding-top: 30px;
+    color: #fdfd28;
+}
+
+.parallax-banner-2 {
+    min-height: 564px;
+}
+
+
+
+/* MEDIA QUERIES*/
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	.tablet-100{
+		width: 100%;
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#header-section {
+		display: none; 
+	}
+
+  	.mobile-100{
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	.section-title, .parallax-title{
+		font-size: 25px;
+	}
+
+	.section-title span{
+		padding: 0;
+	}
+
+	.section-slogan, .parallax-slogan{
+		font-size: 15px;
+	}
+
+	.about-section, .team-section{
+		padding-bottom: 0;
+		padding-top: 50px;
+	}
+
+	.parallax-content{
+		margin-left: 0;
+	}
+
+	.parallax-content .parallax-header{
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.parallax-section{
+		background-size: cover;
+		min-height: 0;
+	}
+}
