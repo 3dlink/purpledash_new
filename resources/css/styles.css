@@ -402,6 +402,12 @@ img{
     position: relative;
     overflow: hidden;
     width: 100%;
+
+    background-size: cover;
+	background-attachment: fixed;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .parallax-content {
@@ -445,7 +451,7 @@ img{
 }
 
 .parallax-banner-2 {
-    min-height: 564px;
+	background-image: url("../img/parallax-banner-2.jpg");
 }
 
 /* End Parallax Styles */
@@ -457,6 +463,15 @@ img{
 	.tablet-100{
 		width: 100%;
 		margin-left: 0px;
+	}
+
+	.parallax-section{
+		max-width: 100%;
+	}
+
+	.parallax-content .parallax-header{
+		padding-bottom: 100px;
+		padding-top: 50px;
 	}
 }
 
@@ -497,8 +512,7 @@ img{
 	}
 
 	.parallax-section{
-		background-size: cover;
-		min-height: 0;
+		background-attachment: inherit;
 	}
 
 	.hero-title{

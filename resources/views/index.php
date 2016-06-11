@@ -12,12 +12,10 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
 	<link href="../css/styles.css" rel="stylesheet" type="text/css">
-	<link href="../css/font-awesome.css" rel="stylesheet" media="all">
 
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="../js/purpledash.js"></script>
-	<script src="../js/parallax.min.js"></script>
 	<script src="../js/smooth-scroll.js"></script>
 </head>
 <body>
@@ -99,24 +97,16 @@
 
 		<div class="clear"></div>
 
-		<section id="parallax-section-2" class="parallax-section parallax-banner-2 parallax-section-2" data-parallax="scroll" data-image-src="../img/parallax-banner-2.jpg">
-
+		<section id="parallax-section-2 clear" class="parallax-section-2 parallax-section parallax-banner-2">
 			<div class="parallax-content">
-        
-		        <!-- parallax header -->
 		        <div class="grid grid-40 prefix-60 mobile-100 tablet-100" style="text-shadow: 1px 1px gray;">
 					<header class="parallax-header">
 			            <h2 class="parallax-title"><span>Our Philosophy</span></h2>
 			            <p class="parallax-slogan about">We believe in quality because it is the only thing that stands the test of time.</p>
 					</header>
 				</div>
-		        <!-- close parallax header -->
-        
       		</div>
-      		<!-- close grid container -->
- 
-    	</section>
-
+   		</section>
 	</div>
 
 	<!-- About us end -->
