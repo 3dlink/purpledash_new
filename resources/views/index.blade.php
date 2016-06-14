@@ -11,12 +11,8 @@
 	<!-- CSS -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
-	<link href="../css/styles.css" rel="stylesheet" type="text/css">
+	<link href='{{URL::asset("/css/styles.css")}}' rel="stylesheet" type="text/css">
 
-	<!-- JavaScript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="../js/purpledash.js"></script>
-	<script src="../js/smooth-scroll.js"></script>
 </head>
 <body>
 
@@ -130,14 +126,65 @@
 
 	<!-- Our team end -->
 
+	<!-- Services -->
+
+	<div class="clear">
+		<section id="service-section" class="service-section parallax-section parallax-banner-6">
+			<div class="grid parallax-content">
+				<div class="grid-parent grid-100 mobile-100 tablet-100"> 
+				          
+					<!-- entry header -->
+					<div class="grid-90 prefix-5 mobile-100 tablet-100">
+						<header class="parallax-header">
+							<h2 class="parallax-title"><span>OUR SERVICES</span></h2>
+							<p class="parallax-slogan"><strong>PURPLEDASH</strong> IS A VERSATILE CREATIVE STUDIO FOUNDED BY PROFESSIONALS FROM DIFFERENT FIELDS. WE KNOW HOW TO BRING NEW LIFE TO A BRAND AND HOW TO CREATE ENTIRELY NEW CONCEPTS. WE LIKE TO WORK CLOSELY WITH CLIENTS AND INCLUDE THEM IN OUR DESIGN PROCESS TO CREATE BETTER RESULTS.</p>
+						</header>
+					</div>
+					<!-- close entry header --> 
+
+					<!-- icon box -->
+
+					@foreach($services as $service)
+					<div class="service-box grid-10 mobile-grid-10 tablet-grid-50">
+						<div class="box-fade icon-box">
+							<i class="fa {{$service->img}} icon-2x service-icon"></i> </div>
+						<div class="box-fade info">
+							<h3>{{$service->name}}</h3>
+						</div>
+					</div>
+					@endforeach
+					<!-- close icon box --> 
+				</div>
+			<!-- close grid-100 --> 
+			</div>
+		<!-- close grid container --> 
+		</section>
+	</div>
+
+	<!-- Services end -->
+
+	<!-- Drop us a line -->
+
+	<div class="clear">
+		<section id="cta-section" class="cta-section content-section">
+			<div class="grid">
+				<div class="grid-100 mobile-100 tablet-100">
+					<span class="cta-btn cl-effect-18 "><a class="cl-effect-18" href="#contact-section"> Drop us a line </a></span>
+				</div>
+			</div>
+		</section>
+	</div>	
+
+	<!-- Drop us a line end -->
+
 
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-	<script>
-    	smoothScroll.init({
-    			easing: "linear",
-    			speed: 400
-    		});
-	</script>
+	<!-- JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/011b552131.js"></script>
+	<script src='{{URL::asset("/js/purpledash.js")}}'></script>
+	<script src='{{URL::asset("/js/smooth-scroll.js")}}'></script>
+	
 </body>
 </html>

@@ -36,8 +36,7 @@ $(document).ready(function (){
 			}
 		});
 
-		//OPACITY CHANGE FOR SERVICES FROM LEFT TO RIGHT
-		//var icons = $(".service-box"); 
+		var icons = $(".service-box");
 		
 	});
 

@@ -11,51 +11,44 @@
 |
 */
 
-use App\Test;
+use App\Service;
 use Illuminate\Http\Request;
 
-/**
- * Show Test Dashboard
- */
-Route::get('/', function () {
+//Main Page Routes
 
-	$tests = Test::orderBy('created_at', 'asc')->get();
+Route::get('/', [
+	'uses'	=>	'mainController@index'
+]);
 
-    return view('tests', [
-        'tests' => $tests
+//Amin Panel Routes
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+
+	Route::get('/', [
+		'uses' 	=>	'HomeController@index',
+		'as'	=>	'admin.index'
+	]);
+
+    Route::resource('services', 'ServicesController');
+
+    Route::get('services/{id}/destroy', [
+    	'uses'	=>	'ServicesController@destroy',
+    	'as'	=>	'admin.services.destroy'
+    ]);
+
+    Route::get('password', [
+    	'uses' 	=> 	'PasswordChangeController@index',
+    	'as'	=>	'admin.password'
+    ]);
+
+    Route::post('password', [
+    	'uses' 	=> 	'PasswordChangeController@setPassword',
+    	'as'	=>	'admin.setpwd'
     ]);
 });
 
-/**
- * Add New Test
- */
-Route::post('/test', function (Request $request) {
+Route::auth();
 
-	$validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-        'edad' => 'required'
-    ]);
 
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
 
-    $test = new Test;
-    $test->name = $request->name;
-    $test->edad = $request->edad;
-    $test->save();
 
-    return redirect('/');
-
-});
-
-/**
- * Delete Test
- */
-Route::delete('/test/{test}', function (Test $test) {
-	$test->delete();
-
-    return redirect('/');
-});

@@ -104,8 +104,6 @@ p {
 .grid-100{
 	clear: both;
 	width: 100%;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 .prefix-5{
@@ -687,6 +685,19 @@ img{
 
 	.grid-10 {
     	width: 33%;
+	}
+
+	.info {
+		text-align: center;
+	}
+
+	.info h3{
+		font-size: 10px;
+		padding-top: 0px;
+	}
+
+	.cta-section {
+   		padding-bottom: 50px;
 	}
 }
 
