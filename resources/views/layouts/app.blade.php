@@ -54,7 +54,7 @@
 
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('admin.services.index')}}">Services</a></li>
-                                <li><a href="#">Phrases</a></li>
+                                <li><a href="{{route('admin.phrases.index')}}">Phrases</a></li>
                                 <li><a href="#">Works</a></li>
                             </ul>
                         </li>

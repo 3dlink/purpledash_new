@@ -1,11 +1,38 @@
 var frases = [	{		h1:"we are",		span: "purple dash"	},	{		h1:"services",		span: "world wide"	},	{		h1:"we love",		span: "BRANDS"	},	{		h1:"we love",		span: "CODING"	},	{		h1:"we are",		span: "CREATIVE"	},	{		h1:"we are",		span: "ENTHUSIASTS"	},	{		h1:"we are",		span: "PASSIONATE"	},	{		h1:"we are",		span: "CURIOUS"	},	{		h1:"we love to",		span: "design"	}];
 var timer = 0;
+
 $(document).ready(function (){
 
 	smoothScroll.init({
     	easing: "linear",
     	speed: 400
     });
+
+    $('.slide').slick({
+		slidesToShow: 9,
+		slidesToScroll:3,
+		infinite: false,
+		arrows:true,
+
+		responsive: [
+			{
+				breakpoint: 1100,
+				settings:{
+					slidesToShow: 6
+				}
+			},
+			{
+				breakpoint: 768,
+				settings:{
+					slidesToShow: 3,
+					arrows: false,
+					autoplay: true,
+					autoplaySpeed: 1500,
+					infinite: true
+				}
+			}
+		]
+	});
 
 	$(".slider").css("height",window.innerHeight);
 
@@ -26,7 +53,7 @@ $(document).ready(function (){
 		}
 
 		//OPACITY CHANGE
-		var obj= $(".section-title, .section-slogan, .section-extra, .parallax-title, .parallax-slogan").each(function (index){
+		var obj= $(".service-box, .section-title, .section-slogan, .section-extra, .parallax-title, .parallax-slogan").each(function (index){
 			var me = $(this);
 			var loc = me.offset().top;
 
@@ -61,6 +88,8 @@ $(document).ready(function (){
 	//RESIZING SLIDER
 	$(window).resize(function(){
 		$(".slider").css("height",window.innerHeight);
+		$(".slick-next").css('right','0px');
+		$(".slick-prev").css('left','0px');
 	});
 
 	//REPRINTING PHRASES
@@ -137,4 +166,8 @@ $(document).ready(function (){
 	}, function(){
 		$(".cl-effect-18 a").removeClass("rotate");
 	});
+
+	$(".slick-next").css('right','0px');
+	$(".slick-prev").css('left','0px');
+
 });

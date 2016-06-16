@@ -13,6 +13,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
 	<link href='{{URL::asset("/css/styles.css")}}' rel="stylesheet" type="text/css">
 
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("js/slick/slick.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("js/slick/slick-theme.css")}}'/>
+
 </head>
 <body>
 
@@ -144,15 +147,20 @@
 
 					<!-- icon box -->
 
-					@foreach($services as $service)
-					<div class="service-box grid-10 mobile-grid-10 tablet-grid-50">
-						<div class="box-fade icon-box">
-							<i class="fa {{$service->img}} icon-2x service-icon"></i> </div>
-						<div class="box-fade info">
-							<h3>{{$service->name}}</h3>
+					<div class="slide clear">
+						@foreach($services as $service)
+						<div class="service-box grid-10 mobile-grid-10 tablet-grid-50">
+							<div class="box-fade icon-box">
+								<i class="fa {{$service->img}} icon-2x service-icon"></i> </div>
+							<div class="box-fade info">
+								<h3>{{$service->name}}</h3>
+							</div>
 						</div>
+						@endforeach
 					</div>
-					@endforeach
+
+					
+
 					<!-- close icon box --> 
 				</div>
 			<!-- close grid-100 --> 
@@ -178,13 +186,11 @@
 	<!-- Drop us a line end -->
 
 
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/011b552131.js"></script>
 	<script src='{{URL::asset("/js/purpledash.js")}}'></script>
 	<script src='{{URL::asset("/js/smooth-scroll.js")}}'></script>
-	
+	<script src='{{URL::asset("/js/slick/slick.min.js")}}'></script>
 </body>
 </html>

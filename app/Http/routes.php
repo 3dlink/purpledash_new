@@ -45,6 +45,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     	'uses' 	=> 	'PasswordChangeController@setPassword',
     	'as'	=>	'admin.setpwd'
     ]);
+
+    Route::resource('phrases', 'PhrasesController');
 });
 
 Route::auth();

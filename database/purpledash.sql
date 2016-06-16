@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2016 a las 23:53:10
+-- Tiempo de generación: 16-06-2016 a las 23:06:53
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -31,16 +31,6 @@ CREATE TABLE `migrations` (
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `migrations`
---
-
-INSERT INTO `migrations` (`migration`, `batch`) VALUES
-('2014_10_12_000000_create_users_table', 1),
-('2014_10_12_100000_create_password_resets_table', 1),
-('2016_06_02_201642_create_tests_table', 2),
-('2016_06_12_225102_create_services_table', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -56,6 +46,20 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `phrases`
+--
+
+CREATE TABLE `phrases` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `author` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `quote` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `services`
 --
 
@@ -66,16 +70,6 @@ CREATE TABLE `services` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `services`
---
-
-INSERT INTO `services` (`id`, `name`, `img`, `created_at`, `updated_at`) VALUES
-(8, 'Branding', 'fa-lightbulb-o', '2016-06-14 17:42:40', '2016-06-14 17:42:40'),
-(9, 'Web Design & Development', 'fa-desktop', '2016-06-14 17:44:04', '2016-06-14 17:44:04'),
-(11, 'App Design & Development', 'fa-mobile', '2016-06-14 20:54:54', '2016-06-14 20:54:54'),
-(12, 'Packaging', 'fa-archive', '2016-06-14 20:58:52', '2016-06-14 20:58:52');
 
 -- --------------------------------------------------------
 
@@ -105,6 +99,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_token_index` (`token`);
 
 --
+-- Indices de la tabla `phrases`
+--
+ALTER TABLE `phrases`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `services`
 --
 ALTER TABLE `services`
@@ -122,10 +122,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `phrases`
+--
+ALTER TABLE `phrases`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --

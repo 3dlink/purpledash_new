@@ -73,7 +73,7 @@ p {
 
 .grid-10{
 	float: left;
-	width: 10%;
+	width: 11%;
 }
 
 .grid-20{
@@ -528,6 +528,12 @@ img{
     border-radius: 50%;
 }
 
+.service-box{
+	opacity: 0;
+	transition: all 1.0s;
+	transition-delay: 1s;
+}
+
 .info {
     overflow: hidden;
     text-align: center;
@@ -542,6 +548,14 @@ img{
     margin: 0;
     text-transform: uppercase;
     padding-top: 25px;
+}
+
+.slide{
+	width: 100%;
+}
+
+.slick-prev, .slick-next{
+	z-index: 1;
 }
 
 .clear{
@@ -632,6 +646,15 @@ img{
 		padding-bottom: 100px;
 		padding-top: 50px;
 	}
+
+	.grid-10{
+		width: 33%;
+		padding-top: 10px;
+	}
+
+	#service-section .parallax-slogan{
+		font-size: 20px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -661,10 +684,6 @@ img{
 		padding-top: 50px;
 	}
 
-	.parallax-content{
-		margin-left: 0;
-	}
-
 	.parallax-content .parallax-header{
 		padding-top: 50px;
 		padding-bottom: 50px;
@@ -685,6 +704,7 @@ img{
 
 	.grid-10 {
     	width: 33%;
+    	padding-top: 10px;
 	}
 
 	.info {
@@ -698,6 +718,10 @@ img{
 
 	.cta-section {
    		padding-bottom: 50px;
+	}
+
+	#service-section .parallax-slogan{
+		font-size: 100%;
 	}
 }
 

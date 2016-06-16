@@ -6,31 +6,31 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading center">Services</div>
+                <div class="panel-heading center">Phrases</div>
 
                 <div class="panel-body">
 					<table class="table">
 						<thead>
 							<th>ID</th>
-							<th>Name</th>
-							<th>Image (fa-icon)</th>
+							<th>Author</th>
+							<th>Quote</th>
 							<th>Actions</th>
 						</thead>
 
 						<tbody>
-							@foreach($services as $service)
+							@foreach($phrases as $phrase)
 								<tr>
-									<td>{{$service->id}}</td>
-									<td>{{$service->name}}</td>
-									<td>{{$service->img}}</td>
+									<td>{{$phrase->id}}</td>
+									<td>{{$phrase->author}}</td>
+									<td>{{$phrase->quote}}</td>
 									<td>
-										<a class="itemAction" href="{{ route('admin.services.edit', $service->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-										<a class="itemAction" href="{{ route('admin.services.show', $service->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$service->id}}""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+										<a class="itemAction" href="{{ route('admin.phrases.edit', $phrase->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+										<a class="itemAction" href="{{ route('admin.phrases.show', $phrase->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$phrase->id}}""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 											
 									</td>
 								</tr>
-								<div id="myModal{{$service->id}}" class="modal fade" role="dialog">
+								<div id="myModal{{$phrase->id}}" class="modal fade" role="dialog">
 								  <div class="modal-dialog">
 								    <div class="modal-content">
 								      <div class="modal-header">
@@ -38,11 +38,11 @@
 								        <h4 class="modal-title">Confirm Delete</h4>
 								      </div>
 								      <div class="modal-body">
-								        <p>Are you sure you want to delete this service?</p>
+								        <p>Are you sure you want to delete this phrase?</p>
 								      </div>
 								      <div class="modal-footer">
 								        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-								        <a href="{{route('admin.services.destroy', $service->id)}}"><button type="button" class="btn btn-primary">Confirm</button></a>
+								        <a href="{{route('admin.phrases.destroy', $phrase->id)}}"><button type="button" class="btn btn-primary">Confirm</button></a>
 								      </div>
 								    </div><!-- /.modal-content -->
 								  </div><!-- /.modal-dialog -->
@@ -50,10 +50,10 @@
 							@endforeach
 						</tbody>
 					</table>
-					<div class="center">{!! $services->render() !!}</div>
+					<div class="center">{!! $phrases->render() !!}</div>
 					
                 </div>
-                <div class="panel-footer"><a href="{{ route('admin.services.create') }}"><button class="btn btn-primary">Add Service</button></a></div>
+                <div class="panel-footer"><a href="{{ route('admin.phrases.create') }}"><button class="btn btn-primary">Add phrase</button></a></div>
             </div>
         </div>
     </div>

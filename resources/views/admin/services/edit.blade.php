@@ -21,13 +21,13 @@
 						{!! Form::label('img', 'Imagen') !!}
 						{!! Form::text('img', $service->img, ['placeholder' => 'fa-example', 'class' => 'form-control', 'required']) !!}
 					</div>
-
-					<div class="form-group">
-						{!! Form::submit('Update',array('class'=>'btn btn-primary')) !!}
-					</div>
-
-					{!! Form::close() !!}
                 </div>
+                <div class="panel-footer">
+                		<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>
+						{!! Form::submit('Update',array('class'=>'btn btn-primary')) !!}
+				</div>
+
+				{!! Form::close() !!}
             </div>
         </div>
     </div>
