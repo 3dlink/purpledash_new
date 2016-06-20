@@ -30,15 +30,15 @@
 
 						<div class="form-group">
 							{!! Form::label('img', 'Imagen (fa-icon)') !!}
-							{!! Form::text('img', null, ['placeholder' => 'fa-example', 'class' => 'form-control', 'required']) !!}
+							{!! Form::text('img', null, ['placeholder' => 'fa-example', 'class' => 'form-control iconpicker', 'required']) !!}
 						</div>
 	            </div>
 
 	            <div class="panel-footer">
-								{!! Form::submit('Add Service', array('class'=>'btn btn-primary')) !!}
-								{!! Form::close() !!}
-								<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>
-							</div>
+					{!! Form::submit('Add Service', array('class'=>'btn btn-primary')) !!}
+					{!! Form::close() !!}
+					<!--<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>-->
+				</div>
 
 
             </div>

@@ -37,7 +37,7 @@
 	            <div class="panel-footer">
 					{!! Form::submit('Add Phrase', array('class'=>'btn btn-primary')) !!}
 					{!! Form::close() !!}
-					<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default">Back</button></a>
+					<!--<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default">Back</button></a>-->
 
 	            </div>
 

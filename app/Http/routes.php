@@ -52,6 +52,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 Route::auth();
 
-// Route::get('/register', [
-	// 'uses'	=>	'Auth\AuthController@showLoginForm'
-// ]);
+Route::get('/register', [
+	'uses'	=>	'Auth\AuthController@showLoginForm'
+]);
