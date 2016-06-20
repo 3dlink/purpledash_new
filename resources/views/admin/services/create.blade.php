@@ -21,7 +21,7 @@
                 {!! Form::open(['route' => 'admin.services.store', 'method' => 'POST']) !!}
 
                 <div class="panel-body">
-					
+
 
 						<div class="form-group">
 							{!! Form::label('name', 'Nombre') !!}
@@ -31,15 +31,16 @@
 						<div class="form-group">
 							{!! Form::label('img', 'Imagen (fa-icon)') !!}
 							{!! Form::text('img', null, ['placeholder' => 'fa-example', 'class' => 'form-control', 'required']) !!}
-						</div>					
+						</div>
 	            </div>
 
 	            <div class="panel-footer">
-	            	<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>
-					{!! Form::submit('Add Service', array('class'=>'btn btn-primary')) !!}
-	            </div>
+								{!! Form::submit('Add Service', array('class'=>'btn btn-primary')) !!}
+								{!! Form::close() !!}
+								<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>
+							</div>
 
-	            {!! Form::close() !!}
+
             </div>
         </div>
     </div>

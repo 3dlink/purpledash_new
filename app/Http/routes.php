@@ -20,6 +20,7 @@ Route::get('/', [
 	'uses'	=>	'mainController@index'
 ]);
 
+
 //Amin Panel Routes
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
@@ -51,6 +52,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 Route::auth();
 
-
-
-
+// Route::get('/register', [
+	// 'uses'	=>	'Auth\AuthController@showLoginForm'
+// ]);

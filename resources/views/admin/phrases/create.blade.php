@@ -21,7 +21,7 @@
                 {!! Form::open(['route' => 'admin.phrases.store', 'method' => 'POST']) !!}
 
                 <div class="panel-body">
-					
+
 
 						<div class="form-group">
 							{!! Form::label('author', 'Author') !!}
@@ -31,15 +31,16 @@
 						<div class="form-group">
 							{!! Form::label('quote', 'Text') !!}
 							{!! Form::text('quote', null, ['class' => 'form-control', 'required']) !!}
-						</div>					
+						</div>
 	            </div>
 
 	            <div class="panel-footer">
-	            	<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default">Back</button></a>
 					{!! Form::submit('Add Phrase', array('class'=>'btn btn-primary')) !!}
+					{!! Form::close() !!}
+					<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default">Back</button></a>
+
 	            </div>
 
-	            {!! Form::close() !!}
             </div>
         </div>
     </div>
