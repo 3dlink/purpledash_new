@@ -45,7 +45,6 @@ $(document).ready(function (){
 		speed: 1500
 	});
 
-	sliderMainImg();
 	$(".slider").css("height",window.innerHeight);
 
 
@@ -74,7 +73,31 @@ $(document).ready(function (){
 			if (window.pageYOffset + window.innerHeight > loc + 50) {
 				me.css("opacity",1);
 			}
-		});		
+		});	
+
+		/*if (isScrolledIntoView('#about-section')) {
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#about-section"]').addClass("selected");
+		}else if (isScrolledIntoView('#team-section')){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#team-section"]').addClass("selected");
+		}else if (isScrolledIntoView('#service-section')){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#service-section"]').addClass("selected");
+		}else if (isScrolledIntoView('#portfolio-section')){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#portfolio-section"]').addClass("selected");
+		}else if (isScrolledIntoView('#testimonial-section')){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#testimonial-section"]').addClass("selected");
+		}else if (isScrolledIntoView('#contact-section')){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#contact-section"]').addClass("selected");
+		}else{
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#top"]').addClass("selected");
+		}*/
+
 	});
 
 
@@ -100,8 +123,6 @@ $(document).ready(function (){
 		$(".slider").css("height",window.innerHeight);
 		$(".slick-next").css('right','0px');
 		$(".slick-prev").css('left','0px');
-
-		sliderMainImg();
 	});
 
 	//REPRINTING PHRASES
@@ -202,15 +223,10 @@ $(document).ready(function (){
 
 function isScrolledIntoView(elem)
 {
-   var docViewTop = $(window).scrollTop();
-   var docViewBottom = docViewTop + $(window).height();    var elemTop = $(elem).offset().top;
-   var elemBottom = elemTop + $(elem).height();    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-};
+	var docViewTop = $(window).scrollTop();
+	var docViewBottom = docViewTop + $(window).height();
+	var elemTop = $(elem).offset().top;
+	var elemBottom = elemTop + $(elem).height();
 
-function sliderMainImg (){
-	if (window.innerWidth < 1024) {
-		$('.main-slider li:first-child').css('background-image','url("../img/s1-mobile.jpg"');
-	} else{
-		$('.main-slider li:first-child').css('background-image','url("../img/s1.jpg"');
-	}
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 };

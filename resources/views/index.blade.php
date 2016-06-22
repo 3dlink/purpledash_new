@@ -30,7 +30,7 @@
 			
 			<div id="logo-section" class="grid grid-20">
 				<h1 class="logo">
-					<a href="#top">
+					<a href="">
 						<img src="../img/logo.png" alt="logo">
 					</a>
 
@@ -69,10 +69,10 @@
 
 			<div class="main-slider">
 				<ul class="slides">
-					<li class="flex-active-slide" style="background: transparent url(&quot;../img/s1.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;"></li>
-					<li class="" style="background: transparent url(&quot;../img/s2.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"></li>
-					<li class="" style="background: transparent url(&quot;../img/s3.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"></li>
-					<li class="" style="background: transparent url(&quot;../img/s4.jpg&quot;) repeat scroll 0% 0%; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
 				</ul>
 			</div>
 		</section>
