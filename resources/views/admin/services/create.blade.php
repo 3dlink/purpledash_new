@@ -35,11 +35,10 @@
 	            </div>
 
 	            <div class="panel-footer">
+	            	<a href="{{ route('admin.services.index') }}"><button class="btn btn-default" type="button">Back</button></a>
 					{!! Form::submit('Add Service', array('class'=>'btn btn-primary')) !!}
-					{!! Form::close() !!}
-					<!--<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>-->
 				</div>
-
+				{!! Form::close() !!}
 
             </div>
         </div>

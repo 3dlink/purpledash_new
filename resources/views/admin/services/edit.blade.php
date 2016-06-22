@@ -19,11 +19,11 @@
 
 					<div class="form-group">
 						{!! Form::label('img', 'Imagen') !!}
-						{!! Form::text('img', $service->img, ['placeholder' => 'fa-example', 'class' => 'form-control', 'required']) !!}
+						{!! Form::text('img', $service->img, ['placeholder' => 'fa-example', 'class' => 'form-control iconpicker', 'required']) !!}
 					</div>
                 </div>
                 <div class="panel-footer">
-                		<a href="{{ route('admin.services.index') }}"><button class="btn btn-default">Back</button></a>
+                		<a href="{{ route('admin.services.index') }}"><button class="btn btn-default" type="button">Back</button></a>
 						{!! Form::submit('Update',array('class'=>'btn btn-primary')) !!}
 				</div>
 

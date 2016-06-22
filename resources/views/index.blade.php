@@ -9,6 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
 	<link href='{{URL::asset("/css/styles.css")}}' rel="stylesheet" type="text/css">
@@ -147,7 +149,7 @@
 
 					<!-- icon box -->
 
-					<div class="slide clear">
+					<div class="slide slide-services clear">
 						@foreach($services as $service)
 						<div class="service-box grid-10 mobile-grid-10 tablet-grid-50">
 							<div class="box-fade icon-box">
@@ -185,9 +187,100 @@
 
 	<!-- Drop us a line end -->
 
+	<!-- Phrases -->
+
+	<div class="clear">
+		<section id="phrases-section" class="parallax-section parallax-banner-7 phrases-section">
+			<div class="grid parallax-content">
+				<div class="grid-parent grid-100 mobile-100 tablet-100 clear"> 
+
+					<!-- entry header -->
+					<div class="grid-70 prefix-15 mobile-100 tablet-100">
+						<div class="slide slide-phrases">
+							@foreach($phrases as $phrase)
+							<header class="parallax-header quotes"> 
+								<h2 class="ut-parallax-quote-title ">{{$phrase->quote}}. </h2>
+								@if ($phrase->author != '')
+								<span class="ut-parallax-quote-name">- {{$phrase->author}}</span>
+								@endif
+							</header>
+							@endforeach
+						</div>
+					</div>
+					<!-- close entry header --> 
+				          
+				</div>
+			</div>
+		      <!-- close grid container --> 
+		</section>
+	</div>
+
+	<!-- Phrases end -->
+
+	<!-- Portfolio -->
+
+	<div class="clear">
+		<section id="portfolio-section" class="portfolio-section content-section clear">
+			<div class="grid clear prefix-5 postfix-5 tablet-fix-0 mobile-fix-0"> 
+			        
+				<!-- section header -->
+				<div class="grid-70 prefix-15 mobile-100 tablet-100">
+					<header class="section-header">
+						<h2 class="section-title"><span>Our Work</span></h2>
+						<p class="section-slogan">“We believe our work <strong>speaks</strong> for itself. Browse our most recent projects below”.</p>
+					</header>
+				</div>
+				<!-- close section header -->
+				@foreach($works as $work)
+				 <!-- portfolio box -->
+				<div class="grid-33 mobile-100 tablet-50"> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" href="">
+					<div class="portfolio-box">
+
+						<figure class="portfolio-image"><img src="img/{{$work->frontImg}}"></figure>
+						<!-- close portfolio image -->
+
+						<div class="portfolio-caption">
+							<h3 class="portfolio-title">{{$work->title}}<span class="portfolio-category">{{$work->category}}</span></h3>
+						</div>
+					<!-- close portfolio caption --> 
+					</div>
+				</a> </div>
+				<!-- close portfolio -->
+				@endforeach
+
+			                
+			</div>
+		<!-- close grid-container --> 
+		</section>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="portfolio-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="grid-70 prefix-15 mobile-100 tablet-100">
+						<header class="section-header">
+							<h2 class="section-title"><span class="work-title"></span></h2>
+							<p class="section-slogan work-description"></p>
+						</header>
+					</div>
+				</div>
+				<div class="modal-body grid-100 mobile-100 tablet-100">
+					<div class="photos clear">
+						<span><img src="" class="magicfields"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Portfolio end -->
+
 
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="https://use.fontawesome.com/011b552131.js"></script>
 	<script src='{{URL::asset("/js/purpledash.js")}}'></script>
 	<script src='{{URL::asset("/js/smooth-scroll.js")}}'></script>

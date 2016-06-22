@@ -8,7 +8,7 @@ $(document).ready(function (){
     	speed: 400
     });
 
-    $('.slide').slick({
+    $('.slide-services').slick({
 		slidesToShow: 9,
 		slidesToScroll:3,
 		infinite: false,
@@ -34,7 +34,20 @@ $(document).ready(function (){
 		]
 	});
 
+	$('.slide-phrases').slick({
+		fade: true,
+		autoplay: true,
+		autoplaySpeed: 8000,
+		draggable: false,
+		arrows: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		speed: 1500
+	});
+
+	sliderMainImg();
 	$(".slider").css("height",window.innerHeight);
+
 
 	$(window).scroll(function () {
 
@@ -53,7 +66,7 @@ $(document).ready(function (){
 		}
 
 		//OPACITY CHANGE
-		var obj= $(".service-box, .section-title, .section-slogan, .section-extra, .parallax-title, .parallax-slogan").each(function (index){
+		var obj= $(".portfolio-box, .service-box, .section-title, .section-slogan, .section-extra, .parallax-title, .parallax-slogan").each(function (index){
 			var me = $(this);
 			var loc = me.offset().top;
 
@@ -61,10 +74,7 @@ $(document).ready(function (){
 			if (window.pageYOffset + window.innerHeight > loc + 50) {
 				me.css("opacity",1);
 			}
-		});
-
-		var icons = $(".service-box");
-		
+		});		
 	});
 
 
@@ -90,6 +100,8 @@ $(document).ready(function (){
 		$(".slider").css("height",window.innerHeight);
 		$(".slick-next").css('right','0px');
 		$(".slick-prev").css('left','0px');
+
+		sliderMainImg();
 	});
 
 	//REPRINTING PHRASES
@@ -170,6 +182,22 @@ $(document).ready(function (){
 	$(".slick-next").css('right','0px');
 	$(".slick-prev").css('left','0px');
 
+	// Dynamic Modal //
+
+	$('#portfolio-modal').on('show.bs.modal', function(event){
+		var me = $(event.relatedTarget);
+		var mainimg = me.data('mainimg');
+		var title = me.data('title');
+		var desc = me.data('desc');
+		var modal = $(this);
+
+		modal.find('.work-title').text(title);
+		modal.find('.work-description').text(desc)
+		modal.find('.photos img').attr('src', 'img/'+mainimg);
+
+	});
+	// Dynamic Modal End //
+
 });
 
 function isScrolledIntoView(elem)
@@ -177,4 +205,12 @@ function isScrolledIntoView(elem)
    var docViewTop = $(window).scrollTop();
    var docViewBottom = docViewTop + $(window).height();    var elemTop = $(elem).offset().top;
    var elemBottom = elemTop + $(elem).height();    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+};
+
+function sliderMainImg (){
+	if (window.innerWidth < 1024) {
+		$('.main-slider li:first-child').css('background-image','url("../img/s1-mobile.jpg"');
+	} else{
+		$('.main-slider li:first-child').css('background-image','url("../img/s1.jpg"');
+	}
 };

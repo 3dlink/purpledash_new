@@ -12,6 +12,8 @@
 */
 
 use App\Service;
+use App\Phrase;
+use App\Work;
 use Illuminate\Http\Request;
 
 //Main Page Routes
@@ -48,6 +50,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     ]);
 
     Route::resource('phrases', 'PhrasesController');
+
+    Route::get('phrases/{id}/destroy', [
+        'uses'  =>  'PhrasesController@destroy',
+        'as'    =>  'admin.phrases.destroy'
+    ]);
+
+    Route::resource('works', 'WorksController');
+
+    Route::get('works/{id}/destroy', [
+        'uses'  =>  'WorksController@destroy',
+        'as'    =>  'admin.works.destroy'
+    ]);
 });
 
 Route::auth();

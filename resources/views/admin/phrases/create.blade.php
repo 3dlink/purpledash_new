@@ -25,7 +25,7 @@
 
 						<div class="form-group">
 							{!! Form::label('author', 'Author') !!}
-							{!! Form::text('author', null, ['placeholder' => 'Nombre del autor', 'class' => 'form-control', 'required']) !!}
+							{!! Form::text('author', null, ['placeholder' => 'Nombre del autor', 'class' => 'form-control']) !!}
 						</div>
 
 						<div class="form-group">
@@ -35,12 +35,10 @@
 	            </div>
 
 	            <div class="panel-footer">
-					{!! Form::submit('Add Phrase', array('class'=>'btn btn-primary')) !!}
-					{!! Form::close() !!}
-					<!--<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default">Back</button></a>-->
-
+	            	<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default" type="button">Back</button></a>
+					{!! Form::submit('Add Phrase', array('class'=>'btn btn-primary')) !!}		
 	            </div>
-
+	            {!! Form::close() !!}
             </div>
         </div>
     </div>

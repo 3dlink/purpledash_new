@@ -57,7 +57,8 @@ class PhrasesController extends Controller
      */
     public function show($id)
     {
-        //
+        $phrase = Phrase::find($id);
+        return view('admin.phrases.show')->with('phrase',$phrase);
     }
 
     /**
@@ -68,7 +69,9 @@ class PhrasesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $phrase = Phrase::find($id);
+
+        return view('admin.phrases.edit')->with('phrase', $phrase);
     }
 
     /**
@@ -80,7 +83,13 @@ class PhrasesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $phrase = Phrase::find($id);
+        $phrase -> author = $request -> author;
+        $phrase -> quote = $request -> quote;
+
+        $phrase -> save();
+
+        return redirect() -> route('admin.phrases.index');
     }
 
     /**
@@ -91,6 +100,10 @@ class PhrasesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $phrase = Phrase::find($id);
+
+        $phrase -> delete();
+
+        return redirect() -> route('admin.phrases.index');
     }
 }

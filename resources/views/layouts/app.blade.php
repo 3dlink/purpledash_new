@@ -8,7 +8,6 @@
     <title>. PurpleDash .</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
@@ -57,7 +56,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('admin.services.index')}}">Services</a></li>
                                 <li><a href="{{route('admin.phrases.index')}}">Phrases</a></li>
-                                <li><a href="#">Works</a></li>
+                                <li><a href="{{route('admin.works.index')}}">Works</a></li>
                             </ul>
                         </li>
                     </li>
@@ -78,7 +77,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/') }}"><i class="fa fa-btn fa-desktop"></i>Go to page</a></li>
+                                <li><a href="{{ url('/') }}" target="_blank"><i class="fa fa-btn fa-desktop"></i>Go to page</a></li>
                                 <li><a href="{{ route('admin.password') }}"><i class="fa fa-btn fa-keyboard-o"></i>Change password</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
@@ -96,10 +95,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
+    <script src="https://use.fontawesome.com/011b552131.js"></script>
     <script src="{{URL::asset('js/iconPicker/js/fontawesome-iconpicker.js')}}"></script>
 
     <script type="text/javascript">
         $('.iconpicker').iconpicker();
+        // Dynamic Modal //
+
+        $('#portfolio-modal').on('show.bs.modal', function(event){
+            var me = $(event.relatedTarget);
+            var mainimg = me.data('mainimg');
+            var title = me.data('title');
+            var desc = me.data('desc');
+            var modal = $(this);
+
+            modal.find('.work-title').text(title);
+            modal.find('.work-description').text(desc)
+            modal.find('.photos img').attr('src', '../../img/'+mainimg);
+
+        });
+        // Dynamic Modal End //
     </script>
 </body>
 </html>

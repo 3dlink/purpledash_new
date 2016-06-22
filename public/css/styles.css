@@ -81,6 +81,13 @@ p {
 	width: 20%;
 }
 
+.grid-33{
+	float: left;
+	width: 33%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 .grid-40{
 	float: left;
 	width: 40%;
@@ -108,6 +115,10 @@ p {
 
 .prefix-5{
 	margin-left: 5%;
+}
+
+.postfix-5{
+	margin-right: 5%;
 }
 
 .prefix-15{
@@ -360,7 +371,7 @@ img{
 	padding-right: 10px;
 }
 
-.grip-parent{
+.grid-parent{
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -497,7 +508,7 @@ img{
     padding-bottom: 130px;
 }
 
-.service-section .parallax-header {
+.service-section .parallax-header, .phrases-section .parallax-header {
     padding-bottom: 70px !important;
 }
 
@@ -558,11 +569,131 @@ img{
 	z-index: 1;
 }
 
+#phrases-section{
+	padding-bottom: 130px;
+}
+
+.quotes{
+	margin-top: 50px;
+	padding: 200px 0;
+	min-height: 140px;
+}
+
+.ut-parallax-quote-title{
+	font-size: 45px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #fdfd28;
+	text-transform: uppercase;
+}
+
+.ut-parallax-quote-name{
+	display: block;
+	font-size: 25px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	color: #fdfd28;
+}
+
+.portfolio-box{
+	opacity: 0;
+	transition: all 1.0s;
+	transition-delay: 1s;
+
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.portfolio-image {
+    margin: 0;
+}
+
+.portfolio-image img {
+    display: block;
+    width: 100%;
+    box-shadow: 0 0 0 0 #000000;
+}
+
+.portfolio-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    text-align: center;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: 0.2s all linear;
+    -moz-transition: 0.2s all linear;
+    transition: 0.2s all linear;
+    backface-visibility: hidden;
+}
+
+.portfolio-caption {
+    background: rgba(192,36, 116, 0.85);
+}
+
+.portfolio-caption::before {
+    content: "";
+    height: 100%;
+}
+
+.portfolio-caption::before, .portfolio-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.portfolio-title {
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    width: 90%;
+}
+
+.portfolio-category {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.portfolio-box:hover .portfolio-caption {
+    opacity: 1;
+}
+
 .clear{
 	overflow: hidden;
 }
 
 /* End Section Styles */
+
+/* Modal Styles */
+
+#portfolio-modal .modal-dialog{
+	width: 100%;
+	margin: 0;
+}
+
+.photos span {
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.modal .section-header{
+	padding-bottom: 0px;
+}
+
+/* Modal Styles */
 
 
 /* Parallax Styles */
@@ -627,6 +758,10 @@ img{
 	background-image: url("../img/parallax-banner-6.jpg");
 }
 
+.parallax-banner-7{
+	background-image: url("../img/parallax-banner-7.jpg");
+}
+
 /* End Parallax Styles */
 
 
@@ -636,6 +771,15 @@ img{
 	.tablet-100{
 		width: 100%;
 		margin-left: 0px;
+	}
+
+	.tablet-50{
+		width: 50%;
+	}
+
+	.tablet-fix-0{
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.parallax-section{
@@ -655,6 +799,12 @@ img{
 	#service-section .parallax-slogan{
 		font-size: 20px;
 	}
+
+	.quotes{
+		margin-top: 50px;
+		padding: 200px 0 !important;
+		min-height: 140px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -665,6 +815,11 @@ img{
   	.mobile-100{
 		width: 100%;
 		margin-left: 0px;
+	}
+
+	.mobile-fix-0{
+		margin-right: 0;
+		margin-left: 0;
 	}
 
 	.section-title, .parallax-title{
@@ -722,6 +877,24 @@ img{
 
 	#service-section .parallax-slogan{
 		font-size: 100%;
+	}
+
+	#phrases-section{
+		padding-bottom: 0;
+	}
+
+	.quotes{
+		margin-top: 50px;
+		padding: 70px 0 !important;
+		min-height: 140px;
+	}
+
+	.ut-parallax-quote-title{
+		font-size: 30px;
+	}
+
+	.ut-parallax-quote-name{
+		font-size: 15px;
 	}
 }
 
