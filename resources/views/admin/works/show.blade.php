@@ -25,7 +25,7 @@
                     <!-- close portfolio -->
 
                 </div>
-                <div class="panel-footer"><a href="{{ route('admin.services.index') }}"><button class="btn btn-primary">Back</button></a></div>
+                <div class="panel-footer"><a href="{{ route('admin.works.index') }}"><button class="btn btn-primary">Back</button></a></div>
             </div>
         </div>
     </div>
