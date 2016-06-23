@@ -2,7 +2,8 @@
 
 @section('content')
 
-@if (count($errors) > 0)
+
+<!-- @if (count($errors) > 0)
 	<div class="">
 		<ul>
 			@foreach ($errors->all() as $error)
@@ -10,7 +11,7 @@
 			@endforeach
 		 </ul>
 	</div>
-@endif
+@endif -->
 
 <div class="container">
     <div class="row">
@@ -27,16 +28,16 @@
 							{!! Form::label('author', 'Author') !!}
 							{!! Form::text('author', null, ['placeholder' => 'Nombre del autor', 'class' => 'form-control']) !!}
 						</div>
-
 						<div class="form-group">
 							{!! Form::label('quote', 'Text') !!}
-							{!! Form::text('quote', null, ['class' => 'form-control', 'required']) !!}
+							{!! Form::text('quote', null, ['placeholder'=>'Quote', 'class' => 'form-control', 'required']) !!}
+							<span class="msjError"> @if ($errors->first('quote')) *{{ $errors->first('quote') }} @endif</span>
 						</div>
 	            </div>
 
 	            <div class="panel-footer">
 	            	<a href="{{ route('admin.phrases.index') }}"><button class="btn btn-default" type="button">Back</button></a>
-					{!! Form::submit('Add Phrase', array('class'=>'btn btn-primary')) !!}		
+					{!! Form::submit('Add Phrase', array('class'=>'btn btn-primary')) !!}
 	            </div>
 	            {!! Form::close() !!}
             </div>

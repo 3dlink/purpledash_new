@@ -11,7 +11,6 @@
                 <div class="panel-body">
 					<table class="table">
 						<thead>
-							<th>ID</th>
 							<th>Title</th>
 							<th>Category</th>
 							<th>Front Image</th>
@@ -23,17 +22,16 @@
 						<tbody>
 							@foreach($works as $work)
 								<tr>
-									<td>{{$work->id}}</td>
 									<td>{{$work->title}}</td>
 									<td>{{$work->category}}</td>
 									<td>{{$work->frontImg}}</td>
 									<td>{{$work->mainImg}}</td>
 									<td>{{$work->description}}</td>
-									<td>
+									<td style="min-width: 100px;">
 										<a class="itemAction" href="{{ route('admin.works.edit', $work->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 										<a class="itemAction" href="{{ route('admin.works.show', $work->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$work->id}}""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-											
+										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$work->id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
 									</td>
 								</tr>
 								<div id="myModal{{$work->id}}" class="modal fade" role="dialog">
@@ -57,7 +55,7 @@
 						</tbody>
 					</table>
 					<div class="center">{!! $works->render() !!}</div>
-					
+
                 </div>
                 <div class="panel-footer"><a href="{{ route('admin.works.create') }}"><button class="btn btn-primary">Add work</button></a></div>
             </div>

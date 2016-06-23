@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if (count($errors) > 0)
+<!-- @if (count($errors) > 0)
 	<div class="">
 		<ul>
 			@foreach ($errors->all() as $error)
@@ -10,7 +10,7 @@
 			@endforeach
 		 </ul>
 	</div>
-@endif
+@endif -->
 
 <div class="container">
     <div class="row">
@@ -26,11 +26,13 @@
 						<div class="form-group">
 							{!! Form::label('name', 'Nombre') !!}
 							{!! Form::text('name', null, ['placeholder' => 'Nombre del servicio', 'class' => 'form-control', 'required']) !!}
+							<span class="msjError"> @if ($errors->first('name')) *{{ $errors->first('name') }} @endif</span>
 						</div>
 
 						<div class="form-group">
 							{!! Form::label('img', 'Imagen (fa-icon)') !!}
 							{!! Form::text('img', null, ['placeholder' => 'fa-example', 'class' => 'form-control iconpicker', 'required']) !!}
+							<span class="msjError"> @if ($errors->first('img')) *{{ $errors->first('img') }} @endif</span>
 						</div>
 	            </div>
 

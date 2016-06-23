@@ -40,6 +40,10 @@ class PhrasesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+          'quote' => 'required'
+        ]);
+
         $phrase = new Phrase();
         $phrase -> author = $request -> author;
         $phrase -> quote = $request -> quote;
@@ -83,6 +87,10 @@ class PhrasesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request,[
+          'quote' => 'required'
+        ]);
         $phrase = Phrase::find($id);
         $phrase -> author = $request -> author;
         $phrase -> quote = $request -> quote;

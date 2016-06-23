@@ -94,6 +94,14 @@ class WorksController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this -> validate($request,[
+            'title'  =>         'required',
+            'category'   =>     'required',
+            'frontImg'   =>    'required',
+            'mainImg'   =>     'required',
+            'description'   =>  'required'
+        ]);
         $work = Work::find($id);
         $work -> title = $request -> title;
         $work -> category = $request -> category;

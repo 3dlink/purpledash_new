@@ -68,7 +68,7 @@ section{
 }
 
 p {
-	margin: 0 0 20px 0;	
+	margin: 0 0 20px 0;
 }
 
 .grid-10{
@@ -141,7 +141,7 @@ p {
 	padding: 0;
 	z-index: 1000;
 	background: rgba(255, 255, 255, 0.95);
-	box-shadow: 0 1px 10px rgba(31, 50, 63, 0.25);	
+	box-shadow: 0 1px 10px rgba(31, 50, 63, 0.25);
 }
 
 .header-show{
@@ -355,43 +355,43 @@ img{
 	background: transparent url('../img/s1.jpg') repeat scroll 0% 0%;
 	width: 100%;
 	float: left;
-	margin-right: -100%; 
-	position: relative; 
-	opacity: 1; 
-	display: block; 
+	margin-right: -100%;
+	position: relative;
+	opacity: 1;
+	display: block;
 	z-index: 2;
 }
 
 .slides li:nth-child(2){
-	background: transparent url('../img/s2.jpg') repeat scroll 0% 0%; 
-	width: 100%; 
-	float: left; 
-	margin-right: -100%; 
-	position: relative; 
-	opacity: 0; 
-	display: block; 
+	background: transparent url('../img/s2.jpg') repeat scroll 0% 0%;
+	width: 100%;
+	float: left;
+	margin-right: -100%;
+	position: relative;
+	opacity: 0;
+	display: block;
 	z-index: 1;
 }
 
 .slides li:nth-child(3){
-	background: transparent url('../img/s3.jpg') repeat scroll 0% 0%; 
-	width: 100%; 
-	float: left; 
-	margin-right: -100%; 
-	position: relative; 
-	opacity: 0; 
-	display: block; 
+	background: transparent url('../img/s3.jpg') repeat scroll 0% 0%;
+	width: 100%;
+	float: left;
+	margin-right: -100%;
+	position: relative;
+	opacity: 0;
+	display: block;
 	z-index: 1;
 }
 
 .slides li:nth-child(4){
-	background: transparent url('../img/s4.jpg') repeat scroll 0% 0%; 
-	width: 100%; 
-	float: left; 
-	margin-right: -100%; 
-	position: relative; 
-	opacity: 0; 
-	display: block; 
+	background: transparent url('../img/s4.jpg') repeat scroll 0% 0%;
+	width: 100%;
+	float: left;
+	margin-right: -100%;
+	position: relative;
+	opacity: 0;
+	display: block;
 	z-index: 1;
 }
 /* End Slider Section Styles */
@@ -903,7 +903,7 @@ img{
 
 @media screen and (max-width: 767px) {
 	#header-section {
-		display: none; 
+		display: none;
 	}
 
   	.mobile-100{
@@ -1000,7 +1000,7 @@ img{
 	}
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 550px){
 	.hero-title{
 		font-size: 25px;
 		margin-top: 0;

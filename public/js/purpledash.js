@@ -55,7 +55,6 @@ $(document).ready(function (){
 			var altura = $(".slider").height();
 
 			if (window.pageYOffset >= altura) {
-			
 				$("#header-section").removeClass("header-hide");
 				$("#header-section").addClass("header-show");
 			} else {
@@ -73,30 +72,30 @@ $(document).ready(function (){
 			if (window.pageYOffset + window.innerHeight > loc + 50) {
 				me.css("opacity",1);
 			}
-		});	
-
-		/*if (isScrolledIntoView('#about-section')) {
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#about-section"]').addClass("selected");
-		}else if (isScrolledIntoView('#team-section')){
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#team-section"]').addClass("selected");
-		}else if (isScrolledIntoView('#service-section')){
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#service-section"]').addClass("selected");
-		}else if (isScrolledIntoView('#portfolio-section')){
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#portfolio-section"]').addClass("selected");
-		}else if (isScrolledIntoView('#testimonial-section')){
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#testimonial-section"]').addClass("selected");
-		}else if (isScrolledIntoView('#contact-section')){
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#contact-section"]').addClass("selected");
-		}else{
-			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#top"]').addClass("selected");
-		}*/
+		});
+		// 
+		// if (isScrolledIntoView('#about-section')) {
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#about-section"]').addClass("selected");
+		// }else if (isScrolledIntoView('#team-section')){
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#team-section"]').addClass("selected");
+		// }else if (isScrolledIntoView('#service-section')){
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#service-section"]').addClass("selected");
+		// }else if (isScrolledIntoView('#portfolio-section')){
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#portfolio-section"]').addClass("selected");
+		// }else if (isScrolledIntoView('#testimonial-section')){
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#testimonial-section"]').addClass("selected");
+		// }else if (isScrolledIntoView('#contact-section')){
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#contact-section"]').addClass("selected");
+		// }else{
+		// 	$(".selected").removeClass("selected");
+		// 	$('#nav-section a[href="#top"]').addClass("selected");
+		// }
 
 	});
 
@@ -161,13 +160,13 @@ $(document).ready(function (){
 
 				$(".slides li:nth-of-type(3)").css("opacity",0);
 				$(".slides li:nth-of-type(3)").css("display","block");
-			});			
+			});
 		}
 
 		if (timer < 9){
-			
+
 			var hth = $(".hero-title-holder");
-				
+
 			hth.fadeOut(function(){
 				var html = '<h1 class="hero-title">'+frases[t].h1+' <span>'+frases[t].span+'</span></h1>';
 				$(".hero-title").replaceWith(html);
@@ -228,5 +227,12 @@ function isScrolledIntoView(elem)
 	var elemTop = $(elem).offset().top;
 	var elemBottom = elemTop + $(elem).height();
 
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+	if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){
+		console.log('if');
+	}
+	else{
+		// console.log('else');
+	}
+
+    // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 };

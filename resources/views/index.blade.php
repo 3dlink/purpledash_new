@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title>. PurpleDash .</title>
@@ -18,16 +19,22 @@
 	<link rel="stylesheet" type="text/css" href='{{URL::asset("js/slick/slick.css")}}'/>
 	<link rel="stylesheet" type="text/css" href='{{URL::asset("js/slick/slick-theme.css")}}'/>
 
+	<style>
+		li.active a{
+			color: red !important;
+		}
+	</style>
+
 </head>
-<body>
+<body data-spy="scroll" data-target=".nav" data-offset="110">
 
 	<a id="top"></a>
 
 	<!--Header Section-->
 	<header id="header-section" class="header-hide">
-		
+
 		<div id="header-container">
-			
+
 			<div id="logo-section" class="grid grid-20">
 				<h1 class="logo">
 					<a href="">
@@ -37,24 +44,37 @@
 				</h1>
 			</div>
 
-			<nav id="nav-section" class="nav grid grid-80">
+			<!-- <nav id="nav-section" class="nav grid grid-80">
 				<a class="" data-scroll href="#top">Home</a>
-				<a class="selected" data-scroll href="#about-section">About</a> 
-				<a class="" data-scroll href="#team-section">Team</a> 
-				<a class="" data-scroll href="#service-section">Service</a> 
-          		<a class="" data-scroll href="#portfolio-section">Work</a> 
-          		<a class="" data-scroll href="#testimonial-section">Aim</a> 
-          		<a class="" data-scroll href="#contact-section">Contact</a>
+				<a class="" data-scroll href="#about-section">About</a>
+				<a class="" data-scroll href="#team-section">Team</a>
+				<a class="" data-scroll href="#service-section">Service</a>
+        <a class="" data-scroll href="#portfolio-section">Work</a>
+        <a class="" data-scroll href="#testimonial-section">Aim</a>
+        <a class="" data-scroll href="#contact-section">Contact</a>
+			</nav> -->
+
+			<nav class="nav grid grid-80">
+			  <div class="container-fluid">
+			      <div class="collapse navbar-collapse" id="myNavbar">
+			        <ul class="nav navbar-nav">
+			          <li><a href="#about-section">Section 1</a></li>
+			          <li><a href="#team-section">Section 2</a></li>
+			          <li><a href="#portfolio-section">Section 3</a></li>
+			        </ul>
+			      </div>
+			  </div>
 			</nav>
 
+
 		</div>
-	</header>	
+	</header>
 	<!--Header end-->
 
 	<!-- Slider -->
 	<div class="slider">
 		<section class="slider hero">
-			<div class="grid"> 
+			<div class="grid">
 				<!-- hero holder -->
 				<div class="hero-holder grid-70 mobile-100 tablet-100">
 					<div class="hero-inner"> <span class="hero-description">Creative Design Studio</span>
@@ -64,7 +84,7 @@
 						<span class="btn-holder"><a id="to-about-section" data-scroll href="#about-section" class="hero-btn">What We Do</a></span>
 					</div>
 				</div>
-			<!-- close hero-holder --> 
+			<!-- close hero-holder -->
 			</div>
 
 			<div class="main-slider">
@@ -83,7 +103,7 @@
 	<!-- About us -->
 	<div class="clear">
 		<section id="about-section" class="about-section content-section">
-			
+
 			<div class="section-container">
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
@@ -136,8 +156,8 @@
 	<div class="clear">
 		<section id="service-section" class="service-section parallax-section parallax-banner-6">
 			<div class="grid parallax-content">
-				<div class="grid-parent grid-100 mobile-100 tablet-100"> 
-				          
+				<div class="grid-parent grid-100 mobile-100 tablet-100">
+
 					<!-- entry header -->
 					<div class="grid-90 prefix-5 mobile-100 tablet-100">
 						<header class="parallax-header">
@@ -145,7 +165,7 @@
 							<p class="parallax-slogan"><strong>PURPLEDASH</strong> IS A VERSATILE CREATIVE STUDIO FOUNDED BY PROFESSIONALS FROM DIFFERENT FIELDS. WE KNOW HOW TO BRING NEW LIFE TO A BRAND AND HOW TO CREATE ENTIRELY NEW CONCEPTS. WE LIKE TO WORK CLOSELY WITH CLIENTS AND INCLUDE THEM IN OUR DESIGN PROCESS TO CREATE BETTER RESULTS.</p>
 						</header>
 					</div>
-					<!-- close entry header --> 
+					<!-- close entry header -->
 
 					<!-- icon box -->
 
@@ -161,13 +181,13 @@
 						@endforeach
 					</div>
 
-					
 
-					<!-- close icon box --> 
+
+					<!-- close icon box -->
 				</div>
-			<!-- close grid-100 --> 
+			<!-- close grid-100 -->
 			</div>
-		<!-- close grid container --> 
+		<!-- close grid container -->
 		</section>
 	</div>
 
@@ -183,7 +203,7 @@
 				</div>
 			</div>
 		</section>
-	</div>	
+	</div>
 
 	<!-- Drop us a line end -->
 
@@ -192,13 +212,13 @@
 	<div class="clear">
 		<section id="phrases-section" class="parallax-section parallax-banner-7 phrases-section">
 			<div class="grid parallax-content">
-				<div class="grid-parent grid-100 mobile-100 tablet-100 clear"> 
+				<div class="grid-parent grid-100 mobile-100 tablet-100 clear">
 
 					<!-- entry header -->
 					<div class="grid-70 prefix-15 mobile-100 tablet-100">
 						<div class="slide slide-phrases">
 							@foreach($phrases as $phrase)
-							<header class="parallax-header quotes"> 
+							<header class="parallax-header quotes">
 								<h2 class="ut-parallax-quote-title ">{{$phrase->quote}}. </h2>
 								@if ($phrase->author != '')
 								<span class="ut-parallax-quote-name">- {{$phrase->author}}</span>
@@ -207,11 +227,11 @@
 							@endforeach
 						</div>
 					</div>
-					<!-- close entry header --> 
-				          
+					<!-- close entry header -->
+
 				</div>
 			</div>
-		      <!-- close grid container --> 
+		      <!-- close grid container -->
 		</section>
 	</div>
 
@@ -221,8 +241,8 @@
 
 	<div class="clear">
 		<section id="portfolio-section" class="portfolio-section content-section clear">
-			<div class="grid clear prefix-5 postfix-5 tablet-fix-0 mobile-fix-0"> 
-			        
+			<div class="grid clear prefix-5 postfix-5 tablet-fix-0 mobile-fix-0">
+
 				<!-- section header -->
 				<div class="grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
@@ -242,15 +262,15 @@
 						<div class="portfolio-caption">
 							<h3 class="portfolio-title">{{$work->title}}<span class="portfolio-category">{{$work->category}}</span></h3>
 						</div>
-					<!-- close portfolio caption --> 
+					<!-- close portfolio caption -->
 					</div>
 				</a> </div>
 				<!-- close portfolio -->
 				@endforeach
 
-			                
+
 			</div>
-		<!-- close grid-container --> 
+		<!-- close grid-container -->
 		</section>
 	</div>
 

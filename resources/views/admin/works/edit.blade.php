@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if (count($errors) > 0)
+<!-- @if (count($errors) > 0)
 	<div class="">
 		<ul>
 			@foreach ($errors->all() as $error)
@@ -10,7 +10,7 @@
 			@endforeach
 		 </ul>
 	</div>
-@endif
+@endif -->
 
 <div class="container">
     <div class="row">
@@ -24,26 +24,31 @@
 					<div class="form-group">
 						{!! Form::label('title', 'Título') !!}
 						{!! Form::text('title', $work->title, ['placeholder' => 'Titulo del trabajo', 'class' => 'form-control', 'required']) !!}
+						<span class="msjError"> @if ($errors->first('title')) *{{ $errors->first('title') }} @endif</span>
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('category', 'Categoría') !!}
 						{!! Form::text('category', $work->category, ['placeholder' => 'Categoria del trabajo', 'class' => 'form-control', 'required']) !!}
+						<span class="msjError"> @if ($errors->first('category')) *{{ $errors->first('category') }} @endif</span>
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('frontImg', 'Imagen Portada') !!}
 						{!! Form::text('frontImg', $work->frontImg, ['placeholder' => 'exampleportada.jpg', 'class' => 'form-control', 'required']) !!}
+						<span class="msjError"> @if ($errors->first('frontImg')) *{{ $errors->first('frontImg') }} @endif</span>
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('mainImg', 'Imagen Principal') !!}
 						{!! Form::text('mainImg', $work->mainImg, ['placeholder' => 'example.jpg', 'class' => 'form-control', 'required']) !!}
+						<span class="msjError"> @if ($errors->first('mainImg')) *{{ $errors->first('mainImg') }} @endif</span>
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('description', 'Descripción') !!}
 						{!! Form::text('description', $work->description, ['placeholder' => 'Descripcion del trabajo', 'class' => 'form-control', 'required']) !!}
+						<span class="msjError"> @if ($errors->first('description')) *{{ $errors->first('description') }} @endif</span>
 					</div>
                 </div>
                 <div class="panel-footer">

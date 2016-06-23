@@ -11,7 +11,6 @@
                 <div class="panel-body">
 					<table class="table">
 						<thead>
-							<th>ID</th>
 							<th>Author</th>
 							<th>Quote</th>
 							<th>Actions</th>
@@ -20,14 +19,13 @@
 						<tbody>
 							@foreach($phrases as $phrase)
 								<tr>
-									<td>{{$phrase->id}}</td>
 									<td>{{$phrase->author}}</td>
 									<td>{{$phrase->quote}}</td>
 									<td>
 										<a class="itemAction" href="{{ route('admin.phrases.edit', $phrase->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 										<a class="itemAction" href="{{ route('admin.phrases.show', $phrase->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
 										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$phrase->id}}""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-											
+
 									</td>
 								</tr>
 								<div id="myModal{{$phrase->id}}" class="modal fade" role="dialog">
@@ -51,7 +49,7 @@
 						</tbody>
 					</table>
 					<div class="center">{!! $phrases->render() !!}</div>
-					
+
                 </div>
                 <div class="panel-footer"><a href="{{ route('admin.phrases.create') }}"><button class="btn btn-primary">Add phrase</button></a></div>
             </div>

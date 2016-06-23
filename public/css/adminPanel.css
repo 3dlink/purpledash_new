@@ -40,3 +40,12 @@ th{
 .grid-10{
 	width: 33%;
 }
+
+.iconpicker{
+	line-height: 20px !important;
+}
+
+.msjError{
+	font-size:12px;
+	color:red;
+}

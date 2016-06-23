@@ -11,7 +11,6 @@
                 <div class="panel-body">
 					<table class="table">
 						<thead>
-							<th>ID</th>
 							<th>Name</th>
 							<th>Image (fa-icon)</th>
 							<th>Actions</th>
@@ -20,14 +19,13 @@
 						<tbody>
 							@foreach($services as $service)
 								<tr>
-									<td>{{$service->id}}</td>
 									<td>{{$service->name}}</td>
 									<td>{{$service->img}}</td>
 									<td>
 										<a class="itemAction" href="{{ route('admin.services.edit', $service->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 										<a class="itemAction" href="{{ route('admin.services.show', $service->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
 										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$service->id}}""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-											
+
 									</td>
 								</tr>
 								<div id="myModal{{$service->id}}" class="modal fade" role="dialog">
@@ -51,7 +49,7 @@
 						</tbody>
 					</table>
 					<div class="center">{!! $services->render() !!}</div>
-					
+
                 </div>
                 <div class="panel-footer"><a href="{{ route('admin.services.create') }}"><button class="btn btn-primary">Add Service</button></a></div>
             </div>

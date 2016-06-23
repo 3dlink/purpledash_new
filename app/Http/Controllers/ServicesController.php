@@ -88,6 +88,12 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this -> validate($request,[
+            'name'  =>  'required',
+            'img'   =>  array('required','Regex:/fa-\w/')
+        ]);
+
         $service = Service::find($id);
         $service -> name = $request -> name;
         $service -> img = $request -> img;

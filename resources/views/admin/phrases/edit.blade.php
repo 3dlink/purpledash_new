@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-	
+<!--
+@if (count($errors) > 0)
+	<div class="">
+		<ul>
+			@foreach ($errors->all() as $error)
+				<li>{{ $error }}</li>
+			@endforeach
+		 </ul>
+	</div>
+@endif -->
 
 <div class="container">
     <div class="row">
@@ -12,13 +21,14 @@
 
                 <div class="panel-body">
 					<div class="form-group">
-							{!! Form::label('author', 'Author') !!}
-							{!! Form::text('author', $phrase->author, ['placeholder' => 'Nombre del autor', 'class' => 'form-control']) !!}
-						</div>
+						{!! Form::label('author', 'Author') !!}
+						{!! Form::text('author', $phrase->author, ['placeholder' => 'Nombre del autor', 'class' => 'form-control']) !!}
+					</div>
 
 					<div class="form-group">
 						{!! Form::label('quote', 'Text') !!}
-						{!! Form::text('quote', $phrase->quote, ['class' => 'form-control', 'required']) !!}
+						{!! Form::text('quote', $phrase->quote, ['placeholder'=>'Quote', 'class' => 'form-control', 'required']) !!}
+						<span class="msjError"> @if ($errors->first('quote')) *{{ $errors->first('quote') }} @endif</span>
 					</div>
 
                 </div>
