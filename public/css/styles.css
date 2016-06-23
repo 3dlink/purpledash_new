@@ -586,7 +586,6 @@ img{
 .service-box{
 	opacity: 0;
 	transition: all 1.0s;
-	transition-delay: 1s;
 }
 
 .info {
@@ -612,6 +611,43 @@ img{
 .slick-prev, .slick-next{
 	z-index: 1;
 }
+
+.service-box:nth-child(1){
+	transition-delay: 1.1s;
+}
+
+.service-box:nth-child(2){
+	transition-delay: 1.2s;
+}
+
+.service-box:nth-child(3){
+	transition-delay: 1.3s;
+}
+
+.service-box:nth-child(4){
+	transition-delay: 1.4s;
+}
+
+.service-box:nth-child(5){
+	transition-delay: 1.5s;
+}
+
+.service-box:nth-child(6){
+	transition-delay: 1.6s;
+}
+
+.service-box:nth-child(7){
+	transition-delay: 1.7s;
+}
+
+.service-box:nth-child(8){
+	transition-delay: 1.8s;
+}
+
+.service-box:nth-child(9){
+	transition-delay: 1.9s;
+}
+
 
 #phrases-section{
 	padding-bottom: 130px;
