@@ -22,8 +22,8 @@
 					{!! Form::open(['route' => ['admin.services.update', $service], 'method' => 'PUT']) !!}
 
 					<div class="form-group">
-						{!! Form::label('name', 'Nombre') !!}
-						{!! Form::text('name', $service->name, ['placeholder' => 'Nombre del servicio', 'class' => 'form-control', 'required']) !!}
+						{!! Form::label('name', 'Name') !!}
+						{!! Form::text('name', $service->name, ['placeholder' => 'Service name', 'class' => 'form-control', 'required']) !!}
 						<span class="msjError"> @if ($errors->first('name')) *{{ $errors->first('name') }} @endif</span>
 					</div>
 

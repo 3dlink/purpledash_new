@@ -26,7 +26,7 @@
 
 						<div class="form-group">
 							{!! Form::label('author', 'Author') !!}
-							{!! Form::text('author', null, ['placeholder' => 'Nombre del autor', 'class' => 'form-control']) !!}
+							{!! Form::text('author', null, ['placeholder' => 'Author name', 'class' => 'form-control']) !!}
 						</div>
 						<div class="form-group">
 							{!! Form::label('quote', 'Text') !!}

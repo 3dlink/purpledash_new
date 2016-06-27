@@ -19,7 +19,12 @@ use Illuminate\Http\Request;
 //Main Page Routes
 
 Route::get('/', [
-	'uses'	=>	'mainController@index'
+	'uses'	=>	'mainController@index',
+    'as'    =>  'index'
+]);
+
+route::post('contact', [
+    'uses'  =>  'mainController@contact'
 ]);
 
 

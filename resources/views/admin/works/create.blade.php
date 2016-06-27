@@ -1,16 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<!--
-@if (count($errors) > 0)
-	<div class="">
-		<ul>
-			@foreach ($errors->all() as $error)
-				<li>{{ $error }}</li>
-			@endforeach
-		 </ul>
-	</div>
-@endif -->
 
 <div class="container">
     <div class="row">
@@ -18,39 +8,53 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading center">New Work</div>
-                {!! Form::open(['route' => 'admin.works.store', 'method' => 'POST']) !!}
+                {!! Form::open(['route' => 'admin.works.store', 'method' => 'POST', 'files' => 'true']) !!}
 
                 <div class="panel-body">
 
 						<div class="form-group">
-							{!! Form::label('title', 'Título') !!}
-							{!! Form::text('title', null, ['placeholder' => 'Titulo del trabajo', 'class' => 'form-control', 'required']) !!}
+							{!! Form::label('title', 'Title') !!}
+							{!! Form::text('title', null, ['placeholder' => 'Work title', 'class' => 'form-control', 'required']) !!}
 							<span class="msjError"> @if ($errors->first('title')) *{{ $errors->first('title') }} @endif</span>
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('category', 'Categoría') !!}
-							{!! Form::text('category', null, ['placeholder' => 'Categoria del trabajo', 'class' => 'form-control', 'required']) !!}
+							{!! Form::label('category', 'Category') !!}
+							{!! Form::text('category', null, ['placeholder' => 'Work category', 'class' => 'form-control', 'required']) !!}
 							<span class="msjError"> @if ($errors->first('category')) *{{ $errors->first('category') }} @endif</span>
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('frontImg', 'Imagen Portada') !!}
-							{!! Form::text('frontImg', null, ['placeholder' => 'exampleportada.jpg', 'class' => 'form-control', 'required']) !!}
-							<span class="msjError"> @if ($errors->first('frontImg')) *{{ $errors->first('frontImg') }} @endif</span>
+							{!! Form::label('description', 'Description') !!}
+							{!! Form::text('description', null, ['placeholder' => 'Work description', 'class' => 'form-control', 'required']) !!}
+							<span class="msjError"> @if ($errors->first('description')) *{{ $errors->first('description') }} @endif</span>
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('mainImg', 'Imagen Principal') !!}
-							{!! Form::text('mainImg', null, ['placeholder' => 'example.jpg', 'class' => 'form-control', 'required']) !!}
+							{!! Form::label('frontImg', 'Front image') !!}
+							{!! Form::text('holder', 'Choose Image', array('disabled'=>'disabled', 'class' => 'form-control uploadSpan', 'id' => 'frontUpload')) !!}
+							
+							<div class="fileUpload btn btn-info">
+								<span>Browse...</span>
+								{!! Form::file('frontImg', array('class' => 'upload')) !!}
+							</div>
+
+							<span class="msjError"> @if ($errors->first('frontImg')) *{{ $errors->first('frontImg') }} @endif</span>
+							
+						</div>
+
+						<div class="form-group">
+							{!! Form::label('mainImg', 'Main image') !!}
+							{!! Form::text('holder', 'Choose Image', array('disabled'=>'disabled', 'class' => 'form-control uploadSpan', 'id' => 'mainUpload')) !!}
+							
+							<div class="fileUpload btn btn-info">
+								<span>Browse...</span>
+								{!! Form::file('mainImg', array('class' => 'upload')) !!}
+							</div>
+
 							<span class="msjError"> @if ($errors->first('mainImg')) *{{ $errors->first('mainImg') }} @endif</span>
 						</div>
 
-						<div class="form-group">
-							{!! Form::label('description', 'Descripción') !!}
-							{!! Form::text('description', null, ['placeholder' => 'Descripcion del trabajo', 'class' => 'form-control', 'required']) !!}
-							<span class="msjError"> @if ($errors->first('description')) *{{ $errors->first('description') }} @endif</span>
-						</div>
 	            </div>
 
 	            <div class="panel-footer">

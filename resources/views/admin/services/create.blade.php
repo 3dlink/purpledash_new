@@ -24,13 +24,13 @@
 
 
 						<div class="form-group">
-							{!! Form::label('name', 'Nombre') !!}
-							{!! Form::text('name', null, ['placeholder' => 'Nombre del servicio', 'class' => 'form-control', 'required']) !!}
+							{!! Form::label('name', 'Name') !!}
+							{!! Form::text('name', null, ['placeholder' => 'Service name', 'class' => 'form-control', 'required']) !!}
 							<span class="msjError"> @if ($errors->first('name')) *{{ $errors->first('name') }} @endif</span>
 						</div>
 
 						<div class="form-group">
-							{!! Form::label('img', 'Imagen (fa-icon)') !!}
+							{!! Form::label('img', 'Image (fa-icon)') !!}
 							{!! Form::text('img', null, ['placeholder' => 'fa-example', 'class' => 'form-control iconpicker', 'required']) !!}
 							<span class="msjError"> @if ($errors->first('img')) *{{ $errors->first('img') }} @endif</span>
 						</div>

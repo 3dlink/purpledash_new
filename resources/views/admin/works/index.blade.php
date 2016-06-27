@@ -24,8 +24,8 @@
 								<tr>
 									<td>{{$work->title}}</td>
 									<td>{{$work->category}}</td>
-									<td>{{$work->frontImg}}</td>
-									<td>{{$work->mainImg}}</td>
+									<td>{{$work->originalFront}}</td>
+									<td>{{$work->originalMain}}</td>
 									<td>{{$work->description}}</td>
 									<td style="min-width: 100px;">
 										<a class="itemAction" href="{{ route('admin.works.edit', $work->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>

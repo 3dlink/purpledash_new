@@ -10,122 +10,186 @@ use App\Work;
 
 class WorksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $works = Work::orderBy('created_at', 'desc')->paginate(6);
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		$works = Work::orderBy('created_at', 'desc')->paginate(6);
 
-        return view('admin.works.index')->with('works', $works);
-    }
+		return view('admin.works.index')->with('works', $works);
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.works.create');
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('admin.works.create');
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this -> validate($request,[
-            'title'  =>         'required|unique:works',
-            'category'   =>     'required',
-            'frontImg'   =>    'required',
-            'mainImg'   =>     'required',
-            'description'   =>  'required'
-        ]);
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(Request $request)
+	{
+		$this -> validate($request,[
+			'title'  =>         'required|unique:works',
+			'category'   =>     'required',
+			'description'   =>  'required',
+			'frontImg'   =>    'required|image',
+			'mainImg'   =>     'required|image'
+			]);
 
-        $work = new Work();
-        $work -> title = $request -> title;
-        $work -> category = $request -> category;
-        $work -> frontImg = $request -> frontImg;
-        $work -> mainImg = $request -> mainImg;
-        $work -> description = $request -> description;
+		$time = strtotime("now");
 
-        $work -> save();
+		$files =[];
+		$names = [];
 
-        return redirect() -> route('admin.works.index');
-    }
+		if ($request->file('frontImg')) 
+			$files[] = $request->file('frontImg');
+		if ($request->file('mainImg')) 
+			$files[] = $request->file('mainImg');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $work = Work::find($id);
-        return view('admin.works.show')->with('work',$work);
-    }
+		foreach ($files as $file)
+		{
+			if(!empty($file)){
+				$filename="img".$time.$this->__randomStr ( 3 ).'.'.$file->getClientOriginalExtension();
+				$names[] = $filename;
+				$file->move(
+					base_path().'/public/img/', $filename
+					);
+			}
+		}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $work = Work::find($id);
+		$work = new Work();
+		$work -> title = $request -> title;
+		$work -> category = $request -> category;
+		$work -> description = $request -> description;
+		$work -> frontImg = $names[0];
+		$work -> originalFront = $request->file('frontImg')->getClientOriginalName();
+		$work -> mainImg = $names[1];
+		$work -> originalMain = $request->file('mainImg')->getClientOriginalName();
 
-        return view('admin.works.edit')->with('work', $work);
-    }
+		$work -> save();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
+		return redirect() -> route('admin.works.index');
+	}
 
-        $this -> validate($request,[
-            'title'  =>         'required',
-            'category'   =>     'required',
-            'frontImg'   =>    'required',
-            'mainImg'   =>     'required',
-            'description'   =>  'required'
-        ]);
-        $work = Work::find($id);
-        $work -> title = $request -> title;
-        $work -> category = $request -> category;
-        $work -> frontImg = $request -> frontImg;
-        $work -> description = $request -> description;
-        $work -> mainImg = $request -> mainImg;
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show($id)
+	{
+		$work = Work::find($id);
+		return view('admin.works.show')->with('work',$work);
+	}
 
-        $work -> save();
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+		$work = Work::find($id);
 
-        return redirect() -> route('admin.works.index');
-    }
+		return view('admin.works.edit')->with('work', $work);
+	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $work = Work::find($id);
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, $id)
+	{
+		$this -> validate($request,[
+			'title'  =>         'required',
+			'category'   =>     'required',
+			'description'   =>  'required',
+			'frontImg'   =>    'image',
+			'mainImg'   =>     'image'
+		]);
 
-        $work -> delete();
+		$work = Work::find($id);
+		$time = strtotime("now");
 
-        return redirect() -> route('admin.works.index');
-    }
+		$files =[];
+
+		if ($request->file('frontImg')) 
+			$files[] = $request->file('frontImg');
+		if ($request->file('mainImg')) 
+			$files[] = $request->file('mainImg');
+
+		if(!empty($files[0])){
+			if ($files[0]->getClientOriginalName() != $work -> originalFront) {
+				$filename="img".$time.$this->__randomStr ( 3 ).'.'.$files[0]->getClientOriginalExtension();
+				$files[0]->move(
+						base_path().'/public/img/', $filename
+				);
+				$work -> frontImg = $filename;
+				$work -> originalFront = $request->file('frontImg')->getClientOriginalName();
+			}
+		}
+
+		if(!empty($files[1])){
+			if ($files[1]->getClientOriginalName() != $work -> originalMain) {
+				$filename="img".$time.$this->__randomStr ( 3 ).'.'.$files[1]->getClientOriginalExtension();
+				$files[1]->move(
+						base_path().'/public/img/', $filename
+				);
+				$work -> mainImg = $filename;
+				$work -> originalMain = $request->file('mainImg')->getClientOriginalName();
+			}
+		}
+
+		$work -> title = $request -> title;
+		$work -> category = $request -> category;
+		$work -> description = $request -> description;
+		
+		$work -> save();
+
+		return redirect() -> route('admin.works.index');
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id)
+	{
+		$work = Work::find($id);
+
+		$work -> delete();
+
+		return redirect() -> route('admin.works.index');
+	}
+
+	public  function __randomStr($length) {
+		$str = '';
+		$chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+		$size = strlen ( $chars );
+		for($i = 0; $i < $length; $i ++) {
+			$str .= $chars [rand ( 0, $size - 1 )];
+		}
+
+		return $str;
+	}
 }

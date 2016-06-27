@@ -16,9 +16,11 @@ class CreateWorksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('category');
-            $table->string('frontImg');
             $table->string('description');
+            $table->string('frontImg');
+            $table->string('originalFront');
             $table->string('mainImg');
+            $table->string('originalMain');
             $table->timestamps();
         });
     }

@@ -1,36 +1,36 @@
-var frases = [	{		h1:"we are",		span: "purple dash"	},	{		h1:"services",		span: "world wide"	},	{		h1:"we love",		span: "BRANDS"	},	{		h1:"we love",		span: "CODING"	},	{		h1:"we are",		span: "CREATIVE"	},	{		h1:"we are",		span: "ENTHUSIASTS"	},	{		h1:"we are",		span: "PASSIONATE"	},	{		h1:"we are",		span: "CURIOUS"	},	{		h1:"we love to",		span: "design"	}];
+var frases = [  {       h1:"we are",        span: "purple dash" },  {       h1:"services",      span: "world wide"  },  {       h1:"we love",       span: "BRANDS"  },  {       h1:"we love",       span: "CODING"  },  {       h1:"we are",        span: "CREATIVE"    },  {       h1:"we are",        span: "ENTHUSIASTS" },  {       h1:"we are",        span: "PASSIONATE"  },  {       h1:"we are",        span: "CURIOUS" },  {       h1:"we love to",        span: "design"  }];
 var timer = 0;
 
 $(document).ready(function (){
 
 	smoothScroll.init({
-    	easing: "linear",
-    	speed: 400
-    });
+		easing: "linear",
+		speed: 400
+	});
 
-    $('.slide-services').slick({
+	$('.slide-services').slick({
 		slidesToShow: 9,
 		slidesToScroll:3,
 		infinite: false,
 		arrows:true,
 
 		responsive: [
-			{
-				breakpoint: 1100,
-				settings:{
-					slidesToShow: 6
-				}
-			},
-			{
-				breakpoint: 768,
-				settings:{
-					slidesToShow: 3,
-					arrows: false,
-					autoplay: true,
-					autoplaySpeed: 1500,
-					infinite: true
-				}
+		{
+			breakpoint: 1100,
+			settings:{
+				slidesToShow: 6
 			}
+		},
+		{
+			breakpoint: 768,
+			settings:{
+				slidesToShow: 3,
+				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 1500,
+				infinite: true
+			}
+		}
 		]
 	});
 
@@ -64,7 +64,7 @@ $(document).ready(function (){
 		}
 
 		//OPACITY CHANGE
-		var obj= $(".portfolio-box, .service-box, .section-title, .section-slogan, .section-extra, .parallax-title, .parallax-slogan").each(function (index){
+		$(".work-box, .service-box, .section-title, .section-slogan, .section-extra, .parallax-title, .parallax-slogan, .social-network").each(function (index){
 			var me = $(this);
 			var loc = me.offset().top;
 
@@ -73,47 +73,29 @@ $(document).ready(function (){
 				me.css("opacity",1);
 			}
 		});
-		// 
-		// if (isScrolledIntoView('#about-section')) {
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#about-section"]').addClass("selected");
-		// }else if (isScrolledIntoView('#team-section')){
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#team-section"]').addClass("selected");
-		// }else if (isScrolledIntoView('#service-section')){
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#service-section"]').addClass("selected");
-		// }else if (isScrolledIntoView('#portfolio-section')){
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#portfolio-section"]').addClass("selected");
-		// }else if (isScrolledIntoView('#testimonial-section')){
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#testimonial-section"]').addClass("selected");
-		// }else if (isScrolledIntoView('#contact-section')){
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#contact-section"]').addClass("selected");
-		// }else{
-		// 	$(".selected").removeClass("selected");
-		// 	$('#nav-section a[href="#top"]').addClass("selected");
-		// }
-
-	});
 
 
-	//SELECTED NAV LINK BY CLICK
-	$("#nav-section a").click(function(){
-		$(".selected").removeClass("selected");
-		$(this).addClass("selected");
-	});
-
-	$("#to-about-section").click(function(){
-		$(".selected").removeClass("selected");
-		$("#nav-section a[href='#about-section']").addClass("selected");
-	});
-
-	$(".cta-btn").click(function(){
-		$(".selected").removeClass("selected");
-		$("#nav-section a[href='#contact-section']").addClass("selected");
+		//SELECTED NAVITEM
+		
+		if ($('#about-section').is_on_screen()) {
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#about-section"]').addClass("selected");
+		}else if ($('#team-section').is_on_screen()){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#team-section"]').addClass("selected");
+		}else if ($('#service-section').is_on_screen()){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#service-section"]').addClass("selected");
+		}else if ($('#portfolio-section').is_on_screen()){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#portfolio-section"]').addClass("selected");
+		}else if ($('#testimonial-section').is_on_screen()){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#testimonial-section"]').addClass("selected");
+		}else if ($('#contact-section').is_on_screen()){
+			$(".selected").removeClass("selected");
+			$('#nav-section a[href="#contact-section"]').addClass("selected");
+		}
 	});
 
 
@@ -220,19 +202,20 @@ $(document).ready(function (){
 
 });
 
-function isScrolledIntoView(elem)
-{
-	var docViewTop = $(window).scrollTop();
-	var docViewBottom = docViewTop + $(window).height();
-	var elemTop = $(elem).offset().top;
-	var elemBottom = elemTop + $(elem).height();
+$.fn.is_on_screen = function(){
+	var win = $(window);
+	var viewport = {
+		top : win.scrollTop(),
+		left : win.scrollLeft()
+	};
 
-	if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){
-		console.log('if');
-	}
-	else{
-		// console.log('else');
-	}
+	viewport.right = viewport.left + win.width();
+	viewport.bottom = viewport.top + win.height();
 
-    // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+	var bounds = this.offset();
+	bounds.right = bounds.left + this.outerWidth();
+	bounds.bottom = bounds.top + this.outerHeight()*0.5;
+
+	return (!(viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
+

@@ -22,7 +22,7 @@
                 <div class="panel-body">
 					<div class="form-group">
 						{!! Form::label('author', 'Author') !!}
-						{!! Form::text('author', $phrase->author, ['placeholder' => 'Nombre del autor', 'class' => 'form-control']) !!}
+						{!! Form::text('author', $phrase->author, ['placeholder' => 'Author name', 'class' => 'form-control']) !!}
 					</div>
 
 					<div class="form-group">

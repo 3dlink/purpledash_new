@@ -28,7 +28,8 @@ p.lead { font-size: 21px; line-height: 27px; color: #77777;  }
 em { font-style: italic; }
 strong { font-weight: bold; color: #c02474;}
 small { font-size: 80%; }
-
+ul {list-style: none outside;}
+form {margin: 0;}
 /*	Blockquotes  */
 
 blockquote, blockquote p { font-size: 17px; line-height: 24px; font-style: italic; }
@@ -51,16 +52,16 @@ a{
 /*	HTML  */
 * {
 	font-family: inherit;
-    font-size: 100%;
-    font-weight: inherit;
-    font-style: inherit;
-    vertical-align: baseline;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    background: transparent;
+	font-size: 100%;
+	font-weight: inherit;
+	font-style: inherit;
+	vertical-align: baseline;
+	white-space: normal;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
 }
 
 section{
@@ -81,6 +82,11 @@ p {
 	width: 20%;
 }
 
+.grid-25{
+	float: left;
+	width: 25%;
+}
+
 .grid-33{
 	float: left;
 	width: 33%;
@@ -93,6 +99,16 @@ p {
 	width: 40%;
 }
 
+.grid-45{
+	float: left;
+	width: 45%;
+}
+
+.grid-55{
+	float: left;
+	width: 55%;
+}
+
 .grid-70{
 	float: left;
 	width: 70%;
@@ -101,6 +117,11 @@ p {
 .grid-80{
 	float: left;
 	width: 80%;
+}
+
+.grid-85{
+	float: left;
+	width: 85%;
 }
 
 .grid-90{
@@ -125,8 +146,20 @@ p {
 	margin-left: 15%;
 }
 
+.prefix-50{
+	margin-left: 50%;
+}
+
+.prefix-55{
+	margin-left: 55%;
+}
+
 .prefix-60{
 	margin-left: 60%;
+}
+
+.suffix-5{
+	margin-right: 5%;
 }
 
 /* Header styles */
@@ -169,13 +202,13 @@ p {
 }
 
 #header-container nav a::after {
-    content: '·';
-    font-size: 20px;
-    position: absolute;
-    top: 0;
-    color: #999999;
-    font-weight: bold;
-    left: 10px;
+	content: '·';
+	font-size: 20px;
+	position: absolute;
+	top: 0;
+	color: #999999;
+	font-weight: bold;
+	left: 10px;
 }
 
 .nav a:first-child:after{
@@ -183,11 +216,11 @@ p {
 }
 
 .logo {
-    text-align: left;
-    margin: 0;
-    line-height: 105px;
-    color: #1d1d1d;
-    text-transform: uppercase;
+	text-align: left;
+	margin: 0;
+	line-height: 105px;
+	color: #1d1d1d;
+	text-transform: uppercase;
 }
 
 .logo img{
@@ -226,7 +259,7 @@ p {
 }
 
 .selected {
-    color: #552499 !important;
+	color: #552499 !important;
 }
 
 img{
@@ -446,12 +479,12 @@ img{
 
 .section-title, .parallax-title {
 	opacity: 0;
-	transition: all 1.0s;
+	transition: opacity 1.0s;
 }
 
 .section-slogan, .parallax-slogan, .section-extra{
 	opacity: 0;
-	transition: all 1.0s;
+	transition: opacity 1.0s;
 	transition-delay: 0.5s;
 }
 
@@ -533,75 +566,75 @@ img{
 }
 
 .cl-effect-18 a::before, .cl-effect-18 a::after {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 50%;
-    height: 2px;
-    margin-top: -1px;
-    background: black;
-    content: '';
-    z-index: -1;
-    pointer-events: none;
-    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-    transition: transform 0.3s, opacity 0.3s;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 50%;
+	height: 2px;
+	margin-top: -1px;
+	background: black;
+	content: '';
+	z-index: -1;
+	pointer-events: none;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
 }
 
 .service-section {
-    padding-bottom: 130px;
+	padding-bottom: 130px;
 }
 
 .service-section .parallax-header, .phrases-section .parallax-header {
-    padding-bottom: 70px !important;
+	padding-bottom: 70px !important;
 }
 
 #service-section .parallax-slogan {
-    font-size: 27px;
-    color: white;
+	font-size: 27px;
+	color: white;
 }
 
 .icon-box {
-    position: relative;
-    margin-bottom: 0px;
-    width: 65px;
-    height: 65px;
-    float: none;
-    margin-right: 0;
-    margin: 0 auto;
+	position: relative;
+	margin-bottom: 0px;
+	width: 65px;
+	height: 65px;
+	float: none;
+	margin-right: 0;
+	margin: 0 auto;
 }
 
 .service-section .service-icon {
-    display: block;
-    text-align: center;
-    font-size: 35px;
-    line-height: 65px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #9d9a94;
-    z-index: 3;
-    position: relative;
-    border-radius: 50%;
+	display: block;
+	text-align: center;
+	font-size: 35px;
+	line-height: 65px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #9d9a94;
+	z-index: 3;
+	position: relative;
+	border-radius: 50%;
 }
 
 .service-box{
 	opacity: 0;
-	transition: all 1.0s;
+	transition: opacity 1.0s;
 }
 
 .info {
-    overflow: hidden;
-    text-align: center;
+	overflow: hidden;
+	text-align: center;
 }
 
 .info h3 {
-    font-size: 14px;
-    color: #fdfd28;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    margin: 0;
-    text-transform: uppercase;
-    padding-top: 25px;
+	font-size: 14px;
+	color: #fdfd28;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	margin: 0;
+	text-transform: uppercase;
+	padding-top: 25px;
 }
 
 .slide{
@@ -676,76 +709,210 @@ img{
 }
 
 .portfolio-box{
-	opacity: 0;
-	transition: all 1.0s;
-	transition-delay: 1s;
-
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 20px;
 }
 
+.work-box{
+	opacity: 0;
+	transition: opacity 1.0s;
+}
+
+.work-box:nth-child(2){
+	transition-delay: 1.1s;
+}
+
+.work-box:nth-child(3){
+	transition-delay: 1.2s;
+}
+
+.work-box:nth-child(4){
+	transition-delay: 1.3s;
+}
+
+.work-box:nth-child(5){
+	transition-delay: 1.1s;
+}
+
+.work-box:nth-child(6){
+	transition-delay: 1.2s;
+}
+
+.work-box:nth-child(7){
+	transition-delay: 1.3s;
+}
+
 .portfolio-image {
-    margin: 0;
+	margin: 0;
 }
 
 .portfolio-image img {
-    display: block;
-    width: 100%;
-    box-shadow: 0 0 0 0 #000000;
+	display: block;
+	width: 100%;
+	box-shadow: 0 0 0 0 #000000;
 }
 
 .portfolio-caption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    opacity: 0;
-    text-align: center;
-    overflow: hidden;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    -webkit-transition: 0.2s all linear;
-    -moz-transition: 0.2s all linear;
-    transition: 0.2s all linear;
-    backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	opacity: 0;
+	text-align: center;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+	-webkit-transition: 0.2s all linear;
+	-moz-transition: 0.2s all linear;
+	transition: 0.2s all linear;
+	backface-visibility: hidden;
 }
 
 .portfolio-caption {
-    background: rgba(192,36, 116, 0.85);
+	background: rgba(192,36, 116, 0.85);
 }
 
 .portfolio-caption::before {
-    content: "";
-    height: 100%;
+	content: "";
+	height: 100%;
 }
 
 .portfolio-caption::before, .portfolio-title {
-    display: inline-block;
-    vertical-align: middle;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .portfolio-title {
-    color: #FFFFFF;
-    margin: 0;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 0 10px;
-    width: 90%;
+	color: #FFFFFF;
+	margin: 0;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 0 10px;
+	width: 90%;
 }
 
 .portfolio-category {
-    display: block;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
+	display: block;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 5px;
 }
 
 .portfolio-box:hover .portfolio-caption {
-    opacity: 1;
+	opacity: 1;
+}
+
+.social-section {
+	padding-bottom: 110px;
+}
+
+.social-section .parallax-header {
+	padding-bottom: 70px !important;
+}
+
+#social-section .parallax-slogan {
+	font-size: 34px;
+	color: white;
+}
+
+.social-network {
+	list-style: none;
+	margin: 0;
+	text-align: center;
+
+	opacity: 0;
+	transition: opacity 1.0s;
+	transition-delay: 0.7s;
+}
+
+.social-network li {
+	text-align: center;
+}
+
+.social-link {
+	margin-bottom: 40px;
+	display: block;
+}
+
+.social-link:focus{
+	outline-style: none;
+}
+
+.social-link, .social-link:visited, .social-link:hover, .social-link:active {
+	color: #FFFFFF !important;
+}
+
+.social-link:hover .social-icon{
+	background: rgba(192,36, 116, 0.85);
+}
+
+.social-icon {
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	margin: 0 auto 20px auto;
+	background: rgba(253, 253, 40, 0.50);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transform: translateZ(0);
+	-webkit-transition: 0.2s background linear;
+	-moz-transition: 0.2s background linear;
+	transition: 0.2s background linear;
+}
+
+.social-icon i {
+	line-height: 100px;
+}
+
+.client-section {
+	padding: 40px 0;
+	background: #fdfd28 !important;
+}
+
+.hero-title3 {
+	font-size: 1.9em;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	color: black;
+	padding-top: 20px;
+}
+
+.contact-section {
+	position: relative;
+	padding-bottom: 150px;
+}
+
+#contact-section .parallax-content .parallax-header {
+	padding-bottom: 0 !important;
+}
+
+.contact-message {
+	padding: 20px 10px 10px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	background: none;
+	color: #fdfd28;
+}
+
+.contact-wrap h3 {
+	color: #fdfd28;
+}
+
+.contact-message ul li {
+	margin-bottom: 10px;
+}
+
+.icons-ul li {
+	margin-right: 5px;
+	text-shadow: 0px 0px 6px rgba(0, 0, 0, .3);
 }
 
 .clear{
@@ -753,6 +920,81 @@ img{
 }
 
 /* End Section Styles */
+
+/* Contact Form Styles */
+
+.contact-form-holder {
+	padding: 20px;
+	background: none;
+	padding-left: 0;
+}
+
+.form-input {
+	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+	border: 1px solid transparent;
+	padding: 10px;
+	outline: none;
+	color: #fdfd28;
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
+	display: block;
+	vertical-align: baseline;
+	margin-bottom: 20px;
+	-webkit-transition: 0.2s background linear;
+	-moz-transition: 0.2s background linear;
+	transition: 0.2s background linear;
+	-webkit-transform: translateZ(0);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-clip: padding-box;
+	background: rgb(0, 0, 0);
+	background: rgba(253, 253, 40, 0.35);
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.form-input:focus {
+	border: 1px solid transparent;
+	color: #FFFFFF;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.85);
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+	min-height: 100px;
+}
+#send-btn{
+	background: rgba(253, 253, 40, 0.35);
+	color: black !important;
+
+	border: none;
+	display: inline-block;
+	text-decoration: none;
+	margin-bottom: 20px;
+	line-height: normal;
+	padding: 10px 15px;
+	font-size: 12px;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.success-message, .alert-message, .error-message {
+	display: none;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+/* End Contact Form Styles */
 
 /* Modal Styles */
 
@@ -762,11 +1004,11 @@ img{
 }
 
 .photos span {
-    margin-bottom: 10px;
-    position: relative;
-    float: left;
-    width: 100%;
-    text-align: center;
+	margin-bottom: 10px;
+	position: relative;
+	float: left;
+	width: 100%;
+	text-align: center;
 }
 
 .modal .section-header{
@@ -787,11 +1029,11 @@ img{
 /* Parallax Styles */
 
 .parallax-section {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
 
-    background-size: cover;
+	background-size: cover;
 	background-attachment: fixed;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
@@ -799,43 +1041,43 @@ img{
 }
 
 .parallax-content {
-    color: #FFFFFF;
-    position: relative;
-    overflow: hidden;
-    width: 90%;
-    margin-left:5%;
-    padding-left: 10px;
-    padding-right: 10px;
+	color: #FFFFFF;
+	position: relative;
+	overflow: hidden;
+	width: 90%;
+	margin-left:5%;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .parallax-content .parallax-header {
-    padding: 200px 0;
+	padding: 200px 0;
 }
 
 .parallax-header {
-    position: relative;
-    text-align: center;
+	position: relative;
+	text-align: center;
 }
 
 .parallax-title {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #fdfd28;
-    padding-top: 20px;
-    display: inline-block;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 10;
+	font-size: 40px;
+	margin-bottom: 20px;
+	color: #fdfd28;
+	padding-top: 20px;
+	display: inline-block;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 10;
 }
 
 .parallax-slogan {
-    font-size: 37px;
-    line-height: 140%;
-    margin: 0;
-    z-index: 10;
-    position: relative;
-    padding-top: 30px;
-    color: #fdfd28;
+	font-size: 37px;
+	line-height: 140%;
+	margin: 0;
+	z-index: 10;
+	position: relative;
+	padding-top: 30px;
+	color: #fdfd28;
 }
 
 .parallax-banner-2 {
@@ -850,8 +1092,77 @@ img{
 	background-image: url("../img/parallax-banner-7.jpg");
 }
 
+.parallax-banner-9{
+	background-image: url("../img/parallax-banner-9.jpg");
+}
+
+.parallax-banner-10{
+	background-image: url("../img/parallax-banner-10.jpg");
+}
+
 /* End Parallax Styles */
 
+/* Footer Styles */
+
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    background: #FFFFFF;
+    position: relative;
+}
+
+.footer h3 {
+    text-transform: none;
+    margin: 0;
+    position: relative;
+    font-size: 1.9em;
+}
+
+.sub-footer {
+    position: relative;
+    float: left;
+    width: 100%;
+    line-height: 50px;
+    background: #c02474;
+    margin-top: 40px;
+}
+
+.sub-footer h4 {
+    line-height: 50px;
+    color: white;
+    font-size: 13px;
+    margin: 0;
+}
+
+.toTop {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    font-size: 28px;
+    line-height: 38px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    -webkit-box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateZ(0);
+    -webkit-transition: 0.2s all linear;
+    -moz-transition: 0.2s all linear;
+    transition: 0.2s all linear;
+}
+
+.toTop:focus{
+	outline-style: none;
+}
+
+/* End Footer Styles */
 
 
 /* MEDIA QUERIES*/
@@ -894,10 +1205,38 @@ img{
 		font-size: 20px;
 	}
 
+	#social-section .parallax-header{
+		padding-top: 200px;
+	}
+
 	.quotes{
 		margin-top: 50px;
 		padding: 200px 0 !important;
 		min-height: 140px;
+	}
+
+	.work-box:nth-child(2){
+	transition-delay: 1.1s;
+	}
+
+	.work-box:nth-child(3){
+		transition-delay: 1.2s;
+	}
+
+	.work-box:nth-child(4){
+		transition-delay: 1.1s;
+	}
+
+	.work-box:nth-child(5){
+		transition-delay: 1.2s;
+	}
+
+	.work-box:nth-child(6){
+		transition-delay: 1.1s;
+	}
+
+	.work-box:nth-child(7){
+		transition-delay: 1.2s;
 	}
 }
 
@@ -906,9 +1245,13 @@ img{
 		display: none;
 	}
 
-  	.mobile-100{
+	.mobile-100{
 		width: 100%;
 		margin-left: 0px;
+	}
+
+	.mobile-50{
+		width: 50%;
 	}
 
 	.mobile-fix-0{
@@ -952,8 +1295,8 @@ img{
 	}
 
 	.grid-10 {
-    	width: 33%;
-    	padding-top: 10px;
+		width: 33%;
+		padding-top: 10px;
 	}
 
 	.info {
@@ -965,8 +1308,12 @@ img{
 		padding-top: 0px;
 	}
 
-	.cta-section {
-   		padding-bottom: 50px;
+	.cta-section, .testimonial-section {
+		padding-bottom: 50px;
+	}
+
+	.testimonial-section{
+		padding-top: 50px;
 	}
 
 	#service-section .parallax-slogan{
@@ -1012,5 +1359,29 @@ img{
 
 	.modal .section-slogan{
 		font-size: 20px;
+	}
+
+	.testimonial-section{
+		padding-bottom: 0px;
+	}
+
+	.hero-title3{
+		font-size: 1em;
+	}
+
+	#social-section .parallax-slogan {
+		font-size: 20px;
+	}
+
+	.footer h3 {
+		font-size: 1.2em;
+	}
+
+	.sub-footer h4{
+		font-size: 10px;
+	}
+
+	.slides li:nth-child(1){
+		background: transparent url('../img/s1-mobile.jpg') repeat scroll 0% 0%;
 	}
 }

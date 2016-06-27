@@ -11,6 +11,18 @@ th{
 	color: black;
 }
 
+td{
+	overflow: hidden;
+}
+
+td:nth-child(3){
+	max-width: 200px;
+}
+
+td:nth-child(4){
+	max-width: 200px;
+}
+
 .fa-btn {
 	margin-right: 6px;
 }
@@ -48,4 +60,37 @@ th{
 .msjError{
 	font-size:12px;
 	color:red;
+	display: block;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: -3px 10px 0px 5px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    margin-top: -2px;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.uploadSpan{
+	width: 33%;
+	display: initial;
+}
+
+label {
+	display: block;
+}
+
+.pdash-icon{
+	max-height: 100%;
+	display: inline-block !important;
 }
