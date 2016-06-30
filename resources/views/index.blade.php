@@ -392,13 +392,16 @@
 										{{ csrf_field() }}
 										<ul class="grid-85">
 											<li>
-												<input id="name" class="name form-input" name="name" placeholder="Name:" type="text">
+												<span class="msjError"> @if ($errors->first('name')) *{{ $errors->first('name') }} @endif</span>
+												<input id="name" class="name form-input" name="name" placeholder="Name:" type="text" required>
 											</li>
 											<li>
-												<input id="email" class="email form-input" name="email" placeholder="E-Mail:" type="email">
+												<span class="msjError"> @if ($errors->first('email')) *{{ $errors->first('email') }} @endif</span>
+												<input id="email" class="email form-input" name="email" placeholder="E-Mail:" type="email" required>
 											</li>
 											<li>
-												<textarea id="message" class="message form-input" name="message" placeholder="Message:"></textarea>
+												<span class="msjError"> @if ($errors->first('message')) *{{ $errors->first('message') }} @endif</span>
+												<textarea id="message" class="message form-input" name="message" placeholder="Message:" required></textarea>
 											</li>
 										</ul>
 										<div class="grid-100">

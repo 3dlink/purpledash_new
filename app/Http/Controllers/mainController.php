@@ -24,18 +24,23 @@ class mainController extends Controller
 
     public function contact (Request $request){
 
+    	$this->validate($request, [
+          'name' => 'required',
+          'email' => 'required|email',
+          'message' => 'required'
+        ]);
+
     	$contact = [];
     	$contact['name'] = $request -> name;
     	$contact['email'] = $request -> email;
     	$contact['message'] = $request -> message;
 
-    	Mail::send('mail.contact', ['contact' => $contact], function ($m){
-            $m->from('hello@purpledash.com', 'PurpleDash');
+	    	$sent= Mail::send('mail.contact', array('contact' => $contact), function ($m){
+	            $m->from('hello@purpledash.com');
+	            $m->to("CORREO_AQUI");
+	            $m->subject("It's alive!");
+	        });
 
-            $m->to('o0serras0o@gmail.com', 'Daniel')->subject("It's alive!");
-            // hello@bepurpledash.com
-        });
-
-        return response()->json(['message' => 'Request completed']);
+        return redirect() -> route('index');
     }
 }
