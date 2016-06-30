@@ -388,6 +388,11 @@
 									<h3 class="grid-100">Drop us a line</h3>
 									
 									<!-- contact form -->
+									<div class="success-message">
+												@if(Session::has('mail'))
+													{{ Session::get('mail')}}
+												@endif
+											</div>
 									<form id="contact-form" class="contact-form" action="{{ url('/contact') }}" method="POST">
 										{{ csrf_field() }}
 										<ul class="grid-85">
@@ -406,9 +411,6 @@
 										</ul>
 										<div class="grid-100">
 											<input id="send-btn" class="send-btn" name="send-btn" value="Send" type="submit">
-											<div class="success-message">Email has been sent!</div>
-											<div class="alert-message"></div>
-											<div class="error-message">Email could not be delivered. Please try again later!</div>
 										</div>
 									</form>
 									<!-- close contact form --> 

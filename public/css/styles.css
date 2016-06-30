@@ -988,8 +988,7 @@ textarea {
 	border-radius: 3px;
 }
 
-.success-message, .alert-message, .error-message {
-	display: none;
+.success-message{
 	font-size: 12px;
 	letter-spacing: 1px;
 }
