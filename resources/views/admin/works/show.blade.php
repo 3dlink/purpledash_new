@@ -10,7 +10,7 @@
                 <div class="panel-body">
 
                    <!-- portfolio box -->
-                    <div class="grid-33 mobile-100 tablet-50" style="margin: 0 33%;"> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" href="">
+                    <div class="grid-33 mobile-100 tablet-50" style="margin: 0 33%;"> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href="">
                       <div class="portfolio-box" style="opacity:1;">
 
                         <figure class="portfolio-image"><img src="../../img/{{$work->frontImg}}"></figure>
@@ -36,11 +36,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <div class="grid-70 prefix-15 mobile-100 tablet-100">
+          <div class="grid-100 mobile-100 tablet-100">
             <header class="section-header">
-              <h2 class="section-title" style="opacity:1"><span class="work-title"></span></h2>
-              <p class="section-slogan work-description" style="opacity:1"></p>
-            </header>
+              <div class="grid-40 rb"><h2 style="opacity:1" class="section-title"><span class="work-title"></span></h2><span class="work-sub" style="opacity:1"></span></div>
+                <div class="grid-60 nrb"><p class="section-slogan work-description" style="text-align:left; padding-left:5%; opacity:1;"></p></div>            </header>
           </div>
         </div>
         <div class="modal-body grid-100 mobile-100 tablet-100">

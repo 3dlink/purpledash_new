@@ -18,6 +18,12 @@
 					</div>
 
 					<div class="form-group">
+							{!! Form::label('subtitle', 'Subtitle') !!}
+							{!! Form::text('subtitle', $work->subtitle, ['placeholder' => 'Work subtitle', 'class' => 'form-control', 'required']) !!}
+							<span class="msjError"> @if ($errors->first('subtitle')) *{{ $errors->first('subtitle') }} @endif</span>
+						</div>
+
+					<div class="form-group">
 						{!! Form::label('category', 'Category') !!}
 						{!! Form::text('category', $work->category, ['placeholder' => 'Work category', 'class' => 'form-control', 'required']) !!}
 						<span class="msjError"> @if ($errors->first('category')) *{{ $errors->first('category') }} @endif</span>

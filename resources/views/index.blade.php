@@ -10,15 +10,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 	<!-- CSS -->
-	<link rel="shortcut icon" href="{{URL::asset('img/favicon.ico')}}">
+	<link rel="shortcut icon" href="{{URL::asset('/img/favicon.ico')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
 	<link href='{{URL::asset("/css/styles.css")}}' rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" type="text/css" href='{{URL::asset("js/slick/slick.css")}}'/>
-	<link rel="stylesheet" type="text/css" href='{{URL::asset("js/slick/slick-theme.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("/js/slick/slick.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("/js/slick/slick-theme.css")}}'/>
 
 </head>
 <body>
@@ -71,10 +71,10 @@
 
 			<div class="main-slider">
 				<ul class="slides">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
+					<li><img src='{{URL::asset("/img/s1.jpg")}}'></li>
+					<li><img src='{{URL::asset("/img/s2.jpg")}}'></li>
+					<li><img src='{{URL::asset("/img/s3.jpg")}}'></li>
+					<li><img src='{{URL::asset("/img/s4.jpg")}}'></li>
 				</ul>
 			</div>
 		</section>
@@ -235,7 +235,7 @@
 					<!-- close section header -->
 					@foreach($works as $work)
 					<!-- portfolio box -->
-					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" href="">
+					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href="">
 						<div class="portfolio-box">
 
 							<figure class="portfolio-image"><img src="img/{{$work->frontImg}}"></figure>
@@ -298,10 +298,10 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<div class="grid-70 prefix-15 mobile-100 tablet-100">
-							<header class="section-header">
-								<h2 class="section-title"><span class="work-title"></span></h2>
-								<p class="section-slogan work-description"></p>
+						<div class="grid-100 mobile-100 tablet-100">
+							<header class="section-header grid-100 clear">
+								<div class="grid-40 rb"><h2 class="section-title"><span class="work-title"></span></h2><span class="work-sub"></span></div>
+								<div class="grid-60 nrb"><p class="section-slogan work-description" style="text-align:left; padding-left:5%;"></p></div>				
 							</header>
 						</div>
 					</div>

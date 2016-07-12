@@ -42,6 +42,7 @@ class WorksController extends Controller
 	{
 		$this -> validate($request,[
 			'title'  =>         'required|unique:works',
+			'subtitle'  =>         'required',
 			'category'   =>     'required',
 			'description'   =>  'required',
 			'frontImg'   =>    'required|image',
@@ -71,6 +72,7 @@ class WorksController extends Controller
 
 		$work = new Work();
 		$work -> title = $request -> title;
+		$work -> subtitle = $request -> subtitle;
 		$work -> category = $request -> category;
 		$work -> description = $request -> description;
 		$work -> frontImg = $names[0];
@@ -119,6 +121,7 @@ class WorksController extends Controller
 	{
 		$this -> validate($request,[
 			'title'  =>         'required',
+			'subtitle'  =>         'required',
 			'category'   =>     'required',
 			'description'   =>  'required',
 			'frontImg'   =>    'image',
@@ -158,6 +161,7 @@ class WorksController extends Controller
 		}
 
 		$work -> title = $request -> title;
+		$work -> subtitle = $request -> subtitle;
 		$work -> category = $request -> category;
 		$work -> description = $request -> description;
 		

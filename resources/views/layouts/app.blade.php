@@ -110,10 +110,12 @@
 			var me = $(event.relatedTarget);
 			var mainimg = me.data('mainimg');
 			var title = me.data('title');
+			var sub = me.data('sub');
 			var desc = me.data('desc');
 			var modal = $(this);
 
 			modal.find('.work-title').text(title);
+			modal.find('.work-sub').text(sub);
 			modal.find('.work-description').text(desc)
 			modal.find('.photos img').attr('src', '../../img/'+mainimg);
 

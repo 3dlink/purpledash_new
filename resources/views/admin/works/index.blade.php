@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading center">Works</div>
 
@@ -12,6 +12,7 @@
 					<table class="table">
 						<thead>
 							<th>Title</th>
+							<th>Subtitle</th>
 							<th>Category</th>
 							<th>Front Image</th>
 							<th>Main Image</th>
@@ -23,6 +24,7 @@
 							@foreach($works as $work)
 								<tr>
 									<td>{{$work->title}}</td>
+									<td>{{$work->subtitle}}</td>
 									<td>{{$work->category}}</td>
 									<td>{{$work->originalFront}}</td>
 									<td>{{$work->originalMain}}</td>

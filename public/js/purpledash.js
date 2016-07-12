@@ -1,5 +1,5 @@
 var frases = [  {       h1:"we are",        span: "purple dash" },  {       h1:"services",      span: "world wide"  },  {       h1:"we love",       span: "BRANDS"  },  {       h1:"we love",       span: "CODING"  },  {       h1:"we are",        span: "CREATIVE"    },  {       h1:"we are",        span: "ENTHUSIASTS" },  {       h1:"we are",        span: "PASSIONATE"  },  {       h1:"we are",        span: "CURIOUS" },  {       h1:"we love to",        span: "design"  }];
-var timer = 0;
+var timer = -1;
 
 $(document).ready(function (){
 
@@ -108,44 +108,60 @@ $(document).ready(function (){
 
 	//REPRINTING PHRASES
 	setInterval(function (){
+		timer += 1;
 		var t = timer;
 		$(".hero-holder").fadeIn();
 
 		if (timer == 0){
 			$(".slides li:nth-of-type(2)").css("opacity",1);
 
-			$(".slides li:nth-of-type(1)").fadeOut(800,"linear", function(){
+			$(".slides li:nth-of-type(1) img").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(2)").css("z-index",2);
 				$(".slides li:nth-of-type(1)").css("z-index",1);
 
 				$(".slides li:nth-of-type(1)").css("opacity",0);
-				$(".slides li:nth-of-type(1)").css("display","block");
+				$(".slides li:nth-of-type(1) img").css("display","block");
 			});
 
 		} else if (timer == 3){
 			$(".slides li:nth-of-type(3)").css("opacity",1);
 
-			$(".slides li:nth-of-type(2)").fadeOut(800,"linear", function(){
+			$(".slides li:nth-of-type(2) img").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(3)").css("z-index",2);
 				$(".slides li:nth-of-type(2)").css("z-index",1);
 
 				$(".slides li:nth-of-type(2)").css("opacity",0);
-				$(".slides li:nth-of-type(2)").css("display","block");
+				$(".slides li:nth-of-type(2) img").css("display","block");
 			});
 
 		} else if (timer == 6){
 			$(".slides li:nth-of-type(4)").css("opacity",1);
 
-			$(".slides li:nth-of-type(3)").fadeOut(800,"linear", function(){
+			$(".slides li:nth-of-type(3) img").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(4)").css("z-index",2);
 				$(".slides li:nth-of-type(3)").css("z-index",1);
 
 				$(".slides li:nth-of-type(3)").css("opacity",0);
-				$(".slides li:nth-of-type(3)").css("display","block");
+				$(".slides li:nth-of-type(3) img").css("display","block");
 			});
+		} else if (timer == 9){
+			$(".slides li:nth-of-type(1)").css("opacity",1);
+
+			$(".slides li:nth-of-type(4) img").fadeOut(800,"linear", function(){
+				$(".slides li:nth-of-type(1)").css("z-index",2);
+				$(".slides li:nth-of-type(4)").css("z-index",1);
+
+				$(".slides li:nth-of-type(4)").css("opacity",0);
+				$(".slides li:nth-of-type(4) img").css("display","block");
+			});
+
+			$(".hero-holder").fadeOut();
+			$(".hero-title-holder").fadeOut();
+
+			timer = -1;
 		}
 
-		if (timer < 9){
+		if (timer < 9 && timer != -1){
 
 			var hth = $(".hero-title-holder");
 
@@ -155,23 +171,8 @@ $(document).ready(function (){
 			});
 
 			hth.fadeIn();
-
-			timer += 1;
-		} else {
-			$(".slides li:nth-of-type(1)").css("opacity",1);
-
-			$(".slides li:nth-of-type(4)").fadeOut(800,"linear", function(){
-				$(".slides li:nth-of-type(1)").css("z-index",2);
-				$(".slides li:nth-of-type(4)").css("z-index",1);
-
-				$(".slides li:nth-of-type(4)").css("opacity",0);
-				$(".slides li:nth-of-type(4)").css("display","block");
-			});
-
-			$(".hero-holder").fadeOut();
-			$(".hero-title-holder").fadeOut();
-			timer = 0;
 		}
+
 	}, 3000);
 
 
@@ -190,10 +191,12 @@ $(document).ready(function (){
 		var me = $(event.relatedTarget);
 		var mainimg = me.data('mainimg');
 		var title = me.data('title');
+		var sub = me.data('sub');
 		var desc = me.data('desc');
 		var modal = $(this);
 
 		modal.find('.work-title').text(title);
+		modal.find('.work-sub').text(sub);
 		modal.find('.work-description').text(desc)
 		modal.find('.photos img').attr('src', 'img/'+mainimg);
 
