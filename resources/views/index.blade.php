@@ -280,7 +280,7 @@
 								<li class="skype grid-25 tablet-50 mobile-50"> 
 									<a class="social-link" href="skype:PurpleDash.Studio?chat"> <span class="social-icon"><i class="fa fa-skype fa-4x"></i></span></a> 
 								</li>
-								<li class="facebook grid-25 tablet-50 mobile-50" style="float:right;"> <a class="social-link" href="https://plus.google.com/u/1/115024707889329031789/" target="_blank"> <span class="social-icon"><i class="fa fa-google-plus fa-4x"></i></span>
+								<li class="facebook grid-25 tablet-50 mobile-50" style="float:right;"> <a class="social-link" href="https://plus.google.com/u/1/115024707889329031789/" target="_blank"> <span class="social-icon"><i class="fa fa-google-plus fa-3x"></i></span>
 								</a> </li>
 							</ul>
 						</div>
@@ -373,10 +373,10 @@
 								<div class="contact-message">
 									<h3 class="grid-100">Our Address</h3>
 									<ul class="icons-ul">
-										<li>Buenos Aires - Argentina</li>
-										<li>Tel: (5411) 5901-2596 </li>
-										<li>hello@bepurpledash.com</li>
-										<li>www.bepurpledash.com</li>
+										<li>{{$contact->city}} - {{$contact->country}}</li>
+										<li>Tel: ({{$contact->areaCode}}) {{$contact->phone}} </li>
+										<li>{{$contact->email}}</li>
+										<li>{{$contact->webpage}}</li>
 									</ul>
 								</div>
 							</div>

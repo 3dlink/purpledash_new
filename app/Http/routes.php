@@ -67,6 +67,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'uses'  =>  'WorksController@destroy',
         'as'    =>  'admin.works.destroy'
     ]);
+
+    Route::resource('contacts', 'ContactsController');
+
+    Route::get('contacts/{id}/destroy', [
+        'uses'  =>  'ContactsController@destroy',
+        'as'    =>  'admin.contacts.destroy'
+    ]);
 });
 
 Route::auth();

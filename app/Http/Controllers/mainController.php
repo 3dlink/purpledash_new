@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Service;
 use App\Phrase;
 use App\Work;
+use App\Contact;
 
 class mainController extends Controller
 {
@@ -18,8 +19,9 @@ class mainController extends Controller
 		$services = Service::all();
 		$phrases = Phrase::all();
 		$works = Work::orderBy('created_at', 'desc')->paginate(6);
+		$contact = Contact::orderBy('created_at', 'desc')->first();
 
-		return view('index')->with('services',$services)->with('phrases',$phrases)->with('works', $works);
+		return view('index')->with('services',$services)->with('phrases',$phrases)->with('works', $works)->with('contact', $contact);
 	}
 
 	public function contact (Request $request){

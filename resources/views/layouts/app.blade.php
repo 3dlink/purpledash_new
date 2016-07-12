@@ -60,6 +60,7 @@
 								<li><a href="{{route('admin.services.index')}}">Services</a></li>
 								<li><a href="{{route('admin.phrases.index')}}">Phrases</a></li>
 								<li><a href="{{route('admin.works.index')}}">Works</a></li>
+								<li><a href="{{route('admin.contacts.index')}}">Contact</a></li>
 							</ul>
 						</li>
 					</li>
