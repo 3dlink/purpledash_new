@@ -187,21 +187,48 @@ $(document).ready(function (){
 
 	// Dynamic Modal //
 
-	$('#portfolio-modal').on('show.bs.modal', function(event){
-		var me = $(event.relatedTarget);
+	// $('#portfolio-modal').on('shown.bs.modal', function(event){
+	// 	var me = $(event.relatedTarget);
+	// 	var mainimg = me.data('mainimg');
+	// 	var title = me.data('title');
+	// 	var sub = me.data('sub');
+	// 	var desc = me.data('desc');
+	// 	var modal = $(this);
+
+	// 	modal.find('.work-title').text(title);
+	// 	modal.find('.work-sub').text(sub);
+	// 	modal.find('.work-description').text(desc)
+	// 	modal.find('.photos img').attr('src', 'img/'+mainimg);
+
+	// });
+
+	$('.work-box a').click(function(event) {
+		var modal = $('#portfolio-modal').modal({
+			show: false,
+		});
+
+		modal.find('.work-title').text('');
+		modal.find('.work-sub').text('');
+		modal.find('.work-description').text('')
+		modal.find('.photos img').attr('src', '');
+
+		var me = $(this);
 		var mainimg = me.data('mainimg');
 		var title = me.data('title');
 		var sub = me.data('sub');
 		var desc = me.data('desc');
-		var modal = $(this);
 
 		modal.find('.work-title').text(title);
 		modal.find('.work-sub').text(sub);
 		modal.find('.work-description').text(desc)
 		modal.find('.photos img').attr('src', 'img/'+mainimg);
 
+		modal.modal('show');
 	});
 	// Dynamic Modal End //
+
+
+
 
 });
 
