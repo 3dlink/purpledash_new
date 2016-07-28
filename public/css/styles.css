@@ -803,6 +803,7 @@ img{
 	display: block;
 	width: 100%;
 	box-shadow: 0 0 0 0 #000000;
+	height: 250px;
 }
 
 .portfolio-caption {
@@ -1322,6 +1323,10 @@ textarea {
 	.work-box:nth-child(7){
 		transition-delay: 1.2s;
 	}
+
+	.portfolio-image img {
+		height: 200px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -1454,6 +1459,10 @@ textarea {
 		font-size: 16px !important;
 		font-weight: 300;
 	}
+
+	.portfolio-image img {
+		height: 480px;
+	}
 }
 
 @media screen and (max-width: 550px){
@@ -1508,5 +1517,9 @@ textarea {
 		font-family: 'NeutraText';
 		font-size: 15px !important;
 		font-weight: 300;
+	}
+
+	.portfolio-image img {
+		height: 250px;
 	}
 }
