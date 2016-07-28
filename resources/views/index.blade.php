@@ -235,7 +235,7 @@
 					<!-- close section header -->
 					@foreach($works as $work)
 					<!-- portfolio box -->
-					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{!!$work->description!!}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href="">
+					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}">
 						<div class="portfolio-box">
 
 							<figure class="portfolio-image"><img src="img/{{$work->frontImg}}"></figure>
@@ -398,15 +398,15 @@
 										<ul class="grid-85">
 											<li>
 												<span class="msjError"> @if ($errors->first('name')) *{{ $errors->first('name') }} @endif</span>
-												<input id="name" class="name form-input" name="name" placeholder="Name:" type="text" required>
+												<input id="name" class="name form-input" name="name" placeholder="Name:" type="text">
 											</li>
 											<li>
 												<span class="msjError"> @if ($errors->first('email')) *{{ $errors->first('email') }} @endif</span>
-												<input id="email" class="email form-input" name="email" placeholder="E-Mail:" type="email" required>
+												<input id="email" class="email form-input" name="email" placeholder="E-Mail:" type="email">
 											</li>
 											<li>
 												<span class="msjError"> @if ($errors->first('message')) *{{ $errors->first('message') }} @endif</span>
-												<textarea id="message" class="message form-input" name="message" placeholder="Message:" required></textarea>
+												<textarea id="message" class="message form-input" name="message" placeholder="Message:"></textarea>
 											</li>
 										</ul>
 										<div class="grid-100">
