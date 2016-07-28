@@ -32,7 +32,7 @@
 
 						<div class="form-group">
 							{!! Form::label('description', 'Description') !!}
-							{!! Form::text('description', null, ['placeholder' => 'Work description', 'class' => 'form-control', 'required']) !!}
+							{!! Form::textarea('description', null, ['placeholder' => 'Work description', 'class' => 'form-control', 'required']) !!}
 							<span class="msjError"> @if ($errors->first('description')) *{{ $errors->first('description') }} @endif</span>
 						</div>
 

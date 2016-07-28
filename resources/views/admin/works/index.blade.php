@@ -14,9 +14,9 @@
 							<th>Title</th>
 							<th>Subtitle</th>
 							<th>Category</th>
-							<th>Front Image</th>
+<!-- 						<th>Front Image</th>
 							<th>Main Image</th>
-							<th>Description</th>
+							<th>Description</th> -->
 							<th>Actions</th>
 						</thead>
 
@@ -26,12 +26,17 @@
 									<td>{{$work->title}}</td>
 									<td>{{$work->subtitle}}</td>
 									<td>{{$work->category}}</td>
-									<td>{{$work->originalFront}}</td>
+<!-- 									<td>{{$work->originalFront}}</td>
 									<td>{{$work->originalMain}}</td>
-									<td>{{$work->description}}</td>
+									<td>{{$work->description}}</td> -->
 									<td style="min-width: 100px;">
 										<a class="itemAction" href="{{ route('admin.works.edit', $work->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 										<a class="itemAction" href="{{ route('admin.works.show', $work->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+										@if ($work->isActive)
+										<a class="itemAction" onclick="cambiarEstado({{$work->id}})"><i class="fa fa-toggle-on" aria-hidden="true"></i></a>
+										@else
+										<a class="itemAction" onclick="cambiarEstado({{$work->id}})"><i class="fa fa-toggle-off" aria-hidden="true"></i></a>
+										@endif
 										<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$work->id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
 									</td>
@@ -65,6 +70,34 @@
     </div>
 </div>
 
+@endsection
 
+@section('script')
+
+	<script type="text/javascript">
+		function cambiarEstado(id) {
+			
+			var uri = 'works/active/'+id;
+
+			$.ajax({
+				url: uri,
+				type: 'GET',
+				success: function (response){
+					var attr = 'cambiarEstado('+id+')';
+
+					me = $('.itemAction[onclick="'+attr+'"] i');
+
+					if (me.hasClass('fa-toggle-on')) {
+						me.removeClass('fa-toggle-on');
+						me.addClass('fa-toggle-off');
+					} else {
+						me.removeClass('fa-toggle-off');
+						me.addClass('fa-toggle-on');
+					}
+					
+				}
+			});
+		}
+	</script>
 
 @endsection

@@ -90,9 +90,9 @@
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
 						<h2 class="section-title"><span>About Purple Dash</span></h2>
-						<p class="section-slogan">We are a creative design studio based in Buenos Aires though we offer our services worldwide. We seek for simple and powerful solutions, bold aesthetics and surprising outputs across all platforms. We develop corporate identity, graphic communication, art direction, editorial, web &amp; app: design + development, illustration, motion graphic, and branding, among others.</p>
-						<p class="section-slogan">We create and redesign B2B and B2C brands for clients ranging from start-ups to global corporations.</p>
-						<p class="section-slogan">We have a close relationship with our customers, we like to involve ourselves in every project and obtain the best possible results. We create your brand design based on rational strategy and emotional harmony.</p>
+						<p class="section-slogan">{!! $about->p1 !!}</p>
+						<p class="section-slogan">{!! $about->p2 !!}.</p>
+						<p class="section-slogan">{!! $about->p3 !!}</p>
 					</header>
 				</div>
 			</div>
@@ -105,7 +105,7 @@
 				<div class="grid grid-40 prefix-60 mobile-100 tablet-100" style="text-shadow: 1px 1px gray;">
 					<header class="parallax-header">
 						<h2 class="parallax-title"><span>Our Philosophy</span></h2>
-						<p class="parallax-slogan about">We believe in quality because it is the only thing that stands the test of time.</p>
+						<p class="parallax-slogan about">{!! $philosophy->text !!}</p>
 					</header>
 				</div>
 			</div>
@@ -122,9 +122,9 @@
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
 						<h2 class="section-title"><span>Our Team</span></h2>
-						<p class="section-slogan">What’s behind The Studio?</p>
-						<p class="section-extra">We have an incredible team of professional and creative people. We craft insanely creative digital experiences throughout the globe! We are enthusiastic people, PASSIONATE about design, technology and all creative things in the world.</p>
-						<p class="section-extra">STAFF: Graphic/ Packaging/ Web &amp; App Designers, Photographers, Web &amp; App Developers, Illustrators, Motion Graphic Designer, among others.</p>
+						<p class="section-slogan">{!! $team->title !!}</p>
+						<p class="section-extra">{!! $team->p1 !!}</p>
+						<p class="section-extra">{!! $team->p2 !!}</p>
 					</header>
 				</div>
 			</div>
@@ -235,7 +235,7 @@
 					<!-- close section header -->
 					@foreach($works as $work)
 					<!-- portfolio box -->
-					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href="">
+					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{!!$work->description!!}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href="">
 						<div class="portfolio-box">
 
 							<figure class="portfolio-image"><img src="img/{{$work->frontImg}}"></figure>

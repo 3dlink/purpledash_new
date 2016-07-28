@@ -11,17 +11,24 @@ use App\Service;
 use App\Phrase;
 use App\Work;
 use App\Contact;
+use App\About;
+use App\Philosophy;
+use App\Team;
+use DB;
 
 class mainController extends Controller
 {
 	public function index(){
 
+		$about = About::first();
+		$philosophy = Philosophy::first();
+		$team = Team::first();
 		$services = Service::all();
 		$phrases = Phrase::all();
-		$works = Work::orderBy('created_at', 'desc')->paginate(6);
+		$works = DB::table('works')->where('isActive', '=', 1)->orderBy('created_at', 'desc')->paginate(6);
 		$contact = Contact::orderBy('created_at', 'desc')->first();
 
-		return view('index')->with('services',$services)->with('phrases',$phrases)->with('works', $works)->with('contact', $contact);
+		return view('index')->with('services',$services)->with('phrases',$phrases)->with('works', $works)->with('contact', $contact)->with('about', $about)->with('philosophy', $philosophy)->with('team', $team);
 	}
 
 	public function contact (Request $request){

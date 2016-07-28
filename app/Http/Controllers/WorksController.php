@@ -196,4 +196,20 @@ class WorksController extends Controller
 
 		return $str;
 	}
+
+	public function active($id){
+		$work = Work::find($id);
+
+		if ($work->isActive == 0) {
+			$response = 1;
+		} else {
+			$response = 0;
+		}
+
+		$work->isActive = $response;
+
+		$work->save();
+
+		return $id;
+	}
 }

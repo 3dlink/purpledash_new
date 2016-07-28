@@ -197,7 +197,7 @@ $(document).ready(function (){
 
 		modal.find('.work-title').text(title);
 		modal.find('.work-sub').text(sub);
-		modal.find('.work-description').text(desc)
+		modal.find('.work-description').html(desc);
 		modal.find('.photos img').attr('src', 'img/'+mainimg);
 
 	});

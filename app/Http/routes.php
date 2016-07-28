@@ -74,6 +74,31 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'uses'  =>  'ContactsController@destroy',
         'as'    =>  'admin.contacts.destroy'
     ]);
+
+    Route::get('works/active/{id}', [
+        'uses'  =>  'WorksController@active'
+    ]);
+
+    Route::resource('abouts', 'AboutsController');
+
+    Route::get('abouts/{id}/destroy', [
+        'uses'  =>  'AboutsController@destroy',
+        'as'    =>  'admin.abouts.destroy'
+    ]);
+
+    Route::resource('philosophies', 'PhilosophiesController');
+
+    Route::get('philosophies/{id}/destroy', [
+        'uses'  =>  'PhilosophiesController@destroy',
+        'as'    =>  'admin.philosophies.destroy'
+    ]);
+
+    Route::resource('teams', 'TeamsController');
+
+    Route::get('teams/{id}/destroy', [
+        'uses'  =>  'TeamsController@destroy',
+        'as'    =>  'admin.teams.destroy'
+    ]);
 });
 
 Route::auth();

@@ -23,6 +23,8 @@
 	<link rel="stylesheet" type="text/css" href="{{URL::asset('css/adminPanel.css')}}">
 	<link href="{{URL::asset('js/iconPicker/css/fontawesome-iconpicker.min.css')}}" rel="stylesheet">
 
+	@yield('css')
+
 </head>
 <body id="app-layout">
 	<nav class="navbar navbar-default navbar-static-top">
@@ -57,6 +59,9 @@
 							</a>
 
 							<ul class="dropdown-menu">
+								<li><a href="{{route('admin.abouts.index')}}">About Us</a></li>
+								<li><a href="{{route('admin.philosophies.index')}}">Our Philosophy</a></li>
+								<li><a href="{{route('admin.teams.index')}}">Our Team</a></li>
 								<li><a href="{{route('admin.services.index')}}">Services</a></li>
 								<li><a href="{{route('admin.phrases.index')}}">Phrases</a></li>
 								<li><a href="{{route('admin.works.index')}}">Works</a></li>
@@ -103,8 +108,8 @@
 		<script src="{{URL::asset('js/iconPicker/js/fontawesome-iconpicker.js')}}"></script>
 
 
-		<script type="text/javascript">
-			$('.iconpicker').iconpicker();
+	<script type="text/javascript">
+		$('.iconpicker').iconpicker();
 
 		// Dynamic Modal //
 		$('#portfolio-modal').on('show.bs.modal', function(event){
@@ -117,7 +122,7 @@
 
 			modal.find('.work-title').text(title);
 			modal.find('.work-sub').text(sub);
-			modal.find('.work-description').text(desc)
+			modal.find('.work-description').html(desc)
 			modal.find('.photos img').attr('src', '../../img/'+mainimg);
 
 		});
@@ -132,5 +137,7 @@
 		};
 
 	</script>
+
+	@yield('script')
 </body>
 </html>
