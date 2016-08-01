@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Service;
+use App\ServiceText;
+
 
 class ServicesController extends Controller
 {
@@ -18,8 +20,9 @@ class ServicesController extends Controller
     public function index()
     {
         $services = Service::paginate(5);
+        $text = ServiceText::orderBy('created_at', 'desc')->paginate(1);
 
-        return view('admin.services.index')->with('services', $services);
+        return view('admin.services.index')->with('services', $services)->with('texts', $text);
     }
 
     /**

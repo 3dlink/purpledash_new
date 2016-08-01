@@ -1064,9 +1064,19 @@ textarea {
 	font-family: 'NeutraText';
 }
 
-#portfolio-modal .modal-dialog{
+#mdialog{
 	width: 100%;
 	margin: 0;
+}
+
+:-moz-any(#mdialog){ 
+	margin: 0;
+	width: 100%;
+}
+
+:-webkit-any(#mdialog){ 
+	margin: 10px !important;
+	width: 100%;
 }
 
 #portfolio-modal img{

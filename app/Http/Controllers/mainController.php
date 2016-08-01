@@ -14,6 +14,9 @@ use App\Contact;
 use App\About;
 use App\Philosophy;
 use App\Team;
+use App\Aim;
+use App\Connect;
+use App\ServiceText;
 use DB;
 
 class mainController extends Controller
@@ -27,8 +30,11 @@ class mainController extends Controller
 		$phrases = Phrase::all();
 		$works = DB::table('works')->where('isActive', '=', 1)->orderBy('created_at', 'desc')->paginate(6);
 		$contact = Contact::orderBy('created_at', 'desc')->first();
+		$connect = Connect::orderBy('created_at', 'desc')->first();
+		$aim = Aim::orderBy('created_at', 'desc')->first();
+		$stext = ServiceText::orderBy('created_at', 'desc')->first();
 
-		return view('index')->with('services',$services)->with('phrases',$phrases)->with('works', $works)->with('contact', $contact)->with('about', $about)->with('philosophy', $philosophy)->with('team', $team);
+		return view('index')->with('services',$services)->with('phrases',$phrases)->with('works', $works)->with('contact', $contact)->with('about', $about)->with('philosophy', $philosophy)->with('team', $team)->with('aim', $aim)->with('connect', $connect)->with('text', $stext);
 	}
 
 	public function contact (Request $request){

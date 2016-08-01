@@ -99,6 +99,27 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'uses'  =>  'TeamsController@destroy',
         'as'    =>  'admin.teams.destroy'
     ]);
+
+    Route::resource('aims', 'AimsController');
+
+    Route::get('aims/{id}/destroy', [
+        'uses'  =>  'AimsController@destroy',
+        'as'    =>  'admin.aims.destroy'
+    ]);
+
+    Route::resource('connects', 'ConnectsController');
+
+    Route::get('connects/{id}/destroy', [
+        'uses'  =>  'ConnectsController@destroy',
+        'as'    =>  'admin.connects.destroy'
+    ]);
+
+    Route::resource('serviceText', 'ServiceTextController');
+
+    Route::get('serviceText/{id}/destroy', [
+        'uses'  =>  'ServiceTextController@destroy',
+        'as'    =>  'admin.serviceText.destroy'
+    ]);
 });
 
 Route::auth();

@@ -144,7 +144,7 @@
 					<div class="grid-90 prefix-5 mobile-100 tablet-100">
 						<header class="parallax-header">
 							<h2 class="parallax-title"><span>OUR SERVICES</span></h2>
-							<p class="parallax-slogan"><strong>PURPLEDASH</strong> IS A VERSATILE CREATIVE STUDIO FOUNDED BY PROFESSIONALS FROM DIFFERENT FIELDS. WE KNOW HOW TO BRING NEW LIFE TO A BRAND AND HOW TO CREATE ENTIRELY NEW CONCEPTS. WE LIKE TO WORK CLOSELY WITH CLIENTS AND INCLUDE THEM IN OUR DESIGN PROCESS TO CREATE BETTER RESULTS.</p>
+							<p class="parallax-slogan">{!! $text->text !!}</p>
 						</header>
 					</div>
 					<!-- close entry header -->
@@ -263,7 +263,7 @@
 						<div class="grid-45 prefix-55 mobile-100 tablet-100">
 							<header class="parallax-header">
 								<h2 class="parallax-title"><span>Get Connected</span></h2>
-								<p class="parallax-slogan">Do not hesitate! Contact us! We are waiting for you!</p>
+								<p class="parallax-slogan">{!! $connect->text !!}</p>
 							</header>
 						</div>
 						<!-- close parallax header -->
@@ -294,12 +294,12 @@
 		</div>
 
 		<div class="modal" tabindex="-1" role="dialog" id="portfolio-modal">
-			<div class="modal-dialog">
+			<div id="mdialog" class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<div class="grid-100 mobile-100 tablet-100">
-							<header class="section-header grid-100 clear">
+							<header class="section-header grid-100">
 								<div class="grid-40 rb"><h2 class="section-title"><span class="work-title"></span></h2><span class="work-sub"></span></div>
 								<div class="grid-60 nrb"><p class="section-slogan work-description" style="text-align:left; padding-left:5%;"></p></div>				
 							</header>
@@ -325,7 +325,7 @@
 					<div class="grid-70 prefix-15 mobile-100 tablet-100">
 						<header class="section-header">
 							<h2 class="section-title"><span>THE AIM</span></h2>
-							<p class="section-slogan">Our ultimate goal is to make our clients happy. <br>   What counts is not that the client comes but that he <strong>comes back</strong>. 
+							<p class="section-slogan">{!! $aim->text !!}
 							</p>
 						</header>
 					</div>
