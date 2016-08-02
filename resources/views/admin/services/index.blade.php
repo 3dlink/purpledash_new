@@ -16,7 +16,6 @@
 						</thead>
 
 						<tbody>
-							@foreach($texts as $text)
 							<tr>
 								<td>{{$text->text}}</td>
 								<td>
@@ -42,7 +41,6 @@
 									</div><!-- /.modal-content -->
 								</div><!-- /.modal-dialog -->
 							</div><!-- /.modal -->
-							@endforeach
 						</tbody>
 					</table>
 
@@ -89,7 +87,7 @@
 
 				</div>
 				<div class="panel-footer">
-					@if(!count($texts)>0)
+					@if(!count($text)>0)
 					<a href="{{ route('admin.serviceText.create') }}"><button class="btn btn-primary">Add Service Text</button></a>
 					@endif
 					<a href="{{ route('admin.services.create') }}"><button class="btn btn-primary">Add Service</button></a></div>

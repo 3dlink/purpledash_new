@@ -20,9 +20,9 @@ class ServicesController extends Controller
     public function index()
     {
         $services = Service::paginate(5);
-        $text = ServiceText::orderBy('created_at', 'desc')->paginate(1);
+        $text = ServiceText::orderBy('created_at', 'desc')->first();
 
-        return view('admin.services.index')->with('services', $services)->with('texts', $text);
+        return view('admin.services.index')->with('services', $services)->with('text', $text);
     }
 
     /**
