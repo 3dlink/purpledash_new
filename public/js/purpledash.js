@@ -46,6 +46,11 @@ $(document).ready(function (){
 	});
 
 	$(".slider").css("height",window.innerHeight);
+	if (window.innerWidth <768) {
+		$('.slides li:nth-child(1) img').attr('src','img/s1-mobile_mini.jpg');
+	}else{
+		$('.slides li:nth-child(1) img').attr('src','img/s1.jpg');
+	}
 
 
 	$(window).scroll(function () {
@@ -106,6 +111,12 @@ $(document).ready(function (){
 		$(".slick-prev").css('left','0px');
 
 		$('#mdialog').style('margin', '0px', 'important');
+
+		if (window.innerWidth < 768) {
+			$('.slides li:nth-child(1) img').attr('src','img/s1-mobile_mini.jpg');
+		}else{
+			$('.slides li:nth-child(1) img').attr('src','img/s1.jpg');
+		}
 	});
 
 	//REPRINTING PHRASES

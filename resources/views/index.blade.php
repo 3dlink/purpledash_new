@@ -389,10 +389,10 @@
 									
 									<!-- contact form -->
 									<div class="success-message">
-												@if(Session::has('mail'))
-													{{ Session::get('mail')}}
-												@endif
-											</div>
+										@if(Session::has('mail'))
+										{{ Session::get('mail')}}
+										@endif
+									</div>
 									<form id="contact-form" class="contact-form" action="{{ url('/contact') }}" method="POST">
 										{{ csrf_field() }}
 										<ul class="grid-85">
@@ -430,7 +430,7 @@
 
 		<footer class="footer"> <a href="#top" data-scroll class="toTop"><i class="fa fa-angle-up"></i></a>
 			<div class="grid">
-			<div class="grid-100 mobile-100 tablet-100">
+				<div class="grid-100 mobile-100 tablet-100">
 					<h3>Relax, we got you covered.</h3>
 				</div>
 			</div>
