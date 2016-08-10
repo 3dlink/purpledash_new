@@ -10,15 +10,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 	<!-- CSS -->
-	<link rel="shortcut icon" href="{{URL::asset('/img/favicon.ico')}}">
+	<link rel="shortcut icon" href="{{URL::asset('public/img/favicon.ico')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
-	<link href='{{URL::asset("/css/styles.css")}}' rel="stylesheet" type="text/css">
+	<link href='{{URL::asset("public/css/styles.css")}}' rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" type="text/css" href='{{URL::asset("/js/slick/slick.css")}}'/>
-	<link rel="stylesheet" type="text/css" href='{{URL::asset("/js/slick/slick-theme.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("public/js/slick/slick.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("public/js/slick/slick-theme.css")}}'/>
 
 </head>
 <body>
@@ -33,7 +33,7 @@
 			<div id="logo-section" class="grid grid-20">
 				<h1 class="logo">
 					<a href="">
-						<img src="{{URL::asset('/img/logo.png')}}" alt="logo">
+						<img src="{{URL::asset('public/img/logo.png')}}" alt="logo">
 					</a>
 
 				</h1>
@@ -71,10 +71,10 @@
 
 			<div class="main-slider">
 				<ul class="slides">
-					<li><img src='{{URL::asset("/img/s1.jpg")}}'></li>
-					<li><img src='{{URL::asset("/img/s2.jpg")}}'></li>
-					<li><img src='{{URL::asset("/img/s3.jpg")}}'></li>
-					<li><img src='{{URL::asset("/img/s4.jpg")}}'></li>
+					<li><div id="slider1" style='background-image:url({{URL::asset("public/img/s1.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider2" style='background-image:url({{URL::asset("public/img/s2.jpg")}}); background-size: cover; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider3" style='background-image:url({{URL::asset("public/img/s3.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider4" style='background-image:url({{URL::asset("public/img/s4.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
 				</ul>
 			</div>
 		</section>
@@ -90,9 +90,12 @@
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
 						<h2 class="section-title"><span>About Purple Dash</span></h2>
-						<p class="section-slogan">{!! $about->p1 !!}</p>
-						<p class="section-slogan">{!! $about->p2 !!}.</p>
-						<p class="section-slogan">{!! $about->p3 !!}</p>
+							<p class="section-slogan">{!! $about->p1 !!}</p>
+	 						<p class="section-slogan">{!! $about->p2 !!}.</p>
+ 							<p class="section-slogan">{!! $about->p3 !!}</p>
+<!-- 						<p class="section-slogan">We are a creative design studio based in Buenos Aires though we offer our services worldwide. We seek for simple and powerful solutions, bold aesthetics and surprising outputs across all platforms. We develop corporate identity, graphic communication, art direction, editorial, web &amp; app: design + development, illustration, motion graphic, and branding, among others.</p> -->
+<!-- 						<p class="section-slogan">We create and redesign B2B and B2C brands for clients ranging from start-ups to global corporations.</p> -->
+<!-- 						<p class="section-slogan">We have a close relationship with our customers, we like to involve ourselves in every project and obtain the best possible results. We create your brand design based on rational strategy and emotional harmony.</p> -->
 					</header>
 				</div>
 			</div>
@@ -105,7 +108,8 @@
 				<div class="grid grid-40 prefix-60 mobile-100 tablet-100" style="text-shadow: 1px 1px gray;">
 					<header class="parallax-header">
 						<h2 class="parallax-title"><span>Our Philosophy</span></h2>
-						<p class="parallax-slogan about">{!! $philosophy->text !!}</p>
+							<p class="parallax-slogan about">{!! $philosophy->text !!}</p>
+<!-- 						<p class="parallax-slogan about">We believe in quality because it is the only thing that stands the test of time.</p> -->
 					</header>
 				</div>
 			</div>
@@ -122,9 +126,12 @@
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
 						<h2 class="section-title"><span>Our Team</span></h2>
-						<p class="section-slogan">{!! $team->title !!}</p>
-						<p class="section-extra">{!! $team->p1 !!}</p>
-						<p class="section-extra">{!! $team->p2 !!}</p>
+							<p class="section-slogan">{!! $team->title !!}</p>
+ 							<p class="section-extra">{!! $team->p1 !!}</p>
+ 							<p class="section-extra">{!! $team->p2 !!}</p>
+<!-- 						<p class="section-slogan">What’s behind The Studio?</p> -->
+<!-- 						<p class="section-extra">We have an incredible team of professional and creative people. We craft insanely creative digital experiences throughout the globe! We are enthusiastic people, PASSIONATE about design, technology and all creative things in the world.</p> -->
+<!-- 						<p class="section-extra">STAFF: Graphic/ Packaging/ Web &amp; App Designers, Photographers, Web &amp; App Developers, Illustrators, Motion Graphic Designer, among others.</p> -->
 					</header>
 				</div>
 			</div>
@@ -144,7 +151,8 @@
 					<div class="grid-90 prefix-5 mobile-100 tablet-100">
 						<header class="parallax-header">
 							<h2 class="parallax-title"><span>OUR SERVICES</span></h2>
-							<p class="parallax-slogan">{!! $text->text !!}</p>
+<!-- 							<p class="parallax-slogan"><strong>PURPLEDASH</strong> IS A VERSATILE CREATIVE STUDIO FOUNDED BY PROFESSIONALS FROM DIFFERENT FIELDS. WE KNOW HOW TO BRING NEW LIFE TO A BRAND AND HOW TO CREATE ENTIRELY NEW CONCEPTS. WE LIKE TO WORK CLOSELY WITH CLIENTS AND INCLUDE THEM IN OUR DESIGN PROCESS TO CREATE BETTER RESULTS.</p> -->
+								<p class="parallax-slogan">{!! $text->text !!}</p>
 						</header>
 					</div>
 					<!-- close entry header -->
@@ -198,7 +206,7 @@
 
 						<!-- entry header -->
 						<div class="grid-70 prefix-15 mobile-100 tablet-100">
-							<div class="slide slide-phrases">
+							<div class="slide slide-phrases" style="text-shadow: 1px 1px gray;">
 								@foreach($phrases as $phrase)
 								<header class="parallax-header quotes">
 									<h2 class="ut-parallax-quote-title ">{{$phrase->quote}}. </h2>
@@ -235,10 +243,11 @@
 					<!-- close section header -->
 					@foreach($works as $work)
 					<!-- portfolio box -->
+<!-- 					<div class="work-box grid-33 mobile-100"> <!~~ tablet-50" >~~> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href=""> -->
 					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}">
 						<div class="portfolio-box">
 
-							<figure class="portfolio-image"><img src="img/{{$work->frontImg}}"></figure>
+							<figure class="portfolio-image"><img src="public/img/{{$work->frontImg}}"></figure>
 							<!-- close portfolio image -->
 
 							<div class="portfolio-caption">
@@ -257,19 +266,20 @@
 
 			<section id="social-section" class="parallax-section parallax-banner-9 social-section">
 				<div class="grid parallax-content">
-					<div class="grid-parent grid-100 mobile-100 tablet-100"> 
-						
+					<div class="grid-parent grid-100 mobile-100 tablet-100">
+
 						<!-- parallax header -->
 						<div class="grid-45 prefix-55 mobile-100 tablet-100">
 							<header class="parallax-header">
 								<h2 class="parallax-title"><span>Get Connected</span></h2>
-								<p class="parallax-slogan">{!! $connect->text !!}</p>
+<!-- 								<p class="parallax-slogan">Do not hesitate! Contact us! We are waiting for you!</p> -->
+									<p class="parallax-slogan">{!! $connect->text !!}</p>
 							</header>
 						</div>
 						<!-- close parallax header -->
-						
+
 						<div class="clear"></div>
-						
+
 						<!-- social network -->
 						<div class="grid-45 prefix-50 mobile-100 tablet-100">
 							<ul class="social-network">
@@ -277,19 +287,19 @@
 
 								<li class="facebook grid-25 tablet-100 mobile-100">&nbsp;</li>
 
-								<li class="skype grid-25 tablet-50 mobile-50"> 
-									<a class="social-link" href="skype:PurpleDash.Studio?chat"> <span class="social-icon"><i class="fa fa-skype fa-4x"></i></span></a> 
+								<li class="skype grid-25 tablet-50 mobile-50">
+									<a class="social-link" href="skype:PurpleDash.Studio?chat"> <span class="social-icon"><i class="fa fa-skype fa-4x"></i></span></a>
 								</li>
 								<li class="facebook grid-25 tablet-50 mobile-50" style="float:right;"> <a class="social-link" href="https://plus.google.com/u/1/115024707889329031789/" target="_blank"> <span class="social-icon"><i class="fa fa-google-plus fa-3x"></i></span>
 								</a> </li>
 							</ul>
 						</div>
-						<!-- close social network --> 
-						
+						<!-- close social network -->
+
 					</div>
-					<!-- close grid-100 --> 
+					<!-- close grid-100 -->
 				</div>
-				<!-- close grid container --> 
+				<!-- close grid container -->
 			</section>
 		</div>
 
@@ -301,7 +311,7 @@
 						<div class="grid-100 mobile-100 tablet-100">
 							<header class="section-header grid-100">
 								<div class="grid-40 rb"><h2 class="section-title"><span class="work-title"></span></h2><span class="work-sub"></span></div>
-								<div class="grid-60 nrb"><p class="section-slogan work-description" style="text-align:left; padding-left:5%;"></p></div>				
+								<div class="grid-60 nrb"><p class="section-slogan work-description" style="text-align:left; padding-left:5%;"></p></div>
 							</header>
 						</div>
 					</div>
@@ -320,19 +330,20 @@
 
 		<div class="clear">
 			<section id="testimonial-section" class="testimonial-section content-section">
-				<div class="grid clear"> 
+				<div class="grid clear">
 					<!-- section header -->
 					<div class="grid-70 prefix-15 mobile-100 tablet-100">
 						<header class="section-header">
 							<h2 class="section-title"><span>THE AIM</span></h2>
-							<p class="section-slogan">{!! $aim->text !!}
+<!-- 							<p class="section-slogan">Our ultimate goal is to make our clients happy. <br>   What counts is not that the client comes but that he <strong>comes back</strong>.  -->
+								<p class="section-slogan">{!! $aim->text !!}
 							</p>
 						</header>
 					</div>
-					<!-- close section header --> 
-					
+					<!-- close section header -->
+
 				</div>
-				<!-- close container --> 
+				<!-- close container -->
 			</section>
 		</div>
 
@@ -345,15 +356,15 @@
 						<h1 class="hero-title3">Details matter, it’s worth waiting to get it right.</h1>
 					</div>
 				</div>
-				<!-- close container --> 
+				<!-- close container -->
 			</section>
 		</div>
 
 		<div class="clear">
 			<section id="contact-section" class="contact-section parallax-section parallax-banner-10">
-				
-				<div class="grid-container parallax-content"> 
-					
+
+				<div class="grid-container parallax-content">
+
 					<!-- parallax header -->
 					<div class="grid-70 prefix-15 mobile-100 tablet-100">
 						<header class="parallax-header">
@@ -361,13 +372,13 @@
 						</header>
 					</div>
 					<!-- close parallax header -->
-					
+
 					<div class="clear"></div>
-					
+
 					<!-- contact wrap -->
 					<div class="grid-100 mobile-100 tablet-100">
-						<div class="contact-wrap"> 
-							
+						<div class="contact-wrap">
+
 							<!-- contact message -->
 							<div class="grid-parent suffix-5 mobile-100 tablet-100">
 								<div class="contact-message">
@@ -380,57 +391,57 @@
 									</ul>
 								</div>
 							</div>
-							<!-- close contact message --> 
-							
+							<!-- close contact message -->
+
 							<!-- contact form -->
 							<div class="grid-parent grid-55 mobile-100 tablet-100">
 								<div class="contact-form-holder">
 									<h3 class="grid-100">Drop us a line</h3>
-									
+
 									<!-- contact form -->
 									<div class="success-message">
-										@if(Session::has('mail'))
-										{{ Session::get('mail')}}
-										@endif
-									</div>
+												@if(Session::has('mail'))
+													{{ Session::get('mail')}}
+												@endif
+											</div>
 									<form id="contact-form" class="contact-form" action="{{ url('/contact') }}" method="POST">
 										{{ csrf_field() }}
 										<ul class="grid-85">
 											<li>
 												<span class="msjError"> @if ($errors->first('name')) *{{ $errors->first('name') }} @endif</span>
-												<input id="name" class="name form-input" name="name" placeholder="Name:" type="text">
+												<input id="name" class="name form-input" name="name" placeholder="Name:" type="text" required>
 											</li>
 											<li>
 												<span class="msjError"> @if ($errors->first('email')) *{{ $errors->first('email') }} @endif</span>
-												<input id="email" class="email form-input" name="email" placeholder="E-Mail:" type="email">
+												<input id="email" class="email form-input" name="email" placeholder="E-Mail:" type="email" required>
 											</li>
 											<li>
 												<span class="msjError"> @if ($errors->first('message')) *{{ $errors->first('message') }} @endif</span>
-												<textarea id="message" class="message form-input" name="message" placeholder="Message:"></textarea>
+												<textarea id="message" class="message form-input" name="message" placeholder="Message:" required></textarea>
 											</li>
 										</ul>
 										<div class="grid-100">
 											<input id="send-btn" class="send-btn" name="send-btn" value="Send" type="submit">
 										</div>
 									</form>
-									<!-- close contact form --> 
-									
+									<!-- close contact form -->
+
 								</div>
 							</div>
-							<!-- close contact-form-holder --> 
-							
+							<!-- close contact-form-holder -->
+
 						</div>
 					</div>
-					<!-- close contact wrap --> 
-					
+					<!-- close contact wrap -->
+
 				</div>
-				<!-- close container --> 
+				<!-- close container -->
 			</section>
 		</div>
 
 		<footer class="footer"> <a href="#top" data-scroll class="toTop"><i class="fa fa-angle-up"></i></a>
 			<div class="grid">
-				<div class="grid-100 mobile-100 tablet-100">
+			<div class="grid-100 mobile-100 tablet-100">
 					<h3>Relax, we got you covered.</h3>
 				</div>
 			</div>
@@ -441,15 +452,15 @@
 					</div>
 				</div>
 			</div>
-			<!-- close container --> 
+			<!-- close container -->
 		</footer>
 
 		<!-- JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/011b552131.js"></script>
-		<script src='{{URL::asset("/js/purpledash.js")}}'></script>
-		<script src='{{URL::asset("/js/smooth-scroll.js")}}'></script>
-		<script src='{{URL::asset("/js/slick/slick.min.js")}}'></script>
+		<script src='{{URL::asset("public/js/purpledash.js")}}'></script>
+		<script src='{{URL::asset("public/js/smooth-scroll.js")}}'></script>
+		<script src='{{URL::asset("public/js/slick/slick.min.js")}}'></script>
 	</body>
 	</html>

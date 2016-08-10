@@ -1,3 +1,11 @@
+:-webkit-any(#portfolio-modal) {
+ padding-righ: 0 !important;
+}
+
+p i{
+	font-style: italic !important;
+}
+
 @font-face {
     font-family: 'NeutraText';
     src: url('NeutraText-Light.otf') format("opentype");
@@ -191,6 +199,7 @@ p {
 	-webkit-transition-timing-function: linear;
 	-moz-transition-timing-function: linear;
 	transition-timing-function: linear;
+
 }
 
 /* Header styles */
@@ -426,7 +435,7 @@ img{
 	display: block;
 	z-index: 2;
 
-	transform: scaleY(1.4);
+/* 	transform: scaleY(1.4); */
 }
 
 .slides li:nth-child(2){
@@ -777,9 +786,16 @@ img{
 	transition-delay: 1.3s;
 }
 
+input:required:focus , textarea:required:focus{
+ border: 1px solid #552499 ;
+ outline: none;
+}
+
 .rb{
+/*
 	border-right-width: 1px;
-	border-right-style: solid; 
+	border-right-style: solid;
+ */
 
 	height: 120px;
 	padding-top: 20px;
@@ -790,8 +806,13 @@ img{
 	height: -webkit-fit-content;
 }
 
+.nrb > p{
+	text-align: justify !important;
+}
+
 .nrb{
-	padding: 20px 0px;
+	border-left: 1px solid black;
+	padding: 20px 20px;
 }
 
 .portfolio-image {
@@ -824,6 +845,7 @@ img{
 }
 
 .portfolio-caption {
+	border-radius: 10px;
 	background: rgba(192,36, 116, 0.85);
 }
 
@@ -1052,8 +1074,8 @@ textarea {
 }
 
 .form-input:focus:focus{
-  border: 1px solid #552499;
-  outline: none;
+   border: 1px solid #552499;
+   outline: none;
 }
 
 /* End Contact Form Styles */
@@ -1063,19 +1085,19 @@ textarea {
 	font-family: 'NeutraText';
 }
 
+/* #portfolio-modal .modal-dialog{ */
 #mdialog{
 	width: 100%;
 	margin: 0;
 }
-
-:-moz-any(#mdialog){ 
-	margin: 0;
-	width: 100%;
+:-moz-any(#mdialog){
+ 	margin: 0;
+ 	width: 100%;
 }
 
-:-webkit-any(#mdialog){ 
-	margin: 10px !important;
-	width: 100%;
+:-webkit-any(#mdialog){
+ 	margin: 10px !important;
+ 	width: 100%;
 }
 
 #portfolio-modal img{
@@ -1256,8 +1278,6 @@ textarea {
 	outline-style: none;
 }
 
-/* End Footer Styles */
-
 @media screen and (min-width: 1200px){
 	.section-container, .parallax-content, #portfolio-section .grid{
 		max-width: 1200px;
@@ -1265,6 +1285,9 @@ textarea {
 		margin-right: auto !important;
 	}
 }
+
+
+/* End Footer Styles */
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
 	.slides li:nth-child(1){
@@ -1318,7 +1341,7 @@ textarea {
 	}
 
 	.work-box:nth-child(2){
-		transition-delay: 1.1s;
+	transition-delay: 1.1s;
 	}
 
 	.work-box:nth-child(3){
@@ -1340,10 +1363,9 @@ textarea {
 	.work-box:nth-child(7){
 		transition-delay: 1.2s;
 	}
-
 	.portfolio-image img {
-		height: 200px;
-	}
+ 		height: 200px;
+ 	}
 }
 
 @media screen and (max-width: 767px) {
@@ -1476,10 +1498,9 @@ textarea {
 		font-size: 16px !important;
 		font-weight: 300;
 	}
-
 	.portfolio-image img {
-		height: 480px;
-	}
+ 		height: 480px;
+ 	}
 }
 
 @media screen and (max-width: 550px){
@@ -1535,8 +1556,7 @@ textarea {
 		font-size: 15px !important;
 		font-weight: 300;
 	}
-
 	.portfolio-image img {
-		height: 250px;
-	}
+ 		height: 250px;
+ 	}
 }

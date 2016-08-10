@@ -3,6 +3,15 @@ var timer = -1;
 
 $(document).ready(function (){
 
+// 	$(document).keypress(function(e) {
+// 		e.preventDefault();
+// 	    if(e.which == 13) {
+// 	    	alert('enter');
+// 	    	var cont = $(this).html();
+// 			$(this).html(html+"<br>");
+//     	}
+// 	});
+
 	smoothScroll.init({
 		easing: "linear",
 		speed: 400
@@ -46,11 +55,6 @@ $(document).ready(function (){
 	});
 
 	$(".slider").css("height",window.innerHeight);
-	if (window.innerWidth <768) {
-		$('.slides li:nth-child(1) img').attr('src','img/s1-mobile_mini.jpg');
-	}else{
-		$('.slides li:nth-child(1) img').attr('src','img/s1.jpg');
-	}
 
 
 	$(window).scroll(function () {
@@ -81,7 +85,7 @@ $(document).ready(function (){
 
 
 		//SELECTED NAVITEM
-		
+
 		if ($('#about-section').is_on_screen()) {
 			$(".selected").removeClass("selected");
 			$('#nav-section a[href="#about-section"]').addClass("selected");
@@ -111,12 +115,6 @@ $(document).ready(function (){
 		$(".slick-prev").css('left','0px');
 
 		$('#mdialog').style('margin', '0px', 'important');
-
-		if (window.innerWidth < 768) {
-			$('.slides li:nth-child(1) img').attr('src','img/s1-mobile_mini.jpg');
-		}else{
-			$('.slides li:nth-child(1) img').attr('src','img/s1.jpg');
-		}
 	});
 
 	//REPRINTING PHRASES
@@ -127,45 +125,40 @@ $(document).ready(function (){
 
 		if (timer == 0){
 			$(".slides li:nth-of-type(2)").css("opacity",1);
-
-			$(".slides li:nth-of-type(1) img").fadeOut(800,"linear", function(){
+			$(".slides #slider1").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(2)").css("z-index",2);
 				$(".slides li:nth-of-type(1)").css("z-index",1);
 
 				$(".slides li:nth-of-type(1)").css("opacity",0);
-				$(".slides li:nth-of-type(1) img").css("display","block");
+				$(".slides #slider1").css("display","block");
 			});
 
 		} else if (timer == 3){
 			$(".slides li:nth-of-type(3)").css("opacity",1);
-
-			$(".slides li:nth-of-type(2) img").fadeOut(800,"linear", function(){
+			$(".slides #slider2").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(3)").css("z-index",2);
 				$(".slides li:nth-of-type(2)").css("z-index",1);
-
 				$(".slides li:nth-of-type(2)").css("opacity",0);
-				$(".slides li:nth-of-type(2) img").css("display","block");
+				$(".slides #slider2").css("display","block");
 			});
 
 		} else if (timer == 6){
 			$(".slides li:nth-of-type(4)").css("opacity",1);
-
-			$(".slides li:nth-of-type(3) img").fadeOut(800,"linear", function(){
+			$(".slides #slider3").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(4)").css("z-index",2);
 				$(".slides li:nth-of-type(3)").css("z-index",1);
-
 				$(".slides li:nth-of-type(3)").css("opacity",0);
-				$(".slides li:nth-of-type(3) img").css("display","block");
+				$(".slides #slider3").css("display","block");
 			});
 		} else if (timer == 9){
 			$(".slides li:nth-of-type(1)").css("opacity",1);
 
-			$(".slides li:nth-of-type(4) img").fadeOut(800,"linear", function(){
+			$(".slides #slider4").fadeOut(800,"linear", function(){
 				$(".slides li:nth-of-type(1)").css("z-index",2);
 				$(".slides li:nth-of-type(4)").css("z-index",1);
 
 				$(".slides li:nth-of-type(4)").css("opacity",0);
-				$(".slides li:nth-of-type(4) img").css("display","block");
+				$(".slides #slider4").css("display","block");
 			});
 
 			$(".hero-holder").fadeOut();
@@ -200,48 +193,30 @@ $(document).ready(function (){
 
 	// Dynamic Modal //
 
-	// $('#portfolio-modal').on('shown.bs.modal', function(event){
-	// 	var me = $(event.relatedTarget);
-	// 	var mainimg = me.data('mainimg');
-	// 	var title = me.data('title');
-	// 	var sub = me.data('sub');
-	// 	var desc = me.data('desc');
-	// 	var modal = $(this);
-
-	// 	modal.find('.work-title').text(title);
-	// 	modal.find('.work-sub').text(sub);
-	// 	modal.find('.work-description').text(desc)
-	// 	modal.find('.photos img').attr('src', 'img/'+mainimg);
-
-	// });
-
 	$('.work-box a').click(function(event) {
-		var modal = $('#portfolio-modal').modal({
-			show: false,
-		});
+ 		var modal = $('#portfolio-modal').modal({
+ 			show: false,
+ 		});
 
-		modal.find('.work-title').text('');
-		modal.find('.work-sub').text('');
-		modal.find('.work-description').text('')
-		modal.find('.photos img').attr('src', '');
+ 		modal.find('.work-title').text('');
+ 		modal.find('.work-sub').text('');
+ 		modal.find('.work-description').text('')
+ 		modal.find('.photos img').attr('src', '');
 
-		var me = $(this);
-		var mainimg = me.data('mainimg');
-		var title = me.data('title');
-		var sub = me.data('sub');
-		var desc = me.data('desc');
+ 		var me = $(this);
+  		var mainimg = me.data('mainimg');
+  		var title = me.data('title');
+  		var sub = me.data('sub');
+  		var desc = me.data('desc');
 
-		modal.find('.work-title').text(title);
-		modal.find('.work-sub').text(sub);
+  		modal.find('.work-title').text(title);
+  		modal.find('.work-sub').text(sub);
 		modal.find('.work-description').html(desc);
-		modal.find('.photos img').attr('src', 'img/'+mainimg);
+  		modal.find('.photos img').attr('src', 'public/img/'+mainimg);
 
-		modal.modal('show');
-	});
+ 		modal.modal('show');
+  	});
 	// Dynamic Modal End //
-
-
-
 
 });
 
@@ -262,67 +237,67 @@ $.fn.is_on_screen = function(){
 	return (!(viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
 
-(function($) {    
-  if ($.fn.style) {
-    return;
-  }
+(function($) {
+   if ($.fn.style) {
+     return;
+   }
 
-  // Escape regex chars with \
-  var escape = function(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-  };
+   // Escape regex chars with \
+   var escape = function(text) {
+     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+   };
 
-  // For those who need them (< IE 9), add support for CSS functions
-  var isStyleFuncSupported = !!CSSStyleDeclaration.prototype.getPropertyValue;
-  if (!isStyleFuncSupported) {
-    CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
-      return this.getAttribute(a);
-    };
-    CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
-      this.setAttribute(styleName, value);
-      var priority = typeof priority != 'undefined' ? priority : '';
-      if (priority != '') {
-        // Add priority manually
-        var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) +
-            '(\\s*;)?', 'gmi');
-        this.cssText =
-            this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
-      }
-    };
-    CSSStyleDeclaration.prototype.removeProperty = function(a) {
-      return this.removeAttribute(a);
-    };
-    CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
-      var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
-          'gmi');
-      return rule.test(this.cssText) ? 'important' : '';
-    }
-  }
+   // For those who need them (< IE 9), add support for CSS functions
+   var isStyleFuncSupported = !!CSSStyleDeclaration.prototype.getPropertyValue;
+   if (!isStyleFuncSupported) {
+     CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
+       return this.getAttribute(a);
+     };
+     CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
+       this.setAttribute(styleName, value);
+       var priority = typeof priority != 'undefined' ? priority : '';
+       if (priority != '') {
+         // Add priority manually
+         var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) +
+             '(\\s*;)?', 'gmi');
+         this.cssText =
+             this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
+       }
+     };
+     CSSStyleDeclaration.prototype.removeProperty = function(a) {
+       return this.removeAttribute(a);
+     };
+     CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+       var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
+           'gmi');
+       return rule.test(this.cssText) ? 'important' : '';
+     }
+   }
 
-  // The style function
-  $.fn.style = function(styleName, value, priority) {
-    // DOM node
-    var node = this.get(0);
-    // Ensure we have a DOM node
-    if (typeof node == 'undefined') {
-      return this;
-    }
-    // CSSStyleDeclaration
-    var style = this.get(0).style;
-    // Getter/Setter
-    if (typeof styleName != 'undefined') {
-      if (typeof value != 'undefined') {
-        // Set style property
-        priority = typeof priority != 'undefined' ? priority : '';
-        style.setProperty(styleName, value, priority);
-        return this;
-      } else {
-        // Get style property
-        return style.getPropertyValue(styleName);
-      }
-    } else {
-      // Get CSSStyleDeclaration
-      return style;
-    }
-  };
-})(jQuery);
+   // The style function
+   $.fn.style = function(styleName, value, priority) {
+     // DOM node
+     var node = this.get(0);
+     // Ensure we have a DOM node
+     if (typeof node == 'undefined') {
+       return this;
+     }
+     // CSSStyleDeclaration
+     var style = this.get(0).style;
+     // Getter/Setter
+     if (typeof styleName != 'undefined') {
+       if (typeof value != 'undefined') {
+         // Set style property
+         priority = typeof priority != 'undefined' ? priority : '';
+         style.setProperty(styleName, value, priority);
+         return this;
+       } else {
+         // Get style property
+         return style.getPropertyValue(styleName);
+       }
+     } else {
+       // Get CSSStyleDeclaration
+       return style;
+     }
+   };
+ })(jQuery);
