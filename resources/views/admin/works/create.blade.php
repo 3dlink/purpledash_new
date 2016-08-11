@@ -49,18 +49,6 @@
 							
 						</div>
 
-						<div class="form-group">
-							{!! Form::label('mainImg', 'Main image') !!}
-							{!! Form::text('holder', 'Choose Image', array('disabled'=>'disabled', 'class' => 'form-control uploadSpan', 'id' => 'mainUpload')) !!}
-							
-							<div class="fileUpload btn btn-info">
-								<span>Browse...</span>
-								{!! Form::file('mainImg', array('class' => 'upload')) !!}
-							</div>
-
-							<span class="msjError"> @if ($errors->first('mainImg')) *{{ $errors->first('mainImg') }} @endif</span>
-						</div>
-
 	            </div>
 
 	            <div class="panel-footer">

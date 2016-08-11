@@ -46,7 +46,7 @@ class WorksController extends Controller
 			'category'   =>     'required',
 			'description'   =>  'required',
 			'frontImg'   =>    'required|image',
-			'mainImg'   =>     'required|image'
+			// 'mainImg'   =>     'required|image'
 			]);
 
 		$time = strtotime("now");
@@ -56,8 +56,8 @@ class WorksController extends Controller
 
 		if ($request->file('frontImg')) 
 			$files[] = $request->file('frontImg');
-		if ($request->file('mainImg')) 
-			$files[] = $request->file('mainImg');
+		// if ($request->file('mainImg')) 
+		// 	$files[] = $request->file('mainImg');
 
 		foreach ($files as $file)
 		{
@@ -77,8 +77,8 @@ class WorksController extends Controller
 		$work -> description = $request -> description;
 		$work -> frontImg = $names[0];
 		$work -> originalFront = $request->file('frontImg')->getClientOriginalName();
-		$work -> mainImg = $names[1];
-		$work -> originalMain = $request->file('mainImg')->getClientOriginalName();
+		// $work -> mainImg = $names[1];
+		// $work -> originalMain = $request->file('mainImg')->getClientOriginalName();
 
 		$work -> save();
 
@@ -125,7 +125,7 @@ class WorksController extends Controller
 			'category'   =>     'required',
 			'description'   =>  'required',
 			'frontImg'   =>    'image',
-			'mainImg'   =>     'image'
+			// 'mainImg'   =>     'image'
 		]);
 
 		$work = Work::find($id);
@@ -135,8 +135,8 @@ class WorksController extends Controller
 
 		if ($request->file('frontImg')) 
 			$files[] = $request->file('frontImg');
-		if ($request->file('mainImg')) 
-			$files[] = $request->file('mainImg');
+		// if ($request->file('mainImg')) 
+		// 	$files[] = $request->file('mainImg');
 
 		if(!empty($files[0])){
 			if ($files[0]->getClientOriginalName() != $work -> originalFront) {
@@ -149,16 +149,16 @@ class WorksController extends Controller
 			}
 		}
 
-		if(!empty($files[1])){
-			if ($files[1]->getClientOriginalName() != $work -> originalMain) {
-				$filename="img".$time.$this->__randomStr ( 3 ).'.'.$files[1]->getClientOriginalExtension();
-				$files[1]->move(
-						base_path().'/public/img/', $filename
-				);
-				$work -> mainImg = $filename;
-				$work -> originalMain = $request->file('mainImg')->getClientOriginalName();
-			}
-		}
+		// if(!empty($files[1])){
+		// 	if ($files[1]->getClientOriginalName() != $work -> originalMain) {
+		// 		$filename="img".$time.$this->__randomStr ( 3 ).'.'.$files[1]->getClientOriginalExtension();
+		// 		$files[1]->move(
+		// 				base_path().'/public/img/', $filename
+		// 		);
+		// 		$work -> mainImg = $filename;
+		// 		$work -> originalMain = $request->file('mainImg')->getClientOriginalName();
+		// 	}
+		// }
 
 		$work -> title = $request -> title;
 		$work -> subtitle = $request -> subtitle;

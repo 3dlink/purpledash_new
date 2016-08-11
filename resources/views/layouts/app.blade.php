@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	@yield('meta')
 
 	<title>. PurpleDash .</title>
 
@@ -108,38 +109,22 @@
 
 		<script src="https://use.fontawesome.com/011b552131.js"></script>
 		<script src="{{URL::asset('js/iconPicker/js/fontawesome-iconpicker.js')}}"></script>
+		<script type="text/javascript" src="{{URL::asset('/js/dropzone-4.3.0/dist/min/dropzone.min.js')}}"></script>
 
 
-	<script type="text/javascript">
-		$('.iconpicker').iconpicker();
+		<script type="text/javascript">
+			$('.iconpicker').iconpicker();
 
-		// Dynamic Modal //
-		$('#portfolio-modal').on('show.bs.modal', function(event){
-			var me = $(event.relatedTarget);
-			var mainimg = me.data('mainimg');
-			var title = me.data('title');
-			var sub = me.data('sub');
-			var desc = me.data('desc');
-			var modal = $(this);
+			document.getElementById("frontImg").onchange = function(){
+				document.getElementById("frontUpload").value = this.value;
+			};
 
-			modal.find('.work-title').text(title);
-			modal.find('.work-sub').text(sub);
-			modal.find('.work-description').html(desc)
-			modal.find('.photos img').attr('src', '../../img/'+mainimg);
+			document.getElementById("mainImg").onchange = function(){
+				document.getElementById("mainUpload").value = this.value;
+			};
 
-		});
-		// Dynamic Modal End //
+		</script>
 
-		document.getElementById("frontImg").onchange = function(){
-			document.getElementById("frontUpload").value = this.value;
-		};
-
-		document.getElementById("mainImg").onchange = function(){
-			document.getElementById("mainUpload").value = this.value;
-		};
-
-	</script>
-
-	@yield('script')
-</body>
-</html>
+		@yield('script')
+	</body>
+	</html>

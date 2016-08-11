@@ -15,7 +15,6 @@
 							<th>Subtitle</th>
 							<th>Category</th>
 <!-- 						<th>Front Image</th>
-							<th>Main Image</th>
 							<th>Description</th> -->
 							<th>Actions</th>
 						</thead>
@@ -27,10 +26,14 @@
 									<td>{{$work->subtitle}}</td>
 									<td>{{$work->category}}</td>
 <!-- 									<td>{{$work->originalFront}}</td>
-									<td>{{$work->originalMain}}</td>
 									<td>{{$work->description}}</td> -->
 									<td style="min-width: 100px;">
 										<a class="itemAction" href="{{ route('admin.works.edit', $work->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+										@if(!$work->hasImages)
+										<a class="itemAction" href="{{route('admin.image.create', $work->id)}}"><i class="fa fa-plus" aria-hidden="true"></i></a>
+										@else
+										<a class="itemAction" href="{{route('admin.image.index', $work->id)}}"><i class="fa fa-file-image-o" aria-hidden="true"></i></a>
+										@endif
 										<a class="itemAction" href="{{ route('admin.works.show', $work->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
 										@if ($work->isActive)
 										<a class="itemAction" onclick="cambiarEstado({{$work->id}})"><i class="fa fa-toggle-on" aria-hidden="true"></i></a>

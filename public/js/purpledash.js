@@ -12,52 +12,52 @@ $(document).ready(function (){
 //     	}
 // 	});
 
-	smoothScroll.init({
-		easing: "linear",
-		speed: 400
-	});
+smoothScroll.init({
+	easing: "linear",
+	speed: 400
+});
 
-	$('.slide-services').slick({
-		slidesToShow: 9,
-		slidesToScroll:3,
-		infinite: false,
-		arrows:true,
+$('.slide-services').slick({
+	slidesToShow: 9,
+	slidesToScroll:3,
+	infinite: false,
+	arrows:true,
 
-		responsive: [
-		{
-			breakpoint: 1100,
-			settings:{
-				slidesToShow: 6
-			}
-		},
-		{
-			breakpoint: 768,
-			settings:{
-				slidesToShow: 3,
-				arrows: false,
-				autoplay: true,
-				autoplaySpeed: 1500,
-				infinite: true
-			}
+	responsive: [
+	{
+		breakpoint: 1100,
+		settings:{
+			slidesToShow: 6
 		}
-		]
-	});
+	},
+	{
+		breakpoint: 768,
+		settings:{
+			slidesToShow: 3,
+			arrows: false,
+			autoplay: true,
+			autoplaySpeed: 1500,
+			infinite: true
+		}
+	}
+	]
+});
 
-	$('.slide-phrases').slick({
-		fade: true,
-		autoplay: true,
-		autoplaySpeed: 8000,
-		draggable: false,
-		arrows: false,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		speed: 1500
-	});
+$('.slide-phrases').slick({
+	fade: true,
+	autoplay: true,
+	autoplaySpeed: 8000,
+	draggable: false,
+	arrows: false,
+	pauseOnFocus: false,
+	pauseOnHover: false,
+	speed: 1500
+});
 
-	$(".slider").css("height",window.innerHeight);
+$(".slider").css("height",window.innerHeight);
 
 
-	$(window).scroll(function () {
+$(window).scroll(function () {
 
 		// HIDE OR SHOW HEADER
 		if(window.innerWidth > 767){
@@ -114,7 +114,7 @@ $(document).ready(function (){
 		$(".slick-next").css('right','0px');
 		$(".slick-prev").css('left','0px');
 
-		$('#mdialog').style('margin', '0px', 'important');
+		// $('#mdialog').style('margin', '0', 'important');
 	});
 
 	//REPRINTING PHRASES
@@ -194,28 +194,61 @@ $(document).ready(function (){
 	// Dynamic Modal //
 
 	$('.work-box a').click(function(event) {
- 		var modal = $('#portfolio-modal').modal({
- 			show: false,
- 		});
+		var modal = $('#portfolio-modal').modal({
+			show: false,
+		});
+
+ 		// modal.find('.work-title').text('');
+ 		// modal.find('.work-sub').text('');
+ 		// modal.find('.work-description').text('')
+ 		// modal.find('.photos img').attr('src', '');
+
+ 		// var me = $(this);
+ 		// var mainimg = me.data('mainimg');
+ 		// var title = me.data('title');
+ 		// var sub = me.data('sub');
+ 		// var desc = me.data('desc');
+
+ 		// modal.find('.work-title').text(title);
+ 		// modal.find('.work-sub').text(sub);
+ 		// modal.find('.work-description').html(desc);
+ 		// modal.find('.photos img').attr('src', 'public/img/'+mainimg);
+
+ 		// modal.modal('show');
 
  		modal.find('.work-title').text('');
  		modal.find('.work-sub').text('');
  		modal.find('.work-description').text('')
- 		modal.find('.photos img').attr('src', '');
+ 		modal.find('.modal-imgs').empty();
 
  		var me = $(this);
-  		var mainimg = me.data('mainimg');
-  		var title = me.data('title');
-  		var sub = me.data('sub');
-  		var desc = me.data('desc');
 
-  		modal.find('.work-title').text(title);
-  		modal.find('.work-sub').text(sub);
-		modal.find('.work-description').html(desc);
-  		modal.find('.photos img').attr('src', 'public/img/'+mainimg);
+ 		$.ajax({
+ 			type: 'GET',
+ 			dataType: 'json',
+ 			url: '/images/'+me.data('mainimg'),
+ 			success: function(data){
+ 				var title = me.data('title');
+ 				var sub = me.data('sub');
+ 				var desc = me.data('desc');
+ 				modal.find('.work-title').text(title);
+ 				modal.find('.work-sub').text(sub);
+ 				modal.find('.work-description').html(desc);
 
- 		modal.modal('show');
-  	});
+ 				var imgHolder = modal.find('.modal-imgs');
+
+ 				for (var i = 0; i < data.length; i++) {
+ 					var html = '<img src="/img/'+data[i].image+'" class="magicfields">'
+ 					imgHolder.append(html);
+ 				}
+
+ 				modal.modal('show');
+ 			},
+ 			error: function(data){
+ 				console.log(data);
+ 			}
+ 		});
+ 	});
 	// Dynamic Modal End //
 
 });
@@ -238,41 +271,41 @@ $.fn.is_on_screen = function(){
 };
 
 (function($) {
-   if ($.fn.style) {
-     return;
-   }
+	if ($.fn.style) {
+		return;
+	}
 
    // Escape regex chars with \
    var escape = function(text) {
-     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+   	return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
    };
 
    // For those who need them (< IE 9), add support for CSS functions
    var isStyleFuncSupported = !!CSSStyleDeclaration.prototype.getPropertyValue;
    if (!isStyleFuncSupported) {
-     CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
-       return this.getAttribute(a);
-     };
-     CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
-       this.setAttribute(styleName, value);
-       var priority = typeof priority != 'undefined' ? priority : '';
-       if (priority != '') {
+   	CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
+   		return this.getAttribute(a);
+   	};
+   	CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
+   		this.setAttribute(styleName, value);
+   		var priority = typeof priority != 'undefined' ? priority : '';
+   		if (priority != '') {
          // Add priority manually
          var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) +
-             '(\\s*;)?', 'gmi');
+         	'(\\s*;)?', 'gmi');
          this.cssText =
-             this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
-       }
-     };
-     CSSStyleDeclaration.prototype.removeProperty = function(a) {
-       return this.removeAttribute(a);
-     };
-     CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
-       var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
-           'gmi');
-       return rule.test(this.cssText) ? 'important' : '';
+         this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
      }
-   }
+ };
+ CSSStyleDeclaration.prototype.removeProperty = function(a) {
+ 	return this.removeAttribute(a);
+ };
+ CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+ 	var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
+ 		'gmi');
+ 	return rule.test(this.cssText) ? 'important' : '';
+ }
+}
 
    // The style function
    $.fn.style = function(styleName, value, priority) {
@@ -280,24 +313,24 @@ $.fn.is_on_screen = function(){
      var node = this.get(0);
      // Ensure we have a DOM node
      if (typeof node == 'undefined') {
-       return this;
+     	return this;
      }
      // CSSStyleDeclaration
      var style = this.get(0).style;
      // Getter/Setter
      if (typeof styleName != 'undefined') {
-       if (typeof value != 'undefined') {
+     	if (typeof value != 'undefined') {
          // Set style property
          priority = typeof priority != 'undefined' ? priority : '';
          style.setProperty(styleName, value, priority);
          return this;
-       } else {
+     } else {
          // Get style property
          return style.getPropertyValue(styleName);
-       }
-     } else {
+     }
+ } else {
        // Get CSSStyleDeclaration
        return style;
-     }
-   };
- })(jQuery);
+   }
+};
+})(jQuery);

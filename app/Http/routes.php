@@ -23,6 +23,11 @@ Route::get('/', [
     'as'    =>  'index'
 ]);
 
+Route::get('/images/{id}', [
+    'uses'  =>  'ImagesController@get',
+    'as'    =>  'images.get'
+]);
+
 route::post('contact', [
     'uses'  =>  'mainController@contact'
 ]);
@@ -119,6 +124,27 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('serviceText/{id}/destroy', [
         'uses'  =>  'ServiceTextController@destroy',
         'as'    =>  'admin.serviceText.destroy'
+    ]);
+
+    Route::resource('image', 'ImagesController');
+
+    Route::get('image/image/{id}', [
+        'uses'  =>  'ImagesController@index',
+        'as'    =>  'admin.image.index']);
+
+    Route::get('image/{id}/create', [
+        'uses'  =>  'ImagesController@create',
+        'as'    =>  'admin.image.create'
+    ]);
+
+    Route::get('image/{id}/destroy', [
+        'uses'  =>  'ImagesController@destroy',
+        'as'    =>  'admin.image.destroy'
+    ]);
+
+    Route::post('image/order', [
+        'uses'  =>  'ImagesController@order',
+        'as'    =>  'admin.image.order'
     ]);
 });
 

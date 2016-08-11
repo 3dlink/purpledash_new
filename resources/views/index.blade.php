@@ -10,15 +10,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 	<!-- CSS -->
-	<link rel="shortcut icon" href="{{URL::asset('public/img/favicon.ico')}}">
+	<link rel="shortcut icon" href="{{URL::asset('/img/favicon.ico')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,600,700' rel='stylesheet' type='text/css'>
-	<link href='{{URL::asset("public/css/styles.css")}}' rel="stylesheet" type="text/css">
+	<link href='{{URL::asset("/css/styles.css")}}' rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" type="text/css" href='{{URL::asset("public/js/slick/slick.css")}}'/>
-	<link rel="stylesheet" type="text/css" href='{{URL::asset("public/js/slick/slick-theme.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("/js/slick/slick.css")}}'/>
+	<link rel="stylesheet" type="text/css" href='{{URL::asset("/js/slick/slick-theme.css")}}'/>
 
 </head>
 <body>
@@ -33,7 +33,7 @@
 			<div id="logo-section" class="grid grid-20">
 				<h1 class="logo">
 					<a href="">
-						<img src="{{URL::asset('public/img/logo.png')}}" alt="logo">
+						<img src="{{URL::asset('/img/logo.png')}}" alt="logo">
 					</a>
 
 				</h1>
@@ -71,10 +71,10 @@
 
 			<div class="main-slider">
 				<ul class="slides">
-					<li><div id="slider1" style='background-image:url({{URL::asset("public/img/s1.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
-					<li><div id="slider2" style='background-image:url({{URL::asset("public/img/s2.jpg")}}); background-size: cover; width: 100%; height: 100%;'></div></li>
-					<li><div id="slider3" style='background-image:url({{URL::asset("public/img/s3.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
-					<li><div id="slider4" style='background-image:url({{URL::asset("public/img/s4.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider1" style='background-image:url({{URL::asset("/img/s1.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider2" style='background-image:url({{URL::asset("/img/s2.jpg")}}); background-size: cover; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider3" style='background-image:url({{URL::asset("/img/s3.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
+					<li><div id="slider4" style='background-image:url({{URL::asset("/img/s4.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
 				</ul>
 			</div>
 		</section>
@@ -243,11 +243,10 @@
 					<!-- close section header -->
 					@foreach($works as $work)
 					<!-- portfolio box -->
-<!-- 					<div class="work-box grid-33 mobile-100"> <!~~ tablet-50" >~~> <a data-toggle="modal" data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}" href=""> -->
-					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-target="#portfolio-modal" data-mainimg="{{$work->mainImg}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}">
+					<div class="work-box grid-33 mobile-100"> <!-- tablet-50" >--> <a data-target="#portfolio-modal" data-mainimg="{{$work->id}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}">
 						<div class="portfolio-box">
 
-							<figure class="portfolio-image"><img src="public/img/{{$work->frontImg}}"></figure>
+							<figure class="portfolio-image"><img src="/img/{{$work->frontImg}}"></figure>
 							<!-- close portfolio image -->
 
 							<div class="portfolio-caption">
@@ -317,7 +316,7 @@
 					</div>
 					<div class="modal-body grid-100 mobile-100 tablet-100">
 						<div class="photos clear">
-							<span><img src="" class="magicfields"></span>
+							<span class='modal-imgs'></span>
 						</div>
 					</div>
 				</div>
@@ -459,8 +458,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/011b552131.js"></script>
-		<script src='{{URL::asset("public/js/purpledash.js")}}'></script>
-		<script src='{{URL::asset("public/js/smooth-scroll.js")}}'></script>
-		<script src='{{URL::asset("public/js/slick/slick.min.js")}}'></script>
+		<script src='{{URL::asset("/js/purpledash.js")}}'></script>
+		<script src='{{URL::asset("/js/smooth-scroll.js")}}'></script>
+		<script src='{{URL::asset("/js/slick/slick.min.js")}}'></script>
 	</body>
 	</html>

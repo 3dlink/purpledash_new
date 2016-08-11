@@ -20,8 +20,9 @@ class CreateWorksTable extends Migration
             $table->string('description');
             $table->string('frontImg');
             $table->string('originalFront');
-            $table->string('mainImg');
-            $table->string('originalMain');
+            $table->boolean('hasImages');
+            // $table->string('mainImg');
+            // $table->string('originalMain');
             $table->boolean('isActive');
             $table->timestamps();
         });
