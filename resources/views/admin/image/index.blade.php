@@ -146,14 +146,19 @@
 
 					formData.push(elem);
 				});
-				
-				var d1 = formData[0].order;
-				$('input[name="order1"]').val(parseInt(d1));
-				var d2 = formData[1].order;
-				$('input[name="order2"]').val(parseInt(d2));
-				var d3 = formData[2].order;
-				$('input[name="order3"]').val(parseInt(d3));
 
+				for (var i = 0; i < formData.length; i++) {
+					if (i == 0) {
+						var d1 = formData[0].order;
+						$('input[name="order1"]').val(parseInt(d1));
+					}else if(i == 1){
+						var d2 = formData[1].order;
+						$('input[name="order2"]').val(parseInt(d2));
+					} else if (i == 2){
+						var d3 = formData[2].order;
+						$('input[name="order3"]').val(parseInt(d3));
+					}
+				}
 
 				$('.order, .orderBtn').removeClass('hidden');
 				$('.inputOrder, .saveBtn, .cancelBtn').addClass('hidden');
