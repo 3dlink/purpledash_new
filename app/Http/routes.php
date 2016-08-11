@@ -146,6 +146,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'uses'  =>  'ImagesController@order',
         'as'    =>  'admin.image.order'
     ]);
+
+    Route::post('/add', [
+        'uses'  =>  'ImagesController@add', 
+        'as'    =>  'admin.image.add'
+    ]);
+
+    Route::get('/complete', [
+        'uses'  =>  'ImagesController@complete',
+        'as'    =>  'admin.image.complete'
+    ]);
 });
 
 Route::auth();

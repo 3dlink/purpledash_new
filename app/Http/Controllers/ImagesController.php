@@ -22,6 +22,8 @@ class ImagesController extends Controller
         $work = Work::find($id);
         $images = $work->images;
 
+        session()->put('qty', count($images));
+
         return view('admin.image.index')->with('work',$work)->with('images', $images);
     }
 
@@ -56,6 +58,46 @@ class ImagesController extends Controller
         $files= [];
         $files = $request->file('originalImgName');
         $order = 0;
+
+        $work = session()->get('work');
+
+        foreach ($files as $file) {
+            $order+=1;
+            $image = new Image();
+
+            $filename="img".$time.$this->__randomStr ( 3 ).'.'.$file->getClientOriginalExtension();
+
+            $file->move(base_path().'/public/img/', $filename);
+
+            $image -> image = $filename;
+            $image -> originalName = $file->getClientOriginalName();
+            $image -> origOrder = $order;
+            $image -> order = $order;
+            $image -> work_id = $work;
+
+            $image -> save();
+        }
+
+        $work = Work::find($work);
+
+        $work->hasImages = true;
+
+        $work->save();
+
+        return response()->json(['success', 200]);
+    }
+
+    public function complete()
+    {
+        return view('admin.image.add');
+    }
+
+    public function add(Request $request)
+    {
+        $time = strtotime("now");
+        $files= [];
+        $files = $request->file('originalImgName');
+        $order = session()->get('qty');
 
         $work = session()->get('work');
 

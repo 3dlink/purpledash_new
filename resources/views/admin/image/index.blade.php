@@ -67,8 +67,11 @@
 				<div class="panel-footer">
 					<a href="{{ route('admin.works.index') }}"><button class="btn btn-default" type="button">Back</button></a>
 					<button class="btn btn-danger cancelBtn hidden" type="button">Cancel</button>
-					<button class="btn btn-primary saveBtn hidden" type="button">Save</button>
-					<button class="btn btn-primary orderBtn" type="button">Edit Order</button>
+					<button class="btn btn-success saveBtn hidden" type="button">Save</button>
+					<button class="btn btn-warning orderBtn" type="button">Edit Order</button>
+					@if(session()->get('qty')<3)
+					<a href="{{ route('admin.image.complete') }}"><button class="btn btn-primary" type="button">Add Images</button></a>
+					@endif
 					<!-- <a href="" data-toggle="modal" data-target="#workModal"><button class="btn btn-danger">Delete Work</button></a>
 					<a href="{{ route('admin.works.edit', $work->id) }}"><button class="btn btn-primary">Edit Work</button></a>-->
 				</div>
