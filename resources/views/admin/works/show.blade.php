@@ -90,7 +90,7 @@
 			modal.find('.work-title').text('');
 			modal.find('.work-sub').text('');
 			modal.find('.work-description').text('')
-			modal.find('.photos img').attr('src', '');
+			modal.find('.modal-imgs').empty();
 
 			var me = $(this);
 
@@ -99,7 +99,7 @@
 			$.ajax({
 				type: 'GET',
 				dataType: 'json',
-				url: '/images/'+me.data('mainimg'),
+				url: "{{route('images.get',session()->get('work'))}}",
 				success: function(data){
 					var title = me.data('title');
 					var sub = me.data('sub');
@@ -111,7 +111,7 @@
 					var imgHolder = modal.find('.modal-imgs');
 
 					for (var i = 0; i < data.length; i++) {
-						var html = '<img src="../../img/'+data[i].image+'" class="magicfields">'
+						var html = '<img src="{{URL::asset("public/img")}}/'+data[i].image+'" class="magicfields">'
 						imgHolder.append(html);
 					}
 

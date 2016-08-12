@@ -69,11 +69,24 @@
 					<button class="btn btn-danger cancelBtn hidden" type="button">Cancel</button>
 					<button class="btn btn-success saveBtn hidden" type="button">Save</button>
 					<button class="btn btn-warning orderBtn" type="button">Edit Order</button>
+					<button class="btn btn-info viewBtn" type="button">Preview</button>
 					@if(session()->get('qty')<3)
 					<a href="{{ route('admin.image.complete') }}"><button class="btn btn-primary" type="button">Add Images</button></a>
 					@endif
 					<!-- <a href="" data-toggle="modal" data-target="#workModal"><button class="btn btn-danger">Delete Work</button></a>
 					<a href="{{ route('admin.works.edit', $work->id) }}"><button class="btn btn-primary">Edit Work</button></a>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="portfolio-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body grid-100 mobile-100 tablet-100">
+					<div class="photos clear">
+						<span class="modal-imgs"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -183,5 +196,48 @@
 	function hasDuplicates(array) {
 		return (new Set(array)).size !== array.length;
 	}
-</script>
-@endsection
+
+	$('.viewBtn').click(function(event) {
+		var modal = $('#portfolio-modal').modal({
+			show: false,
+		});
+
+		modal.find('.modal-imgs').empty();
+
+		var me = $(this);
+
+			// <img src="" class="magicfields"> modal-imgs
+
+			$.ajax({
+				type: 'GET',
+				dataType: 'json',
+				url: "{{route('images.get',session()->get('work'))}}",
+				success: function(data){
+
+					var imgHolder = modal.find('.modal-imgs');
+
+					for (var i = 0; i < data.length; i++) {
+						var html = '<img src="{{URL::asset("public/img")}}/'+data[i].image+'" class="magicfields">';
+						imgHolder.append(html);
+					}
+
+					modal.modal('show');
+				},
+				error: function(data){
+					console.log(data);
+				}
+			});
+
+
+			// var mainimg = me.data('mainimg');
+			// var title = me.data('title');
+			// var sub = me.data('sub');
+			// var desc = me.data('desc');
+
+			// modal.find('.work-title').text(title);
+			// modal.find('.work-sub').text(sub);
+			// modal.find('.work-description').html(desc);
+			// modal.find('.photos img').attr('src', '../../img/'+mainimg);
+		});
+	</script>
+	@endsection

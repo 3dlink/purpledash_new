@@ -238,7 +238,11 @@ $(window).scroll(function () {
  				var imgHolder = modal.find('.modal-imgs');
 
  				for (var i = 0; i < data.length; i++) {
- 					var html = '<img src="/img/'+data[i].image+'" class="magicfields">'
+ 					var html ="";
+ 					html += '<img src="/img/';
+ 					html+= data[i].image;
+ 					html+= '" class="magicfields">';
+ 					
  					imgHolder.append(html);
  				}
 

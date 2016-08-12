@@ -53,6 +53,10 @@
 				e.preventDefault();
 				myDropzone.processQueue();
 			});
+		},
+		queuecomplete: function(e, response){
+			console.log(response);
+			window.location.replace("{{route('admin.image.index', session()->get('work'))}}");
 		}
 	});
 </script>

@@ -94,6 +94,7 @@ class WorksController extends Controller
 	public function show($id)
 	{
 		$work = Work::find($id);
+		session()->put('work', $id);
 		return view('admin.works.show')->with('work',$work);
 	}
 
