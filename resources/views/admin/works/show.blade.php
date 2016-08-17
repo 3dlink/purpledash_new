@@ -22,7 +22,7 @@
 				 <div class="grid-33 mobile-100 tablet-50 w-box" style="margin: 0 33%;"> <a data-target="#portfolio-modal" data-mainimg="{{$work->id}}" data-desc="{{$work->description}}" data-title="{{$work->title}}" data-sub="{{$work->subtitle}}">
 					<div class="portfolio-box" style="opacity:1;">
 
-						<figure class="portfolio-image"><img src="../../img/{{$work->frontImg}}"></figure>
+						<figure class="portfolio-image"><img src='{{URL::asset("public/img/$work->frontImg")}}'></figure>
 						<!-- close portfolio image -->
 
 						<div class="portfolio-caption">

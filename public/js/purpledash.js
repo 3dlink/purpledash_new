@@ -198,61 +198,58 @@ $(window).scroll(function () {
 			show: false,
 		});
 
- 		// modal.find('.work-title').text('');
- 		// modal.find('.work-sub').text('');
- 		// modal.find('.work-description').text('')
- 		// modal.find('.photos img').attr('src', '');
+		// modal.find('.work-title').text('');
+		// modal.find('.work-sub').text('');
+		// modal.find('.work-description').text('')
+		// modal.find('.photos img').attr('src', '');
 
- 		// var me = $(this);
- 		// var mainimg = me.data('mainimg');
- 		// var title = me.data('title');
- 		// var sub = me.data('sub');
- 		// var desc = me.data('desc');
+		// var me = $(this);
+		// var mainimg = me.data('mainimg');
+		// var title = me.data('title');
+		// var sub = me.data('sub');
+		// var desc = me.data('desc');
 
- 		// modal.find('.work-title').text(title);
- 		// modal.find('.work-sub').text(sub);
- 		// modal.find('.work-description').html(desc);
- 		// modal.find('.photos img').attr('src', 'public/img/'+mainimg);
+		// modal.find('.work-title').text(title);
+		// modal.find('.work-sub').text(sub);
+		// modal.find('.work-description').html(desc);
+		// modal.find('.photos img').attr('src', 'public/img/'+mainimg);
 
- 		// modal.modal('show');
+		// modal.modal('show');
 
- 		modal.find('.work-title').text('');
- 		modal.find('.work-sub').text('');
- 		modal.find('.work-description').text('')
- 		modal.find('.modal-imgs').empty();
+		modal.find('.work-title').text('');
+		modal.find('.work-sub').text('');
+		modal.find('.work-description').text('')
+		modal.find('.modal-imgs').empty();
 
- 		var me = $(this);
+		var me = $(this);
 
- 		$.ajax({
- 			type: 'GET',
- 			dataType: 'json',
- 			url: '/images/'+me.data('mainimg'),
- 			success: function(data){
- 				var title = me.data('title');
- 				var sub = me.data('sub');
- 				var desc = me.data('desc');
- 				modal.find('.work-title').text(title);
- 				modal.find('.work-sub').text(sub);
- 				modal.find('.work-description').html(desc);
+		$.ajax({
+			type: 'GET',
+			dataType: 'json',
+			url: '/images/'+me.data('mainimg'),
+			success: function(data){
+				var title = me.data('title');
+				var sub = me.data('sub');
+				var desc = me.data('desc');
+				modal.find('.work-title').text(title);
+				modal.find('.work-sub').text(sub);
+				modal.find('.work-description').html(desc);
 
- 				var imgHolder = modal.find('.modal-imgs');
+				var imgHolder = modal.find('.modal-imgs');
 
- 				for (var i = 0; i < data.length; i++) {
- 					var html ="";
- 					html += '<img src="/img/';
- 					html+= data[i].image;
- 					html+= '" class="magicfields">';
- 					
- 					imgHolder.append(html);
- 				}
+				for (var i = 0; i < data.length; i++) {
+					var html = '<img src="public/img/'+data[i].image+'" class="magicfields">';
+					
+					imgHolder.append(html);
+				}
 
- 				modal.modal('show');
- 			},
- 			error: function(data){
- 				console.log(data);
- 			}
- 		});
- 	});
+				modal.modal('show');
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+	});
 	// Dynamic Modal End //
 
 });
@@ -294,47 +291,47 @@ $.fn.is_on_screen = function(){
    		this.setAttribute(styleName, value);
    		var priority = typeof priority != 'undefined' ? priority : '';
    		if (priority != '') {
-         // Add priority manually
-         var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) +
-         	'(\\s*;)?', 'gmi');
-         this.cssText =
-         this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
-     }
- };
- CSSStyleDeclaration.prototype.removeProperty = function(a) {
- 	return this.removeAttribute(a);
- };
- CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
- 	var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
- 		'gmi');
- 	return rule.test(this.cssText) ? 'important' : '';
- }
+		 // Add priority manually
+		 var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) +
+		 	'(\\s*;)?', 'gmi');
+		 this.cssText =
+		 this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
+		}
+	};
+	CSSStyleDeclaration.prototype.removeProperty = function(a) {
+		return this.removeAttribute(a);
+	};
+	CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+		var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
+			'gmi');
+		return rule.test(this.cssText) ? 'important' : '';
+	}
 }
 
    // The style function
    $.fn.style = function(styleName, value, priority) {
-     // DOM node
-     var node = this.get(0);
-     // Ensure we have a DOM node
-     if (typeof node == 'undefined') {
-     	return this;
-     }
-     // CSSStyleDeclaration
-     var style = this.get(0).style;
-     // Getter/Setter
-     if (typeof styleName != 'undefined') {
-     	if (typeof value != 'undefined') {
-         // Set style property
-         priority = typeof priority != 'undefined' ? priority : '';
-         style.setProperty(styleName, value, priority);
-         return this;
-     } else {
-         // Get style property
-         return style.getPropertyValue(styleName);
-     }
- } else {
-       // Get CSSStyleDeclaration
-       return style;
-   }
+	 // DOM node
+	 var node = this.get(0);
+	 // Ensure we have a DOM node
+	 if (typeof node == 'undefined') {
+	 	return this;
+	 }
+	 // CSSStyleDeclaration
+	 var style = this.get(0).style;
+	 // Getter/Setter
+	 if (typeof styleName != 'undefined') {
+	 	if (typeof value != 'undefined') {
+		 // Set style property
+		 priority = typeof priority != 'undefined' ? priority : '';
+		 style.setProperty(styleName, value, priority);
+		 return this;
+		} else {
+		 // Get style property
+		 return style.getPropertyValue(styleName);
+		}
+	} else {
+	   // Get CSSStyleDeclaration
+	   return style;
+	}
 };
 })(jQuery);

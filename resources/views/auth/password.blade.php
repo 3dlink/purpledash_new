@@ -21,6 +21,9 @@
                         <div class="form-group">
                             {!! Form::label('Old password', 'Old password') !!}
                             {!! Form::password('old_password', ['class'=>'form-control']) !!}
+                            @if($wrongPwd == 'true')
+                                <span class="wrongPwd">The old password doesn't match</span>
+                            @endif
                         </div>
 
                         <div class="form-group">

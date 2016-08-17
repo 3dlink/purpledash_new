@@ -197,6 +197,8 @@ class ImagesController extends Controller
 
         $qty = count(Work::find($work)->images);
 
+        dd($qty);
+
         if ($qty == 0) {
             $work = Work::find($work);
 

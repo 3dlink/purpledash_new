@@ -14,16 +14,16 @@ use Auth;
 
 class PasswordChangeController extends Controller
 {
-	/**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
 
-	
+    
     public function index()
     {
-    	return view('auth.password');
+        return view('auth.password')->with('wrongPwd', 'false');
     }
 
     public function setPassword(Request $request){
@@ -42,6 +42,8 @@ class PasswordChangeController extends Controller
             ])->save();
 
             return redirect() -> route('admin.index');
+        } else {
+            return view('auth.password')->with('wrongPwd', 'true');
         }
     }
 }
