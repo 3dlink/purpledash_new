@@ -438,6 +438,10 @@ img{
 	/* 	transform: scaleY(1.4); */
 }
 
+.slides li:nth-child(1) img {
+	transform: scaleY(1.4);
+}
+
 .slides li:nth-child(2){
 	width: 100%;
 	float: left;
@@ -1293,11 +1297,11 @@ textarea {
 	/* End Footer Styles */
 
 	@media screen and (min-width: 768px) and (max-width: 1024px){
-		.slides li:nth-child(1){
+		.slides li:nth-child(1) img{
 			transform: scaleX(1.1);
 		}
 
-		.slides li:nth-child(2){
+		.slides li:nth-child(2) img{
 			transform: scaleX(2);
 		}
 

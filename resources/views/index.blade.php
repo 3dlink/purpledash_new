@@ -71,10 +71,10 @@
 
 			<div class="main-slider">
 				<ul class="slides">
-					<li><div id="slider1" style='background-image:url({{URL::asset("/img/s1.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
-					<li><div id="slider2" style='background-image:url({{URL::asset("/img/s2.jpg")}}); background-size: cover; width: 100%; height: 100%;'></div></li>
-					<li><div id="slider3" style='background-image:url({{URL::asset("/img/s3.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
-					<li><div id="slider4" style='background-image:url({{URL::asset("/img/s4.jpg")}}); background-size: cover; background-position: center center; width: 100%; height: 100%;'></div></li>
+					<li id="slider1"><img src='{{URL::asset("/img/s1.jpg")}}'></li>
+					<li id="slider2"><img src='{{URL::asset("/img/s2.jpg")}}'></li>
+					<li id="slider3"><img src='{{URL::asset("/img/s3.jpg")}}'></li>
+					<li id="slider4"><img src='{{URL::asset("/img/s4.jpg")}}'></li>
 				</ul>
 			</div>
 		</section>
@@ -90,12 +90,12 @@
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
 						<h2 class="section-title"><span>About Purple Dash</span></h2>
-							<p class="section-slogan">{!! $about->p1 !!}</p>
-	 						<p class="section-slogan">{!! $about->p2 !!}.</p>
- 							<p class="section-slogan">{!! $about->p3 !!}</p>
-<!-- 						<p class="section-slogan">We are a creative design studio based in Buenos Aires though we offer our services worldwide. We seek for simple and powerful solutions, bold aesthetics and surprising outputs across all platforms. We develop corporate identity, graphic communication, art direction, editorial, web &amp; app: design + development, illustration, motion graphic, and branding, among others.</p> -->
-<!-- 						<p class="section-slogan">We create and redesign B2B and B2C brands for clients ranging from start-ups to global corporations.</p> -->
-<!-- 						<p class="section-slogan">We have a close relationship with our customers, we like to involve ourselves in every project and obtain the best possible results. We create your brand design based on rational strategy and emotional harmony.</p> -->
+						<p class="section-slogan">{!! $about->p1 !!}</p>
+						<p class="section-slogan">{!! $about->p2 !!}.</p>
+						<p class="section-slogan">{!! $about->p3 !!}</p>
+						<!-- 						<p class="section-slogan">We are a creative design studio based in Buenos Aires though we offer our services worldwide. We seek for simple and powerful solutions, bold aesthetics and surprising outputs across all platforms. We develop corporate identity, graphic communication, art direction, editorial, web &amp; app: design + development, illustration, motion graphic, and branding, among others.</p> -->
+						<!-- 						<p class="section-slogan">We create and redesign B2B and B2C brands for clients ranging from start-ups to global corporations.</p> -->
+						<!-- 						<p class="section-slogan">We have a close relationship with our customers, we like to involve ourselves in every project and obtain the best possible results. We create your brand design based on rational strategy and emotional harmony.</p> -->
 					</header>
 				</div>
 			</div>
@@ -108,8 +108,8 @@
 				<div class="grid grid-40 prefix-60 mobile-100 tablet-100" style="text-shadow: 1px 1px gray;">
 					<header class="parallax-header">
 						<h2 class="parallax-title"><span>Our Philosophy</span></h2>
-							<p class="parallax-slogan about">{!! $philosophy->text !!}</p>
-<!-- 						<p class="parallax-slogan about">We believe in quality because it is the only thing that stands the test of time.</p> -->
+						<p class="parallax-slogan about">{!! $philosophy->text !!}</p>
+						<!-- 						<p class="parallax-slogan about">We believe in quality because it is the only thing that stands the test of time.</p> -->
 					</header>
 				</div>
 			</div>
@@ -126,12 +126,12 @@
 				<div class="grid grid-70 prefix-15 mobile-100 tablet-100">
 					<header class="section-header">
 						<h2 class="section-title"><span>Our Team</span></h2>
-							<p class="section-slogan">{!! $team->title !!}</p>
- 							<p class="section-extra">{!! $team->p1 !!}</p>
- 							<p class="section-extra">{!! $team->p2 !!}</p>
-<!-- 						<p class="section-slogan">What’s behind The Studio?</p> -->
-<!-- 						<p class="section-extra">We have an incredible team of professional and creative people. We craft insanely creative digital experiences throughout the globe! We are enthusiastic people, PASSIONATE about design, technology and all creative things in the world.</p> -->
-<!-- 						<p class="section-extra">STAFF: Graphic/ Packaging/ Web &amp; App Designers, Photographers, Web &amp; App Developers, Illustrators, Motion Graphic Designer, among others.</p> -->
+						<p class="section-slogan">{!! $team->title !!}</p>
+						<p class="section-extra">{!! $team->p1 !!}</p>
+						<p class="section-extra">{!! $team->p2 !!}</p>
+						<!-- 						<p class="section-slogan">What’s behind The Studio?</p> -->
+						<!-- 						<p class="section-extra">We have an incredible team of professional and creative people. We craft insanely creative digital experiences throughout the globe! We are enthusiastic people, PASSIONATE about design, technology and all creative things in the world.</p> -->
+						<!-- 						<p class="section-extra">STAFF: Graphic/ Packaging/ Web &amp; App Designers, Photographers, Web &amp; App Developers, Illustrators, Motion Graphic Designer, among others.</p> -->
 					</header>
 				</div>
 			</div>
@@ -151,8 +151,8 @@
 					<div class="grid-90 prefix-5 mobile-100 tablet-100">
 						<header class="parallax-header">
 							<h2 class="parallax-title"><span>OUR SERVICES</span></h2>
-<!-- 							<p class="parallax-slogan"><strong>PURPLEDASH</strong> IS A VERSATILE CREATIVE STUDIO FOUNDED BY PROFESSIONALS FROM DIFFERENT FIELDS. WE KNOW HOW TO BRING NEW LIFE TO A BRAND AND HOW TO CREATE ENTIRELY NEW CONCEPTS. WE LIKE TO WORK CLOSELY WITH CLIENTS AND INCLUDE THEM IN OUR DESIGN PROCESS TO CREATE BETTER RESULTS.</p> -->
-								<p class="parallax-slogan">{!! $text->text !!}</p>
+							<!-- 							<p class="parallax-slogan"><strong>PURPLEDASH</strong> IS A VERSATILE CREATIVE STUDIO FOUNDED BY PROFESSIONALS FROM DIFFERENT FIELDS. WE KNOW HOW TO BRING NEW LIFE TO A BRAND AND HOW TO CREATE ENTIRELY NEW CONCEPTS. WE LIKE TO WORK CLOSELY WITH CLIENTS AND INCLUDE THEM IN OUR DESIGN PROCESS TO CREATE BETTER RESULTS.</p> -->
+							<p class="parallax-slogan">{!! $text->text !!}</p>
 						</header>
 					</div>
 					<!-- close entry header -->
@@ -271,8 +271,8 @@
 						<div class="grid-45 prefix-55 mobile-100 tablet-100">
 							<header class="parallax-header">
 								<h2 class="parallax-title"><span>Get Connected</span></h2>
-<!-- 								<p class="parallax-slogan">Do not hesitate! Contact us! We are waiting for you!</p> -->
-									<p class="parallax-slogan">{!! $connect->text !!}</p>
+								<!-- 								<p class="parallax-slogan">Do not hesitate! Contact us! We are waiting for you!</p> -->
+								<p class="parallax-slogan">{!! $connect->text !!}</p>
 							</header>
 						</div>
 						<!-- close parallax header -->
@@ -334,8 +334,8 @@
 					<div class="grid-70 prefix-15 mobile-100 tablet-100">
 						<header class="section-header">
 							<h2 class="section-title"><span>THE AIM</span></h2>
-<!-- 							<p class="section-slogan">Our ultimate goal is to make our clients happy. <br>   What counts is not that the client comes but that he <strong>comes back</strong>.  -->
-								<p class="section-slogan">{!! $aim->text !!}
+							<!-- 							<p class="section-slogan">Our ultimate goal is to make our clients happy. <br>   What counts is not that the client comes but that he <strong>comes back</strong>.  -->
+							<p class="section-slogan">{!! $aim->text !!}
 							</p>
 						</header>
 					</div>
@@ -399,10 +399,10 @@
 
 									<!-- contact form -->
 									<div class="success-message">
-												@if(Session::has('mail'))
-													{{ Session::get('mail')}}
-												@endif
-											</div>
+										@if(Session::has('mail'))
+										{{ Session::get('mail')}}
+										@endif
+									</div>
 									<form id="contact-form" class="contact-form" action="{{ url('/contact') }}" method="POST">
 										{{ csrf_field() }}
 										<ul class="grid-85">
@@ -440,7 +440,7 @@
 
 		<footer class="footer"> <a href="#top" data-scroll class="toTop"><i class="fa fa-angle-up"></i></a>
 			<div class="grid">
-			<div class="grid-100 mobile-100 tablet-100">
+				<div class="grid-100 mobile-100 tablet-100">
 					<h3>Relax, we got you covered.</h3>
 				</div>
 			</div>
