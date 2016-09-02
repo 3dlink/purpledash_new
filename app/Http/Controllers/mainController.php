@@ -57,7 +57,7 @@ class mainController extends Controller
 
 		$sent= Mail::send('mail.contact', array('contact' => $contact), function ($m){
 			$m->from('hello@purpledash.com');
-			$m->to("o0serras0o@gmail.com");
+			$m->to("");
 			$m->subject("It's alive!");
 		});
 
@@ -68,5 +68,12 @@ class mainController extends Controller
 
 		$request->session()->flash('mail','Email has been sent!');
 		return redirect('/#contact-section');
+	}
+
+	public function workModal($id){
+		$work = Work::find($id);
+		$images = $work->images()->orderBy('order', 'asc')->get();
+
+		return view('work')->with('work', $work)->with('images', $images);
 	}
 }

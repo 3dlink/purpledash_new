@@ -111,7 +111,7 @@
 					var imgHolder = modal.find('.modal-imgs');
 
 					for (var i = 0; i < data.length; i++) {
-						var html = '<img src="{{URL::asset("public/img")}}/'+data[i].image+'" class="magicfields">'
+						var html = '<img src="{{URL::asset("public/img")}}/'+data[i].image+'" class="magicfields">';
 						imgHolder.append(html);
 					}
 

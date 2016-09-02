@@ -40,13 +40,13 @@
 			</div>
 
 			<nav id="nav-section" class="nav grid grid-80">
-				<a class="selected" data-scroll href="#top">Home</a>
-				<a class="" data-scroll href="#about-section">About</a>
-				<a class="" data-scroll href="#team-section">Team</a>
-				<a class="" data-scroll href="#service-section">Service</a>
-				<a class="" data-scroll href="#portfolio-section">Work</a>
-				<a class="" data-scroll href="#testimonial-section">Aim</a>
-				<a class="" data-scroll href="#contact-section">Contact</a>
+				<a class="selected menu-link" data-href="#top">Home</a>
+				<a class="menu-link" data-href="#about-section">About</a>
+				<a class="menu-link" data-href="#team-section">Team</a>
+				<a class="menu-link" data-href="#service-section">Service</a>
+				<a class="menu-link" data-href="#portfolio-section">Work</a>
+				<a class="menu-link" data-href="#testimonial-section">Aim</a>
+				<a class="menu-link" data-href="#contact-section">Contact</a>
 			</nav>
 
 		</div>
@@ -63,7 +63,7 @@
 						<div class="hero-title-holder clear">
 							<h1 class="hero-title">We are <span>purple dash</span></h1>
 						</div>
-						<span class="btn-holder"><a id="to-about-section" data-scroll href="#about-section" class="hero-btn">What We Do</a></span>
+						<span class="btn-holder"><a id="to-about-section" data-href="#about-section" class="hero-btn menu-link">What We Do</a></span>
 					</div>
 				</div>
 				<!-- close hero-holder -->
@@ -109,7 +109,6 @@
 					<header class="parallax-header">
 						<h2 class="parallax-title"><span>Our Philosophy</span></h2>
 						<p class="parallax-slogan about">{!! $philosophy->text !!}</p>
-						<!-- 						<p class="parallax-slogan about">We believe in quality because it is the only thing that stands the test of time.</p> -->
 					</header>
 				</div>
 			</div>
@@ -189,7 +188,7 @@
 			<section id="cta-section" class="cta-section content-section">
 				<div class="grid">
 					<div class="grid-100 mobile-100 tablet-100">
-						<span class="cta-btn cl-effect-18 "><a class="cl-effect-18" data-scroll href="#contact-section"> Drop us a line </a></span>
+						<span class="cta-btn cl-effect-18 " style="cursor: pointer;"><a class="cl-effect-18 menu-link" data-href="#contact-section"> Drop us a line </a></span>
 					</div>
 				</div>
 			</section>
@@ -438,7 +437,7 @@
 			</section>
 		</div>
 
-		<footer class="footer"> <a href="#top" data-scroll class="toTop"><i class="fa fa-angle-up"></i></a>
+		<footer class="footer"> <a data-href="#top" class="toTop menu-link" style="cursor:pointer;"><i class="fa fa-angle-up"></i></a>
 			<div class="grid">
 				<div class="grid-100 mobile-100 tablet-100">
 					<h3>Relax, we got you covered.</h3>
@@ -459,7 +458,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/011b552131.js"></script>
 		<script src='{{URL::asset("/js/purpledash.js")}}'></script>
-		<script src='{{URL::asset("/js/smooth-scroll.js")}}'></script>
 		<script src='{{URL::asset("/js/slick/slick.min.js")}}'></script>
+		<script src="{{URL::asset('/js/jquery-scrollto.js')}}"></script>
 	</body>
 	</html>

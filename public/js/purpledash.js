@@ -3,6 +3,21 @@ var timer = -1;
 
 $(document).ready(function (){
 
+	$(".menu-link").click(function(){
+		var me = $(this);
+		var target = me.data('href');
+
+		$(target).ScrollTo({
+			duration: 500,
+			easing: 'linear',
+			onAfter: function() {
+				requestAnimationFrame(function() {
+					$(me).addClass("selected");
+				});
+			}
+		});
+	});
+
 // 	$(document).keypress(function(e) {
 // 		e.preventDefault();
 // 	    if(e.which == 13) {
@@ -20,10 +35,10 @@ if (window.innerWidth <768) {
 	$('.slides li:nth-child(1) img').attr('src','img/s1.jpg');
 }
 
-smoothScroll.init({
-	easing: "linear",
-	speed: 400
-});
+// smoothScroll.init({
+// 	easing: "linear",
+// 	speed: 400
+// });
 
 $('.slide-services').slick({
 	slidesToShow: 9,
@@ -93,22 +108,22 @@ $(window).scroll(function () {
 
 		if ($('#about-section').is_on_screen()) {
 			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#about-section"]').addClass("selected");
+			$('#nav-section a[data-href="#about-section"]').addClass("selected");
 		}else if ($('#team-section').is_on_screen()){
 			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#team-section"]').addClass("selected");
+			$('#nav-section a[data-href="#team-section"]').addClass("selected");
 		}else if ($('#service-section').is_on_screen()){
 			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#service-section"]').addClass("selected");
+			$('#nav-section a[data-href="#service-section"]').addClass("selected");
 		}else if ($('#portfolio-section').is_on_screen()){
 			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#portfolio-section"]').addClass("selected");
+			$('#nav-section a[data-href="#portfolio-section"]').addClass("selected");
 		}else if ($('#testimonial-section').is_on_screen()){
 			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#testimonial-section"]').addClass("selected");
+			$('#nav-section a[data-href="#testimonial-section"]').addClass("selected");
 		}else if ($('#contact-section').is_on_screen()){
 			$(".selected").removeClass("selected");
-			$('#nav-section a[href="#contact-section"]').addClass("selected");
+			$('#nav-section a[data-href="#contact-section"]').addClass("selected");
 		}
 	});
 
