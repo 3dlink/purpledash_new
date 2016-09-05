@@ -33,7 +33,8 @@ route::post('contact', [
     ]);
 
 Route::get('/work/{id}', [
-    'uses' => 'mainController@workModal'
+    'uses' => 'mainController@workModal',
+    'as'    =>  'work'
     ]);
 
 
