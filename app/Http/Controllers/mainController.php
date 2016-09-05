@@ -71,7 +71,7 @@ class mainController extends Controller
 	}
 
 	public function workModal($id){
-		$work = Work::find($id);
+		$work = Work::where('title',$id)->first();
 		$images = $work->images()->orderBy('order', 'asc')->get();
 
 		return view('work')->with('work', $work)->with('images', $images);

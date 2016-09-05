@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Work;
 
+use DB;
+
 class WorksController extends Controller
 {
 	/**
@@ -128,6 +130,14 @@ class WorksController extends Controller
 			'frontImg'   =>    'image',
 			// 'mainImg'   =>     'image'
 		]);
+
+		$test = DB::table('works')->where('title', $request->title)->get();
+
+		if ( $test[0]->id != $id ) {
+			$this -> validate($request, [
+				'title'	=>	'unique:works'
+				]);
+		}
 
 		$work = Work::find($id);
 		$time = strtotime("now");

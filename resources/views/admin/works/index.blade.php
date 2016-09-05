@@ -37,7 +37,7 @@
 									<a class="itemAction" onclick="cambiarEstado({{$work->id}})"><i class="fa fa-toggle-off" aria-hidden="true"></i></a>
 									@endif
 									<a class="itemAction" href="" data-toggle="modal" data-target="#myModal{{$work->id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-									<a class="itemAction share-icon" data-target="{{$work->id}}"><i class="fa fa-link" aria-hidden="true"></i></a>
+									<a class="itemAction share-icon" data-target="{{$work->title}}"><i class="fa fa-link" aria-hidden="true"></i></a>
 
 								</td>
 							</tr>
