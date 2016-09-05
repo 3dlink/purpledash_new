@@ -154,5 +154,13 @@
 					</div>
 				</div>
 			</div>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+					window.history.replaceState(null, "", "{{ $work->title }}");
+				});
+			</script>
 		</body>
 		</html>
