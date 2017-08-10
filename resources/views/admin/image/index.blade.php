@@ -183,7 +183,6 @@
 			}
 		});
 
-
 		$('select').on('change', function(){
 			var bind = $(this).attr('bind');
 			var binded = $('td[binded="'+bind+'"]');
